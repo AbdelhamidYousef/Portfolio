@@ -35,9 +35,9 @@ const App = () => {
   return (
     <div className="flex">
       {/* Sidebar Toggle Button */}
-      <div className="fixed left-5 top-5 w-12 h-12 rounded-full bg-black/30 z-10 grid place-content-center">
+      <div className="lg:hidden fixed left-5 top-5 w-12 h-12 rounded-full bg-black/30 z-10 grid place-content-center  focus-within:border-2 focus-within:border-black/60">
         <button
-          className="w-5 h-5 flex items-center"
+          className="w-5 h-5 flex items-center focus:outline-none"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         >
           <svg
@@ -87,7 +87,11 @@ const App = () => {
                   activeSection === link ? "text-white" : "text-white/50"
                 } hover:text-white mb-4 text-lg font-semibold uppercase`}
               >
-                <a href={`#${link}`} onClick={(e) => scrollToSection(e, link)}>
+                <a
+                  href={`#${link}`}
+                  onClick={(e) => scrollToSection(e, link)}
+                  className="focus:outline-none focus:border-b-2 focus:border-current focus:border-spacing-2"
+                >
                   {link}
                 </a>
               </li>
