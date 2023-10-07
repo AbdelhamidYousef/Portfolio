@@ -89,9 +89,9 @@ const App = () => {
         } fixed left-0 top-0 lg:w-72 h-screen bg-primary grid place-content-center text-center overflow-hidden transition-all duration-1000`}
       >
         <a
-          title="Profile Picture"
           onClick={() => scrollTo({ top: 0, behavior: "smooth" })}
-          className="cursor-pointer mb-8"
+          title="Profile Picture"
+          className="cursor-pointer mb-8 animate-bounceRight"
         >
           <img
             src={profilePic}
@@ -101,7 +101,7 @@ const App = () => {
           />
         </a>
 
-        <nav>
+        <nav className="animate-bounceRight">
           <ul>
             {sidebarLinks.map((link, i) => (
               <li
@@ -133,7 +133,7 @@ const App = () => {
         <section
           ref={(el) => sectionRefs.current.push(el)}
           id="about"
-          className="min-h-[40rem] h-screen grid content-center text-center xs:text-left"
+          className="min-h-[40rem] h-screen grid content-center text-center xs:text-left animate-slideLeft"
         >
           <h1 className="mb-2 xs:mb-0 font-hero font-bold text-5xl xs:text-6xl sm:text-8xl text-slate-700 uppercase">
             Abdulhamid <span className="text-primary">Yousef</span>
@@ -157,7 +157,7 @@ const App = () => {
             {technologies.map((tech) => (
               <li
                 key={tech.id}
-                className="w-6 h-6 xs:w-8 xs:h-8 lg:w-9 lg:h-9 cursor-help"
+                className="w-6 h-6 xs:w-8 xs:h-8 lg:w-9 lg:h-9 drop-shadow-[0_0_3px_#33333340] cursor-help"
                 data-title={tech.title}
               >
                 {tech.component}
