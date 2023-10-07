@@ -132,26 +132,29 @@ const App = () => {
         <section
           ref={(el) => sectionRefs.current.push(el)}
           id="about"
-          className="min-h-[40rem] h-screen grid content-center"
+          className="min-h-[40rem] h-screen grid content-center text-center xs:text-left"
         >
-          <h1 className="font-hero font-bold text-8xl text-slate-700 uppercase">
+          <h1 className="mb-2 xs:mb-0 font-hero font-bold text-5xl xs:text-6xl sm:text-8xl text-slate-700 uppercase">
             Abdulhamid <span className="text-primary">Yousef</span>
           </h1>
 
-          <p className="ml-1 mb-10 font-hero font-medium text-2xl text-slate-500 uppercase tracking-widest">
-            Frontend Engineer |{" "}
+          <p className="xs:ml-1 mb-3 xs:mb-6 sm:mb-8 lg:mb-10 font-hero font-medium text-lg xs:text-xl sm:text-2xl text-slate-500 uppercase tracking-widest">
+            <span className="block xs:inline-block leading-none">
+              Frontend Engineer
+            </span>
+            <span className="hidden xs:inline-block mx-1">|</span>
             <span className="text-primary">React Developer</span>
           </p>
 
-          <p className="max-w-7xl ml-1 mb-10 text-lg text-slate-500/80">
+          <p className="max-w-6xl xs:ml-1 mb-7 xs:mb-10 sm:mb-12 lg:mb-14 text-sm xs:text-lg text-slate-500/80">
             I specialize in building interactive web applications using React
             and Tailwind / Sass, leveraging their powerful ecosystems to create
             immersive user experiences.
           </p>
 
-          <ul className="ml-1 flex flex-wrap gap-x-2 gap-y-3 lg:gap-x-3">
+          <ul className="xs:ml-1 flex flex-wrap justify-center xs:justify-start gap-x-2 gap-y-3 lg:gap-x-6">
             {technologies.map((tech, i) => (
-              <li key={i} className="w-7 h-7">
+              <li key={i} className="w-6 h-6 xs:w-8 xs:h-8 lg:w-9 lg:h-9">
                 {tech}
               </li>
             ))}
