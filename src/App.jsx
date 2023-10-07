@@ -13,16 +13,16 @@ import Eslint from "./svgs/Eslint";
 
 const sidebarLinks = ["about", "skills", "projects", "contact"];
 const technologies = [
-  <Html />,
-  <Css />,
-  <Javascript />,
-  <React />,
-  <Tailwind />,
-  <Sass />,
-  <Git />,
-  <Github />,
-  <Vite />,
-  <Eslint />,
+  { id: 1, title: "HTML", component: <Html /> },
+  { id: 2, title: "CSS", component: <Css /> },
+  { id: 3, title: "JavaScript", component: <Javascript /> },
+  { id: 4, title: "React", component: <React /> },
+  { id: 5, title: "Tailwindcss", component: <Tailwind /> },
+  { id: 6, title: "SASS", component: <Sass /> },
+  { id: 7, title: "Git", component: <Git /> },
+  { id: 8, title: "GitHub", component: <Github /> },
+  { id: 9, title: "Vite", component: <Vite /> },
+  { id: 10, title: "Eslint", component: <Eslint /> },
 ];
 
 const App = () => {
@@ -153,9 +153,13 @@ const App = () => {
           </p>
 
           <ul className="xs:ml-1 flex flex-wrap justify-center xs:justify-start gap-x-2 gap-y-3 lg:gap-x-6">
-            {technologies.map((tech, i) => (
-              <li key={i} className="w-6 h-6 xs:w-8 xs:h-8 lg:w-9 lg:h-9">
-                {tech}
+            {technologies.map((tech) => (
+              <li
+                key={tech.id}
+                className="w-6 h-6 xs:w-8 xs:h-8 lg:w-9 lg:h-9 cursor-help"
+                data-title={tech.title}
+              >
+                {tech.component}
               </li>
             ))}
           </ul>
