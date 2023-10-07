@@ -41,7 +41,8 @@
   [data-title]:after {
     content: attr(data-title);
     @apply absolute left-[90%] -bottom-8 z-[99] px-2 py-1 rounded-md shadow-[0_0_4px_#222] opacity-0 invisible transition-all duration-300;
-    @apply text-slate-800 text-center whitespace-nowrap;
+    @apply text-slate-900 text-center whitespace-nowrap;
+    backdrop-filter: blur(3px);
   }
   [data-title]:hover:after {
     @apply opacity-100 visible;

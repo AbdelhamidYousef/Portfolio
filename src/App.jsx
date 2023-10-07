@@ -57,7 +57,7 @@ const App = () => {
   return (
     <div className="flex">
       {/* Sidebar Toggle Button */}
-      <div className="lg:hidden fixed left-5 top-5 w-12 h-12 rounded-full bg-black/30 z-10 grid place-content-center  focus-within:border-2 focus-within:border-black/60">
+      <div className="lg:hidden fixed left-5 top-5 w-12 h-12 rounded-full bg-black/30 z-10 grid place-content-center  focus-within:border-2 focus-within:border-black/20">
         <button
           className="w-5 h-5 flex items-center focus:outline-none"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -85,18 +85,19 @@ const App = () => {
       {/* Sidebar */}
       <header
         className={`${
-          isSidebarOpen ? "w-72" : "w-0"
+          isSidebarOpen ? "w-full z-10 sm:w-72" : "w-0"
         } fixed left-0 top-0 lg:w-72 h-screen bg-primary grid place-content-center text-center overflow-hidden transition-all duration-1000`}
       >
         <a
+          title="Profile Picture"
           onClick={() => scrollTo({ top: 0, behavior: "smooth" })}
-          className="cursor-pointer"
+          className="cursor-pointer mb-8"
         >
           <img
             src={profilePic}
             alt="Profile Picture"
-            title="Profile Picture"
-            className="w-40 h-40 rounded-full border-6 border-white/60 shadow mb-8"
+            data-title="Profile Picture"
+            className="w-40 h-40 rounded-full border-6 border-white/60 shadow "
           />
         </a>
 
@@ -126,7 +127,7 @@ const App = () => {
       <main
         className={`${
           isSidebarOpen ? "ml-72" : "ml-0"
-        } lg:ml-72 w-full h-screen bg-gray-100/80 px-5 lg:px-10 transition-all duration-1000`}
+        } lg:ml-72 w-full h-screen bg-gray-100/80 px-5 lg:px-10 transition-all duration-1000 overflow-x-hidden`}
       >
         {/* About Section */}
         <section
