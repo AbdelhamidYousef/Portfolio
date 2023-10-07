@@ -2,9 +2,14 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,jsx}"],
   theme: {
+    fontFamily: {
+      main: ["Open Sans", "sans-serif"],
+      hero: ["Saira Extra Condensed", "cursive", "serif"],
+    },
+
     extend: {
       colors: {
-        sidebar: "#bd5d38",
+        primary: "#bd5d38",
       },
 
       borderWidth: {
