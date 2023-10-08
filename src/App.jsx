@@ -126,7 +126,7 @@ const App = () => {
   return (
     <div className="flex">
       {/* Sidebar Toggle Button */}
-      <div className="lg:hidden fixed left-5 top-5 w-12 h-12 rounded-full bg-black/30 z-10 grid place-content-center  focus-within:border-2 focus-within:border-black/20">
+      <div className="lg:hidden fixed left-5 top-5 w-12 h-12 rounded-full bg-black/30 z-10 grid place-content-center focus-within:border-2 focus-within:border-black/20">
         <button
           className="w-5 h-5 flex items-center focus:outline-none"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
@@ -241,17 +241,35 @@ const App = () => {
           id="skills"
           className="py-20 animate-slideLeft"
         >
-          <h2 className="mb-12 font-hero font-bold text-6xl text-slate-700 uppercase tracking-wide  ">
+          <h2 className="mb-12 font-hero font-bold text-6xl text-slate-700 uppercase tracking-wide text-center sm:text-left">
             Skills
           </h2>
 
-          <ul>
+          {/* Mobile & Tablet */}
+          <ul className="ml-1 md:hidden flex flex-wrap justify-center sm:justify-start gap-x-5">
+            {Object.keys(skills).map((key) =>
+              skills[key].map((skill) => (
+                <li key={skill.id}>
+                  <Skill
+                    name={skill.name}
+                    percentage={skill.percentage}
+                    circleRadius={60}
+                    barColor="#eb7647"
+                    barWidth={2}
+                  />
+                </li>
+              ))
+            )}
+          </ul>
+
+          {/* Desktop */}
+          <ul className="ml-1 hidden md:block">
             {Object.keys(skills).map((key, i) => (
               <li
                 key={i}
-                className="grid grid-cols-[22rem_1fr] items-center mb-10"
+                className="grid grid-cols-[18rem_1fr] xl:grid-cols-[22rem_1fr] items-center mb-10"
               >
-                <h3 className="font-hero font-semibold text-3xl text-slate-500 leading-none">
+                <h3 className="font-hero font-semibold text-2xl xl:text-3xl text-slate-500 leading-none">
                   {key}
                 </h3>
 
@@ -263,7 +281,7 @@ const App = () => {
                         percentage={skill.percentage}
                         circleRadius={52}
                         barColor="#eb7647"
-                        barWidth={4}
+                        barWidth={2}
                       />
                     </li>
                   ))}

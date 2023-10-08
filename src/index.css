@@ -20,3 +20,45 @@
     @apply opacity-100 visible;
   }
 }
+
+.responsive-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.language-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.progress-circle {
+  width: 7.42857rem;
+  height: 7.42857rem;
+}
+
+.progress-bar {
+  stroke-dasharray: 326.7256359733385;
+  stroke-dashoffset: 0;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: stroke-dashoffset 0.3s ease-in-out;
+}
+
+.language-content {
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .responsive-list {
+    gap: 1rem;
+  }
+
+  .language-item {
+    flex-direction: column;
+    align-items: center;
+  }
+}
