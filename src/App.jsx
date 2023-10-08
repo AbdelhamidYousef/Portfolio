@@ -351,17 +351,17 @@ const App = () => {
           id="projects"
           className="pt-20 pb-24 animate-slideLeft"
         >
-          <h2 className="mb-16 font-hero font-bold text-6xl text-slate-700 uppercase tracking-wide text-center sm:text-left">
+          <h2 className="mb-10 sm:mb-16 font-hero font-bold text-6xl text-slate-700 uppercase tracking-wide text-center sm:text-left">
             Projects
           </h2>
 
-          <ul className="grid grid-cols-3 gap-10">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-x-5 gap-y-10">
             {projects.map((project) => (
               <li
                 key={project.id}
                 className={`${
-                  project.id === 4 ? "col-start-2" : ""
-                } group relative rounded-lg overflow-hidden shadow-lg`}
+                  project.id === 4 ? "2xl:col-start-2" : ""
+                } group relative rounded-xl overflow-hidden shadow-lg`}
               >
                 {/* Project Image  */}
                 <img
@@ -371,12 +371,12 @@ const App = () => {
                 />
 
                 {/* Project Content */}
-                <div className="absolute inset-0 bg-black/80 backdrop-blur-[2px] px-10 text-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500">
+                <div className="absolute inset-0 bg-black/80 backdrop-blur-[2px] px-10 grid content-center text-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500">
                   {/* Project Title & Description */}
-                  <h3 className="mt-32 mb-6 font-hero font-semibold text-3xl text-gray-100 uppercase tracking-wide">
+                  <h3 className="-mt-[20%] xs:-mt-[15%] mb-2 font-hero font-semibold text-2xl xs:text-4xl text-gray-100 uppercase tracking-wide z-[1]">
                     {project.title}
                   </h3>
-                  <p className="font-medium text-gray-100">
+                  <p className="font-medium text-sm xs:text-lg text-gray-100 z-[1]">
                     {project.description}
                   </p>
 
@@ -386,7 +386,7 @@ const App = () => {
                     target="_blank"
                     rel="noreferrer"
                     title="Code Source"
-                    className="absolute right-6 top-6 z-10 w-9 h-9 drop-shadow-[0_0_20px_#fff] hover:drop-shadow-[0_0_10px_#fff] transition-all duration-300"
+                    className="absolute right-4 top-4 xs:right-5 xs:top-5 xl:right-6 xl:top-6 z-10 w-6 h-6 xs:w-8 xs:h-8 xl:w-10 xl:h-10 drop-shadow-[0_0_20px_#fff] hover:drop-shadow-[0_0_10px_#fff] transition-all duration-300"
                   >
                     <Github color="#fff" />
                   </a>
@@ -397,7 +397,7 @@ const App = () => {
                     rel="noreferrer"
                     className="absolute inset-0"
                   >
-                    <span className="absolute left-1/2 -translate-x-1/2 bottom-10 px-8 p-3 border-2 border-gray-100 rounded-full font-medium text-lg text-gray-100 hover:border-transparent hover:bg-gray-100 hover:text-slate-700 hover:drop-shadow-[0_0_3px_#fff] transition-all duration-700">
+                    <span className="absolute left-1/2 -translate-x-1/2 bottom-5 xs:bottom-8 xl:bottom-10 px-6 py-2 xl:px-8 xl:py-3 border-2 border-gray-100 rounded-full font-medium text-md xl:text-lg text-gray-100 hover:border-transparent hover:bg-gray-100 hover:text-slate-700 hover:drop-shadow-[0_0_3px_#fff] transition-all duration-700">
                       Visit Now
                     </span>
                   </a>
