@@ -20,7 +20,7 @@ import project4 from "./assets/images/project-4.webp";
 
 // # HTML Content
 // Sidebar
-const sidebarLinks = ["hero", "skills", "projects", "contact"];
+const sidebarLinks = ["about", "skills", "projects", "contact"];
 const technologies = [
   { id: 1, title: "HTML", component: <Html /> },
   { id: 2, title: "CSS", component: <Css /> },
@@ -149,31 +149,30 @@ const projects = [
 ];
 
 const App = () => {
-  console.log(window.scrollY);
-
-  document.addEventListener("scroll", () => {
-    console.log(window.scrollY);
-  });
-
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
 
   const sectionRefs = useRef([]);
 
+  // Intersection Observer
   useEffect(() => {
-    // Callback
+    // Callback Function
     const intersectionHandler = ([entry]) => {
       if (entry.isIntersecting) setActiveSection(entry.target.id);
     };
 
+    // Options
+    const options = {
+      threshold: 0.5,
+    };
+
     // Observer
-    const observer = new IntersectionObserver(intersectionHandler, {});
+    const observer = new IntersectionObserver(intersectionHandler, options);
+
+    // Observing Sections
     sectionRefs.current.forEach((section) => {
       if (section) observer.observe(section);
     });
-
-    // Clean up
-    return observer.disconnect();
   }, [sectionRefs]);
 
   // Handler Functions
@@ -185,53 +184,6 @@ const App = () => {
 
   return (
     <div className="flex">
-      {/* Sidebar Toggle Button */}
-      <button
-        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-        className="lg:hidden fixed left-5 top-5 w-12 h-12 rounded-full bg-slate-700/60 z-20 grid place-content-center hover:bg-slate-700/50 focus:outline-none focus:ring-2 focus:ring-slate-700/60 focus:ring-offset-2 transition-all duration-300"
-      >
-        <span className="w-5 h-5 flex items-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 448 512"
-            fill="#f6f6f6"
-            className={`${isSidebarOpen ? "hidden" : "block"}`}
-          >
-            <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
-          </svg>
-
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 384 512"
-            fill="#f6f6f6"
-            className={`${isSidebarOpen ? "block" : "hidden"}`}
-          >
-            <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
-          </svg>
-        </span>
-      </button>
-
-      {/* To Top Button */}
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed right-5 bottom-5 sm:right-10 sm:bottom-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-600 z-10 grid place-content-center hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 transition-all duration-300"
-      >
-        <span className="w-5 h-5 sm:w-6 sm:h-6 ">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            version="1.1"
-            viewBox="0 0 48 48"
-            width="100%"
-            height="100%"
-          >
-            <path
-              fill="#fff"
-              d="m25.989 46.22 3.661-32.985 4.925 2.88c1.5.874 3.07-1.013 1.943-2.33L25.169.542a1.539 1.539 0 0 0-2.335 0l-11.35 13.243c-1.133 1.317.443 3.203 1.937 2.33l4.931-2.874 3.657 32.979c.256 2.366 3.724 2.367 3.98 0z"
-            ></path>
-          </svg>
-        </span>
-      </button>
-
       {/* Sidebar */}
       <header
         className={`${
@@ -258,7 +210,7 @@ const App = () => {
                 key={i}
                 className={`${
                   activeSection === link ? "text-white" : "text-white/50"
-                } hover:text-white mb-4 text-lg font-semibold uppercase`}
+                } hover:text-white mb-4 text-lg font-semibold uppercase text-white`}
               >
                 <a
                   href={`#${link}`}
@@ -279,10 +231,10 @@ const App = () => {
           isSidebarOpen ? "ml-72" : "ml-0"
         } lg:ml-72 w-full bg-gray-100/80 px-5 lg:px-10 transition-all duration-1000 overflow-x-hidden divide-y-2`}
       >
-        {/* Hero Section */}
+        {/* About Section */}
         <section
           ref={(el) => sectionRefs.current.push(el)}
-          id="hero"
+          id="about"
           className="min-h-[40rem] h-screen grid content-center text-center xs:text-left animate-slideLeft"
         >
           <h1 className="mb-2 xs:mb-0 font-hero font-bold text-5xl xs:text-6xl sm:text-8xl text-slate-700 uppercase">
@@ -440,6 +392,53 @@ const App = () => {
           className="h-screen"
         ></section>
       </main>
+
+      {/* Sidebar Toggle Button */}
+      <button
+        onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+        className="lg:hidden fixed left-5 top-5 w-12 h-12 rounded-full bg-slate-700/60 z-20 grid place-content-center hover:bg-slate-700/50 focus:outline-none focus:ring-2 focus:ring-slate-700/60 focus:ring-offset-2 transition-all duration-300"
+      >
+        <span className="w-5 h-5 flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            fill="#f6f6f6"
+            className={`${isSidebarOpen ? "hidden" : "block"}`}
+          >
+            <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+          </svg>
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 384 512"
+            fill="#f6f6f6"
+            className={`${isSidebarOpen ? "block" : "hidden"}`}
+          >
+            <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" />
+          </svg>
+        </span>
+      </button>
+
+      {/* To Top Button */}
+      <button
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className="fixed right-5 bottom-5 sm:right-10 sm:bottom-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-600 z-10 grid place-content-center hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 transition-all duration-300"
+      >
+        <span className="w-5 h-5 sm:w-6 sm:h-6 ">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            viewBox="0 0 48 48"
+            width="100%"
+            height="100%"
+          >
+            <path
+              fill="#fff"
+              d="m25.989 46.22 3.661-32.985 4.925 2.88c1.5.874 3.07-1.013 1.943-2.33L25.169.542a1.539 1.539 0 0 0-2.335 0l-11.35 13.243c-1.133 1.317.443 3.203 1.937 2.33l4.931-2.874 3.657 32.979c.256 2.366 3.724 2.367 3.98 0z"
+            ></path>
+          </svg>
+        </span>
+      </button>
     </div>
   );
 };
