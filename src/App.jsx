@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import profilePic from "./assets/images/profile.webp";
+// Components
+import Skill from "./components/Skill";
 import Html from "./svgs/Html";
 import Css from "./svgs/Css";
 import Javascript from "./svgs/Javascript";
@@ -10,8 +11,15 @@ import Git from "./svgs/Git";
 import Github from "./svgs/Github";
 import Vite from "./svgs/Vite";
 import Eslint from "./svgs/Eslint";
-import Skill from "./components/Skill";
+// Assets
+import profilePic from "./assets/images/profile.webp";
+import project1 from "./assets/images/project-1.webp";
+import project2 from "./assets/images/project-2.webp";
+import project3 from "./assets/images/project-3.webp";
+import project4 from "./assets/images/project-4.webp";
 
+// # HTML Content
+// Sidebar
 const sidebarLinks = ["about", "skills", "projects", "contact"];
 const technologies = [
   { id: 1, title: "HTML", component: <Html /> },
@@ -25,6 +33,8 @@ const technologies = [
   { id: 9, title: "Vite", component: <Vite /> },
   { id: 10, title: "Eslint", component: <Eslint /> },
 ];
+
+// Skills Section
 const skills = {
   "Frontend Programming Languages": [
     {
@@ -93,6 +103,50 @@ const skills = {
     },
   ],
 };
+
+// Projects Section
+const projects = [
+  {
+    id: 1,
+    image: project1,
+    title: "Quick Pizza",
+    description:
+      "A web application to order pizzas, browse the menu, order pizza, and follow order progress easily.",
+    tech: ["React", "Redux", "React-Router", "Tailwindcss."],
+    githubLink: "https://github.com/AbdelhamidYousef/QuickPizza",
+    demoLink: "https://quickpizza99.netlify.app",
+  },
+  {
+    id: 2,
+    image: project2,
+    title: "Infinity Web",
+    description:
+      "A landing page for a web design agency. Showcases the company's ability to display outstanding but also simple design using modern CSS techniques",
+    tech: ["vanilla JS", "Tailwindcss", "HTML"],
+    githubLink: "https://github.com/AbdelhamidYousef/InfinityWeb",
+    demoLink: "https://infinityweb99.netlify.app",
+  },
+  {
+    id: 3,
+    image: project3,
+    title: "Forkify",
+    description:
+      "A web application to search food recipes, where you are able to change servings and bookmark recipes.",
+    tech: ["vanilla JS", "SASS", "HTML", "Parcel"],
+    githubLink: "https://github.com/AbdelhamidYousef/Forkify",
+    demoLink: "https://forkify99.netlify.app",
+  },
+  {
+    id: 4,
+    image: project4,
+    title: "Natours",
+    description:
+      "A web page for a traveling company, where you can book different tours for wonderful places.",
+    tech: ["vanilla JS", "SASS", "Parcel"],
+    githubLink: "https://github.com/AbdelhamidYousef/Natours",
+    demoLink: "https://natours99.netlify.app",
+  },
+];
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -291,15 +345,72 @@ const App = () => {
           </ul>
         </section>
 
+        {/* Projects Section */}
         <section
           ref={(el) => sectionRefs.current.push(el)}
           id="projects"
-          className="h-screen"
-        ></section>
+          className="pt-20 pb-24 animate-slideLeft"
+        >
+          <h2 className="mb-16 font-hero font-bold text-6xl text-slate-700 uppercase tracking-wide text-center sm:text-left">
+            Projects
+          </h2>
+
+          <ul className="grid grid-cols-3 gap-10">
+            {projects.map((project) => (
+              <li
+                key={project.id}
+                className={`${
+                  project.id === 4 ? "col-start-2" : ""
+                } group relative rounded-lg overflow-hidden shadow-lg`}
+              >
+                {/* Project Image  */}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+
+                {/* Project Content */}
+                <div className="absolute inset-0 bg-black/80 backdrop-blur-[2px] px-10 text-center opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-500">
+                  {/* Project Title & Description */}
+                  <h3 className="mt-32 mb-6 font-hero font-semibold text-3xl text-gray-100 uppercase tracking-wide">
+                    {project.title}
+                  </h3>
+                  <p className="font-medium text-gray-100">
+                    {project.description}
+                  </p>
+
+                  {/* Links */}
+                  <a
+                    href={project.githubLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    title="Code Source"
+                    className="absolute right-6 top-6 z-10 w-9 h-9 drop-shadow-[0_0_20px_#fff] hover:drop-shadow-[0_0_10px_#fff] transition-all duration-300"
+                  >
+                    <Github color="#fff" />
+                  </a>
+
+                  <a
+                    href={project.demoLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="absolute inset-0"
+                  >
+                    <span className="absolute left-1/2 -translate-x-1/2 bottom-10 px-8 p-3 border-2 border-gray-100 rounded-full font-medium text-lg text-gray-100 hover:border-transparent hover:bg-gray-100 hover:text-slate-700 hover:drop-shadow-[0_0_3px_#fff] transition-all duration-700">
+                      Visit Now
+                    </span>
+                  </a>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         <section
-          id="contact"
           ref={(el) => sectionRefs.current.push(el)}
+          id="contact"
+          className="h-screen"
         ></section>
       </main>
     </div>
