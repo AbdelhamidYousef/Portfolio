@@ -20,7 +20,7 @@ import project4 from "./assets/images/project-4.webp";
 
 // # HTML Content
 // Sidebar
-const sidebarLinks = ["about", "skills", "projects", "contact"];
+const sidebarLinks = ["hero", "skills", "projects", "contact"];
 const technologies = [
   { id: 1, title: "HTML", component: <Html /> },
   { id: 2, title: "CSS", component: <Css /> },
@@ -149,6 +149,12 @@ const projects = [
 ];
 
 const App = () => {
+  console.log(window.scrollY);
+
+  document.addEventListener("scroll", () => {
+    console.log(window.scrollY);
+  });
+
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
 
@@ -180,6 +186,8 @@ const App = () => {
   return (
     <div className="flex">
       {/* Sidebar Toggle Button */}
+      {/* To fix the bug of disappearing in small window when the sidebar is on */}
+      {/* To change the elements to be consistent with top button */}
       <div className="lg:hidden fixed left-5 top-5 w-12 h-12 rounded-full bg-black/30 z-10 grid place-content-center focus-within:border-2 focus-within:border-black/20">
         <button
           className="w-5 h-5 flex items-center focus:outline-none"
@@ -204,6 +212,29 @@ const App = () => {
           </svg>
         </button>
       </div>
+
+      {/* Top Button */}
+      <button
+        onClick={() =>
+          setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 10)
+        }
+        className="fixed right-10 bottom-6 w-12 h-12 rounded-full bg-primary-600 z-10 grid place-content-center hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 transition-all duration-300"
+      >
+        <span className="w-6 h-6">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            viewBox="0 0 48 48"
+            width="100%"
+            height="100%"
+          >
+            <path
+              fill="#fff"
+              d="m25.989 46.22 3.661-32.985 4.925 2.88c1.5.874 3.07-1.013 1.943-2.33L25.169.542a1.539 1.539 0 0 0-2.335 0l-11.35 13.243c-1.133 1.317.443 3.203 1.937 2.33l4.931-2.874 3.657 32.979c.256 2.366 3.724 2.367 3.98 0z"
+            ></path>
+          </svg>
+        </span>
+      </button>
 
       {/* Sidebar */}
       <header
@@ -250,12 +281,12 @@ const App = () => {
       <main
         className={`${
           isSidebarOpen ? "ml-72" : "ml-0"
-        } lg:ml-72 w-full h-screen bg-gray-100/80 px-5 lg:px-10 transition-all duration-1000 overflow-x-hidden divide-y-2`}
+        } lg:ml-72 w-full bg-gray-100/80 px-5 lg:px-10 transition-all duration-1000 overflow-x-hidden divide-y-2`}
       >
-        {/* About Section */}
+        {/* Hero Section */}
         <section
           ref={(el) => sectionRefs.current.push(el)}
-          id="about"
+          id="hero"
           className="min-h-[40rem] h-screen grid content-center text-center xs:text-left animate-slideLeft"
         >
           <h1 className="mb-2 xs:mb-0 font-hero font-bold text-5xl xs:text-6xl sm:text-8xl text-slate-700 uppercase">
