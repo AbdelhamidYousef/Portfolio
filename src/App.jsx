@@ -17,10 +17,34 @@ import project1 from "./assets/images/project-1.webp";
 import project2 from "./assets/images/project-2.webp";
 import project3 from "./assets/images/project-3.webp";
 import project4 from "./assets/images/project-4.webp";
+import Linkedin from "./svgs/Linkedin";
+import Email from "./svgs/Email";
 
 // # HTML Content
 // Sidebar
 const sidebarLinks = ["about", "skills", "projects", "contact"];
+const socials = [
+  {
+    id: 1,
+    title: "Linkedin Account",
+    component: <Linkedin />,
+    link: "https://www.linkedin.com/in/abdulhamidyousef/",
+  },
+  {
+    id: 2,
+    title: "GitHub Account",
+    component: <Github />,
+    link: "https://github.com/AbdelhamidYousef",
+  },
+  {
+    id: 3,
+    title: "E-mail",
+    component: <Email />,
+    link: "mailto:abdelhamedy33@gmail.com",
+  },
+];
+
+// About Section
 const technologies = [
   { id: 1, title: "HTML", component: <Html /> },
   { id: 2, title: "CSS", component: <Css /> },
@@ -187,42 +211,65 @@ const App = () => {
       {/* Sidebar */}
       <header
         className={`${
-          isSidebarOpen ? "w-full z-10 sm:w-72" : "w-0"
-        } fixed left-0 top-0 lg:w-72 h-screen bg-primary-600 grid place-content-center text-center overflow-hidden transition-all duration-1000`}
+          isSidebarOpen ? "w-full z-10 sm:w-72" : "w-0 overflow-hidden"
+        } fixed left-0 top-0 lg:w-72 h-screen bg-primary-600 transition-all duration-1000`}
       >
-        <a
-          onClick={() => scrollTo({ top: 0, behavior: "smooth" })}
-          title="Profile Picture"
-          className="cursor-pointer mb-8 animate-bounceRight"
+        <div
+          className={`${
+            isSidebarOpen ? "scale-x-100" : "scale-x-0"
+          } absolute inset-0 grid place-content-center text-center animate-bounceRight transition-all duration-1000`}
         >
-          <img
-            src={profilePic}
-            alt="Profile Picture"
-            data-title="Profile Picture"
-            className="w-40 h-40 rounded-full border-6 border-white/60 shadow "
-          />
-        </a>
+          {/* Profile Picture  */}
+          <a
+            onClick={() => scrollTo({ top: 0, behavior: "smooth" })}
+            title="Profile Picture"
+            className={` cursor-pointer mb-8 `}
+          >
+            <img
+              src={profilePic}
+              alt="Profile Picture"
+              data-title-bottom="Profile Picture"
+              className="w-40 h-40 rounded-full border-6 border-white/60 shadow "
+            />
+          </a>
 
-        <nav className="animate-bounceRight">
-          <ul>
-            {sidebarLinks.map((link, i) => (
-              <li
-                key={i}
-                className={`${
-                  activeSection === link ? "text-white" : "text-white/50"
-                } hover:text-white mb-4 text-lg font-semibold uppercase text-white`}
-              >
-                <a
-                  href={`#${link}`}
-                  onClick={(e) => scrollToSection(e, link)}
-                  className="focus:outline-none focus:border-b-2 focus:border-current focus:border-spacing-2"
+          {/* Navigation Links */}
+          <nav className="">
+            <ul>
+              {sidebarLinks.map((link, i) => (
+                <li
+                  key={i}
+                  className={`${
+                    activeSection === link ? "text-white" : "text-white/50"
+                  } hover:text-white mb-4 text-lg font-semibold uppercase text-white`}
                 >
-                  {link}
+                  <a
+                    href={`#${link}`}
+                    onClick={(e) => scrollToSection(e, link)}
+                    className="focus:outline-none focus:border-b-2 focus:border-current focus:border-spacing-2"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Social Links */}
+          <ul className="absolute left-1/2 -translate-x-1/2 bottom-6 flex gap-5">
+            {socials.map((social) => (
+              <li
+                key={social.id}
+                className="w-7 h-7 drop-shadow-[0_0_3px_#33333340] text-gray-50 cursor-help"
+                data-title-top={social.title}
+              >
+                <a href={social.link} target="_blank" rel="noreferrer">
+                  {social.component}
                 </a>
               </li>
             ))}
           </ul>
-        </nav>
+        </div>
       </header>
 
       {/* Main Content  */}
@@ -260,7 +307,7 @@ const App = () => {
               <li
                 key={tech.id}
                 className="w-6 h-6 xs:w-8 xs:h-8 lg:w-9 lg:h-9 drop-shadow-[0_0_3px_#33333340] cursor-help"
-                data-title={tech.title}
+                data-title-bottom={tech.title}
               >
                 {tech.component}
               </li>
@@ -365,9 +412,9 @@ const App = () => {
                     target="_blank"
                     rel="noreferrer"
                     title="Code Source"
-                    className="absolute right-4 top-4 xs:right-5 xs:top-5 xl:right-6 xl:top-6 z-10 w-6 h-6 xs:w-8 xs:h-8 xl:w-10 xl:h-10 drop-shadow-[0_0_20px_#fff] hover:drop-shadow-[0_0_10px_#fff] transition-all duration-300"
+                    className="absolute right-4 top-4 xs:right-5 xs:top-5 xl:right-6 xl:top-6 z-10 w-6 h-6 xs:w-8 xs:h-8 xl:w-10 xl:h-10 text-white drop-shadow-[0_0_20px_#fff] hover:drop-shadow-[0_0_10px_#fff] transition-all duration-300"
                   >
-                    <Github color="#fff" />
+                    <Github />
                   </a>
 
                   <a
@@ -422,7 +469,9 @@ const App = () => {
       {/* To Top Button */}
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-        className="fixed right-5 bottom-5 sm:right-10 sm:bottom-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-600 z-10 grid place-content-center hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 transition-all duration-300"
+        className={`${
+          isSidebarOpen ? "hidden sm:grid" : ""
+        } fixed right-5 bottom-5 sm:right-10 sm:bottom-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-600 z-10 grid place-content-center hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 transition-all duration-300`}
       >
         <span className="w-5 h-5 sm:w-6 sm:h-6 ">
           <svg
