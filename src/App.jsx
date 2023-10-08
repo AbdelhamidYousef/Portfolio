@@ -62,7 +62,7 @@ const skills = {
     {
       id: 3,
       name: "SASS",
-      percentage: 98,
+      percentage: 95,
       barColor: "#CF649A",
     },
   ],
@@ -279,7 +279,7 @@ const App = () => {
                       <Skill
                         name={skill.name}
                         percentage={skill.percentage}
-                        circleRadius={52}
+                        circleRadius={60}
                         barColor="#eb7647"
                         barWidth={2}
                       />

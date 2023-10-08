@@ -42,7 +42,7 @@ const Skill = ({
           cy="50%"
           r={circleRadius}
           fill="none"
-          stroke={`${barColor}30`}
+          stroke={`${barColor}10`}
           strokeWidth={barWidth}
         />
 
@@ -63,8 +63,8 @@ const Skill = ({
 
       {/* Text */}
       <div className="absolute inset-0 grid place-content-center text-center">
-        <span className="text-lg font-bold">{progress}%</span>
-        <span className="text-sm font-medium">{name}</span>
+        <span className="text-lg font-bold text-slate-600">{name}</span>
+        <span className="text-sm font-medium text-slate-600">{progress}%</span>
       </div>
     </div>
   );
