@@ -213,14 +213,14 @@ const App = () => {
         </button>
       </div>
 
-      {/* Top Button */}
+      {/* To Top Button */}
       <button
         onClick={() =>
           setTimeout(() => window.scrollTo({ top: 0, behavior: "smooth" }), 10)
         }
-        className="fixed right-10 bottom-6 w-12 h-12 rounded-full bg-primary-600 z-10 grid place-content-center hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 transition-all duration-300"
+        className="fixed right-5 bottom-5 sm:right-10 sm:bottom-6 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary-600 z-10 grid place-content-center hover:bg-opacity-75 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:ring-offset-2 transition-all duration-300"
       >
-        <span className="w-6 h-6">
+        <span className="w-5 h-5 sm:w-6 sm:h-6 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
