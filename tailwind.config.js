@@ -8,23 +8,34 @@ export default {
     },
 
     extend: {
+      /* Screen Sizes */
       screens: {
         xs: "400px",
       },
 
+      /* Colors */
       colors: {
-        primary: "#bd5d38",
+        "primary-400": "#eb7647", // hsl(17, 80%, 60%)
+        "primary-600": "#bd5d38", //hsl(17, 54%, 48%)
       },
 
+      /* Borders */
       borderWidth: {
         6: "6px",
       },
 
+      /* Background Image / Gradients */
+      backgroundImage: {
+        stripes:
+          "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)",
+      },
+
+      /* Animation */
       animation: {
         bounceRight: "bounceRight 1s ease-out",
         slideLeft: "slideLeft 1s ease-out",
+        stripesProgress: "stripesProgress 2s linear infinite",
       },
-
       keyframes: {
         bounceRight: {
           "0%": { opacity: "0", transform: "translateX(-100%)" },
@@ -35,6 +46,14 @@ export default {
           "0%": { opacity: "0", transform: "translateX(40%)" },
           "80%": { transform: "translateX(-2%)" },
           "100%": { opacity: "100%", transform: "translateX(0)" },
+        },
+        stripesProgress: {
+          "0%": {
+            "background-position": "40px 0",
+          },
+          "100%": {
+            "background-position": "0 0",
+          },
         },
       },
     },

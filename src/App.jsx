@@ -10,6 +10,7 @@ import Git from "./svgs/Git";
 import Github from "./svgs/Github";
 import Vite from "./svgs/Vite";
 import Eslint from "./svgs/Eslint";
+import Skill from "./components/Skill";
 
 const sidebarLinks = ["about", "skills", "projects", "contact"];
 const technologies = [
@@ -24,6 +25,74 @@ const technologies = [
   { id: 9, title: "Vite", component: <Vite /> },
   { id: 10, title: "Eslint", component: <Eslint /> },
 ];
+const skills = {
+  "Frontend Programming Languages": [
+    {
+      id: 1,
+      name: "HTML",
+      percentage: 98,
+      barColor: "#ff4b00",
+    },
+    {
+      id: 2,
+      name: "CSS",
+      percentage: 95,
+      barColor: "#2196f3",
+    },
+    {
+      id: 3,
+      name: "JavaScipt",
+      percentage: 90,
+      barColor: "#f5d400",
+    },
+  ],
+  "Frontend Frameworks / Libraries": [
+    {
+      id: 1,
+      name: "React",
+      percentage: 90,
+      barColor: "#16addf",
+    },
+    {
+      id: 2,
+      name: "Tailwind",
+      percentage: 98,
+      barColor: "#38bdf8",
+    },
+    {
+      id: 3,
+      name: "SASS",
+      percentage: 98,
+      barColor: "#CF649A",
+    },
+  ],
+  "Version Control & Dev Tools": [
+    {
+      id: 1,
+      name: "Git",
+      percentage: 90,
+      barColor: "#f14e32",
+    },
+    {
+      id: 2,
+      name: "GitHub",
+      percentage: 90,
+      barColor: "#111",
+    },
+    {
+      id: 3,
+      name: "Vite",
+      percentage: 95,
+      barColor: "#BD34FE",
+    },
+    {
+      id: 4,
+      name: "Eslint",
+      percentage: 90,
+      barColor: "#4B32C3",
+    },
+  ],
+};
 
 const App = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -86,7 +155,7 @@ const App = () => {
       <header
         className={`${
           isSidebarOpen ? "w-full z-10 sm:w-72" : "w-0"
-        } fixed left-0 top-0 lg:w-72 h-screen bg-primary grid place-content-center text-center overflow-hidden transition-all duration-1000`}
+        } fixed left-0 top-0 lg:w-72 h-screen bg-primary-600 grid place-content-center text-center overflow-hidden transition-all duration-1000`}
       >
         <a
           onClick={() => scrollTo({ top: 0, behavior: "smooth" })}
@@ -127,7 +196,7 @@ const App = () => {
       <main
         className={`${
           isSidebarOpen ? "ml-72" : "ml-0"
-        } lg:ml-72 w-full h-screen bg-gray-100/80 px-5 lg:px-10 transition-all duration-1000 overflow-x-hidden`}
+        } lg:ml-72 w-full h-screen bg-gray-100/80 px-5 lg:px-10 transition-all duration-1000 overflow-x-hidden divide-y-2`}
       >
         {/* About Section */}
         <section
@@ -136,7 +205,7 @@ const App = () => {
           className="min-h-[40rem] h-screen grid content-center text-center xs:text-left animate-slideLeft"
         >
           <h1 className="mb-2 xs:mb-0 font-hero font-bold text-5xl xs:text-6xl sm:text-8xl text-slate-700 uppercase">
-            Abdulhamid <span className="text-primary">Yousef</span>
+            Abdulhamid <span className="text-primary-600">Yousef</span>
           </h1>
 
           <p className="xs:ml-1 mb-3 xs:mb-6 sm:mb-8 lg:mb-10 font-hero font-medium text-lg xs:text-xl sm:text-2xl text-slate-500 uppercase tracking-widest">
@@ -144,7 +213,7 @@ const App = () => {
               Frontend Engineer
             </span>
             <span className="hidden xs:inline-block mx-1">|</span>
-            <span className="text-primary">React Developer</span>
+            <span className="text-primary-600">React Developer</span>
           </p>
 
           <p className="max-w-6xl xs:ml-1 mb-7 xs:mb-10 sm:mb-12 lg:mb-14 text-sm xs:text-lg text-slate-500/80">
@@ -166,14 +235,48 @@ const App = () => {
           </ul>
         </section>
 
+        {/* Skills Section */}
         <section
-          id="skills"
           ref={(el) => sectionRefs.current.push(el)}
-        ></section>
+          id="skills"
+          className="py-20 animate-slideLeft"
+        >
+          <h2 className="mb-12 font-hero font-bold text-6xl text-slate-700 uppercase tracking-wide  ">
+            Skills
+          </h2>
+
+          <ul>
+            {Object.keys(skills).map((key, i) => (
+              <li
+                key={i}
+                className="grid grid-cols-[22rem_1fr] items-center mb-10"
+              >
+                <h3 className="font-hero font-semibold text-3xl text-slate-500 leading-none">
+                  {key}
+                </h3>
+
+                <ul className="flex gap-x-5">
+                  {skills[key].map((skill) => (
+                    <li key={skill.id}>
+                      <Skill
+                        name={skill.name}
+                        percentage={skill.percentage}
+                        circleRadius={52}
+                        barColor="#eb7647"
+                        barWidth={4}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         <section
-          id="projects"
           ref={(el) => sectionRefs.current.push(el)}
+          id="projects"
+          className="h-screen"
         ></section>
 
         <section

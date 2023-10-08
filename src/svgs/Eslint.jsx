@@ -1,4 +1,4 @@
-const Vite = () => {
+const Eslint = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -18,4 +18,4 @@ const Vite = () => {
   );
 };
 
-export default Vite;
+export default Eslint;
