@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 const Skill = ({
   name,
   percentage,
-  circleRadius = 52,
-  barColor = "#333",
-  barWidth = 6,
+  circleRadius = 60,
+  barColor = "#eb7647",
+  barWidth = 2,
 }) => {
   const [progress, setProgress] = useState(0);
 

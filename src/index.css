@@ -18,10 +18,10 @@
     @apply w-2.5 bg-white;
   }
   ::-webkit-scrollbar-thumb {
-    @apply rounded-md  bg-primary-500;
+    @apply rounded-md  bg-primary-600;
   }
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-primary-500/70;
+    @apply bg-primary-600/70;
   }
 }
 
