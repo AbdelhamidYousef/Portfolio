@@ -1,5 +1,5 @@
 import DownloadArrow from "../../svgs/DownloadArrow";
-import resume from "../../../assets/resume/resume.pdf";
+import { resume } from "../../../assets";
 
 const Download = () => {
   return (

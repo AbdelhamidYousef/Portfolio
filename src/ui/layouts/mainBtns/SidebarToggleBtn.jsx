@@ -1,6 +1,6 @@
 import { PropTypes } from "prop-types";
 import Bars from "../../svgs/Bars";
-import Close from "../../svgs/close";
+import Close from "../../svgs/Close";
 
 const SidebarToggleBtn = ({ isSidebarOpen, setIsSidebarOpen }) => {
   return (

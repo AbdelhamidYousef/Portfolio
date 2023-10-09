@@ -1,4 +1,5 @@
 import { PropTypes } from "prop-types";
+
 const Main = ({ isSidebarOpen, children }) => {
   return (
     <main

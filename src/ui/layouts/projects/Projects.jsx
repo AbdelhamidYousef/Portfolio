@@ -1,5 +1,5 @@
 import { projects } from "../../../htmlContent/projects";
-import Project from "./project";
+import Project from "./Project";
 
 const Projects = () => {
   return (

@@ -1,4 +1,5 @@
 import { PropTypes } from "prop-types";
+
 const SectionTitle = ({ initialStyle = true, classes, children }) => {
   return (
     <h2

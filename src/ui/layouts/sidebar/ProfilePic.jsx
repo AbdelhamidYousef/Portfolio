@@ -1,4 +1,4 @@
-import profilePic from "../../../assets/images/profile.webp";
+import { profilePic } from "../../../assets";
 
 const ProfilePic = () => {
   return (

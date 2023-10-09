@@ -1,7 +1,7 @@
-import project1 from "../assets/images/project-1.webp";
-import project2 from "../assets/images/project-2.webp";
-import project3 from "../assets/images/project-3.webp";
-import project4 from "../assets/images/project-4.webp";
+import { project1 } from "../assets";
+import { project2 } from "../assets";
+import { project3 } from "../assets";
+import { project4 } from "../assets";
 
 export const projects = [
   {
