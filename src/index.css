@@ -3,8 +3,25 @@
 @tailwind components;
 
 @layer base {
+  html {
+    @apply scroll-smooth;
+  }
   body {
-    @apply font-main;
+    @apply font-main text-base selection:bg-primary-500 selection:text-gray-50;
+  }
+
+  span {
+    @apply inline-block;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2.5 bg-white;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-md  bg-primary-500;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500/70;
   }
 }
 

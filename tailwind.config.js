@@ -16,8 +16,9 @@ export default {
       /* Colors */
       colors: {
         "primary-200": "hsl(17, 80%, 80%)",
-        "primary-400": "#eb7647", // hsl(17, 80%, 60%)
-        "primary-600": "#bd5d38", //hsl(17, 54%, 48%)
+        "primary-400": "hsl(17, 80%, 60%)",
+        "primary-500": "hsl(17, 70%, 60%)",
+        "primary-600": "hsl(17, 54%, 48%)",
         "primary-800": "hsl(17, 54%, 35%)",
       },
 
