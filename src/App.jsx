@@ -11,14 +11,17 @@ import Git from "./svgs/Git";
 import Github from "./svgs/Github";
 import Vite from "./svgs/Vite";
 import Eslint from "./svgs/Eslint";
+import Email from "./svgs/Email";
+import ExternalLink from "./svgs/ExternalLink";
+import Linkedin from "./svgs/Linkedin";
 // Assets
 import profilePic from "./assets/images/profile.webp";
 import project1 from "./assets/images/project-1.webp";
 import project2 from "./assets/images/project-2.webp";
 import project3 from "./assets/images/project-3.webp";
 import project4 from "./assets/images/project-4.webp";
-import Linkedin from "./svgs/Linkedin";
-import Email from "./svgs/Email";
+import resume from "./assets/resume/resume.pdf";
+import DownloadArrow from "./svgs/DownloadArrow";
 
 // # HTML Content
 // Sidebar
@@ -211,13 +214,13 @@ const App = () => {
       {/* Sidebar */}
       <header
         className={`${
-          isSidebarOpen ? "w-full z-10 sm:w-72" : "w-0 overflow-hidden"
+          isSidebarOpen ? "w-full z-20 sm:w-72" : "w-0 overflow-hidden"
         } fixed left-0 top-0 lg:w-72 h-screen bg-primary-600 transition-all duration-1000`}
       >
         <div
           className={`${
             isSidebarOpen ? "scale-x-100" : "scale-x-0"
-          } absolute inset-0 grid place-content-center text-center animate-bounceRight transition-all duration-1000`}
+          } absolute inset-0 lg:scale-x-100 grid place-content-center text-center animate-bounceRight transition-all duration-1000`}
         >
           {/* Profile Picture  */}
           <a
@@ -260,7 +263,7 @@ const App = () => {
             {socials.map((social) => (
               <li
                 key={social.id}
-                className="w-7 h-7 drop-shadow-[0_0_3px_#33333340] text-gray-50 cursor-help"
+                className="w-7 h-7 drop-shadow-[0_0_3px_#33333340] text-gray-50 hover:text-primary-200 cursor-help"
                 data-title-top={social.title}
               >
                 <a href={social.link} target="_blank" rel="noreferrer">
@@ -275,8 +278,8 @@ const App = () => {
       {/* Main Content  */}
       <main
         className={`${
-          isSidebarOpen ? "ml-72" : "ml-0"
-        } lg:ml-72 w-full bg-gray-100/80 px-5 lg:px-10 transition-all duration-1000 overflow-x-hidden divide-y-2`}
+          isSidebarOpen ? "ml-72 h-0" : "ml-0"
+        } lg:ml-72 w-full bg-gray-100/80 px-5 lg:px-10 transition-all duration-1000 overflow-x-hidden divide-y-2 relative`}
       >
         {/* About Section */}
         <section
@@ -319,7 +322,7 @@ const App = () => {
         <section
           ref={(el) => sectionRefs.current.push(el)}
           id="skills"
-          className="py-20 animate-slideLeft"
+          className="py-20 lg:py-28 animate-slideLeft"
         >
           <h2 className="mb-12 font-hero font-bold text-6xl text-slate-700 uppercase tracking-wide text-center sm:text-left">
             Skills
@@ -375,7 +378,7 @@ const App = () => {
         <section
           ref={(el) => sectionRefs.current.push(el)}
           id="projects"
-          className="pt-20 pb-24 animate-slideLeft"
+          className="pt-20 pb-24 lg:py-28 animate-slideLeft"
         >
           <h2 className="mb-10 sm:mb-16 font-hero font-bold text-6xl text-slate-700 uppercase tracking-wide text-center sm:text-left">
             Projects
@@ -423,9 +426,14 @@ const App = () => {
                     rel="noreferrer"
                     className="absolute inset-0"
                   >
-                    <span className="absolute left-1/2 -translate-x-1/2 bottom-5 xs:bottom-8 xl:bottom-10 px-6 py-2 xl:px-8 xl:py-3 border-2 border-gray-100 rounded-full font-medium text-md xl:text-lg text-gray-100 hover:border-transparent hover:bg-gray-100 hover:text-slate-700 hover:drop-shadow-[0_0_3px_#fff] transition-all duration-700">
-                      Visit Now
-                    </span>
+                    <div className="absolute left-1/2 -translate-x-1/2 bottom-5 xs:bottom-8 xl:bottom-10 px-6 py-2 xl:px-8 xl:py-3 border-2 border-gray-100 rounded-full text-gray-100 hover:text-slate-700 flex items-center hover:border-transparent hover:bg-gray-100 hover:drop-shadow-[0_0_3px_#fff] transition-all duration-700">
+                      <span className="font-medium text-md xl:text-lg whitespace-nowrap mr-2">
+                        Live Preview
+                      </span>
+                      <span className="inline-block w-4 h-4">
+                        <ExternalLink />
+                      </span>
+                    </div>
                   </a>
                 </div>
               </li>
@@ -433,17 +441,54 @@ const App = () => {
           </ul>
         </section>
 
+        {/* Contact Section */}
         <section
           ref={(el) => sectionRefs.current.push(el)}
           id="contact"
-          className="h-screen"
-        ></section>
+          className="py-10 flex flex-col items-center gap-y-7 xl:flex-row xl:justify-between animate-slideLeft bg-inherit relative z-[11]"
+        >
+          <h2 className="font-bold text-3xl text-slate-600 hover:text-primary-600 uppercase transition-all duration-300">
+            Get In Touch
+          </h2>
+
+          <ul className="flex gap-5 xl:gap-14">
+            {socials.map((social) => (
+              <li
+                key={social.id}
+                className="w-8 h-8 text-slate-600 hover:text-primary-600 transition-all duration-300 focus-within:border-b-2 focus-within:border-slate-600 focus-within:border-spacing-2"
+                data-title-bottom={social.title}
+              >
+                <a
+                  href={social.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="focus:outline-none"
+                >
+                  {social.component}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <a
+            href={resume}
+            download
+            className="group text-slate-600 flex items-center gap-x-2 transition-all duration-300 hover:text-primary-600 hover:border-none outline-none focus:border-b-2 focus:border-slate-600 focus:border-spacing-2"
+          >
+            <span className="font-bold text-lg xs:text-xl uppercase tracking-tight">
+              Download My Resume
+            </span>
+            <span className="w-4 h-4 group-hover:animate-bounce">
+              <DownloadArrow />
+            </span>
+          </a>
+        </section>
       </main>
 
       {/* Sidebar Toggle Button */}
       <button
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-        className="lg:hidden fixed left-5 top-5 w-12 h-12 rounded-full bg-slate-700/60 z-20 grid place-content-center hover:bg-slate-700/50 focus:outline-none focus:ring-2 focus:ring-slate-700/60 focus:ring-offset-2 transition-all duration-300"
+        className="lg:hidden fixed left-5 top-5 w-12 h-12 rounded-full bg-slate-700/60 z-30 grid place-content-center hover:bg-slate-700/50 focus:outline-none focus:ring-2 focus:ring-slate-700  transition-all duration-300"
       >
         <span className="w-5 h-5 flex items-center">
           <svg
