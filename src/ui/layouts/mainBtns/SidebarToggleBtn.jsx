@@ -2,10 +2,10 @@ import { PropTypes } from "prop-types";
 import Bars from "../../svgs/Bars";
 import Close from "../../svgs/Close";
 
-const SidebarToggleBtn = ({ isSidebarOpen, setIsSidebarOpen }) => {
+const SidebarToggleBtn = ({ isSidebarOpen, toggleSidebar }) => {
   return (
     <button
-      onClick={() => setIsSidebarOpen(!isSidebarOpen)}
+      onClick={() => toggleSidebar()}
       className="lg:hidden fixed left-5 top-5 w-12 h-12 rounded-full bg-slate-700/60 z-30 grid place-content-center hover:bg-slate-700/50 focus:outline-none focus:ring-2 focus:ring-slate-700  transition-all duration-300"
     >
       <span
@@ -29,7 +29,7 @@ const SidebarToggleBtn = ({ isSidebarOpen, setIsSidebarOpen }) => {
 
 SidebarToggleBtn.propTypes = {
   isSidebarOpen: PropTypes.bool.isRequired,
-  setIsSidebarOpen: PropTypes.func.isRequired,
+  toggleSidebar: PropTypes.func.isRequired,
 };
 
 export default SidebarToggleBtn;

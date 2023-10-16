@@ -1,11 +1,15 @@
 import { PropTypes } from "prop-types";
 import { navLinks } from "../../../htmlContent/sidebar";
 
-const Nav = ({ activeSection }) => {
+const Nav = ({ activeSection, toggleSidebar }) => {
   const scrollToSection = (e, sectionId) => {
     e.preventDefault();
+
     const section = document.getElementById(sectionId);
-    if (section) section.scrollIntoView({ behavior: "smooth" });
+    if (!section) return;
+
+    section.scrollIntoView({ behavior: "smooth" });
+    toggleSidebar();
   };
 
   return (
@@ -16,7 +20,7 @@ const Nav = ({ activeSection }) => {
             key={i}
             className={`${
               activeSection === link ? "text-white" : "text-white/50"
-            } hover:text-white mb-4 text-lg font-semibold uppercase text-white`}
+            } hover:text-white/90 mb-4 text-lg font-semibold uppercase text-white`}
           >
             <a
               href={`#${link}`}
@@ -33,7 +37,8 @@ const Nav = ({ activeSection }) => {
 };
 
 Nav.propTypes = {
-  activeSection: PropTypes.string,
+  activeSection: PropTypes.string.isRequired,
+  toggleSidebar: PropTypes.func.isRequired,
 };
 
 export default Nav;

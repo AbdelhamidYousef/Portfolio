@@ -41,11 +41,20 @@ const App = () => {
     });
   }, [sectionRefs]);
 
+  const toggleSidebar = () =>
+    setIsSidebarOpen((isSidebarOpen) => !isSidebarOpen);
+
+  // useEffect(() => {
+  //   document.addEventListener("keydown", (e) => {
+  //     if (e.key === "Escape") toggleSidebar();
+  //   });
+  // }
+
   return (
     <div className="flex overflow-hidden">
       <Sidebar isSidebarOpen={isSidebarOpen}>
         <ProfilePic />
-        <Nav activeSection={activeSection} />
+        <Nav activeSection={activeSection} toggleSidebar={toggleSidebar} />
         <Socials
           containerClasses="absolute left-1/2 -translate-x-1/2 bottom-6 flex gap-5"
           elementClasses="w-7 h-7 text-gray-50 hover:text-primary-200 cursor-help focus-within:drop-shadow-[0_0_10px_#fff]"
@@ -107,7 +116,7 @@ const App = () => {
 
       <SidebarToggleBtn
         isSidebarOpen={isSidebarOpen}
-        setIsSidebarOpen={setIsSidebarOpen}
+        toggleSidebar={toggleSidebar}
       />
     </div>
   );
