@@ -47,7 +47,7 @@ const Nav = ({ activeSection, toggleSidebar }) => {
 };
 
 Nav.propTypes = {
-  activeSection: PropTypes.string.isRequired,
+  activeSection: PropTypes.string,
   toggleSidebar: PropTypes.func.isRequired,
 };
 

@@ -7,14 +7,14 @@ const Skills = () => {
   return (
     <>
       {/* Mobile & Tablet */}
-      <ul className="lg:hidden flex flex-wrap justify-center sm:justify-start gap-x-5">
+      <ul className="lg:hidden flex flex-wrap justify-center sm:justify-start gap-4">
         {skillsArray.map((key) =>
           skillsObject[key].map((skill) => (
             <li key={skill.id}>
               <Skill
                 name={skill.name}
                 percentage={skill.percentage}
-                circleRadius={54}
+                circleRadius={60}
               />
             </li>
           ))
@@ -38,7 +38,7 @@ const Skills = () => {
                   <Skill
                     name={skill.name}
                     percentage={skill.percentage}
-                    circleRadius={matchMedia("min-width: 1280px") ? 60 : 52}
+                    circleRadius={60}
                   />
                 </li>
               ))}

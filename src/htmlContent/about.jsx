@@ -7,7 +7,6 @@ import Sass from "../ui/svgs/Sass";
 import Git from "../ui/svgs/Git";
 import Github from "../ui/svgs/Github";
 import Vite from "../ui/svgs/Vite";
-import Eslint from "../ui/svgs/Eslint";
 
 export const aboutText = {
   fname: "Abdulhamid",
@@ -27,5 +26,4 @@ export const techns = [
   { id: 7, title: "Git", component: <Git /> },
   { id: 8, title: "GitHub", component: <Github /> },
   { id: 9, title: "Vite", component: <Vite /> },
-  { id: 10, title: "Eslint", component: <Eslint /> },
 ];

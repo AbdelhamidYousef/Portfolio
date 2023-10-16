@@ -31,8 +31,8 @@ const Skill = ({
     <div
       className="relative"
       style={{
-        width: `${circleRadius / 7}rem`,
-        height: `${circleRadius / 7}rem`,
+        width: `${circleRadius / 7.5}rem`,
+        height: `${circleRadius / 7.5}rem`,
       }}
     >
       <svg width="100%" height="100%">
@@ -62,8 +62,14 @@ const Skill = ({
       </svg>
 
       {/* Text */}
-      <div className="absolute inset-0 grid place-content-center text-center">
-        <span className="text-lg font-bold text-slate-600">{name}</span>
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-11/12 h-11/12 grid place-content-center text-center">
+        <span
+          className={`${
+            name.split(" ").length > 1 ? "text-base" : "text-lg"
+          } font-bold whitespace-normal text-slate-600`}
+        >
+          {name}
+        </span>
         <span className="text-sm font-medium text-slate-600">{progress}%</span>
       </div>
     </div>
