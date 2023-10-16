@@ -1,7 +1,17 @@
 import { PropTypes } from "prop-types";
 import { navLinks } from "../../../htmlContent/sidebar";
+import { useEffect } from "react";
 
 const Nav = ({ activeSection, toggleSidebar }) => {
+  useEffect(() => {
+    const callback = (e) => {
+      if (e.key === "Escape") toggleSidebar();
+    };
+
+    document.addEventListener("keydown", callback);
+    return () => document.removeEventListener("keydown", callback);
+  }, [toggleSidebar]);
+
   const scrollToSection = (e, sectionId) => {
     e.preventDefault();
 

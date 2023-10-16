@@ -44,12 +44,6 @@ const App = () => {
   const toggleSidebar = () =>
     setIsSidebarOpen((isSidebarOpen) => !isSidebarOpen);
 
-  // useEffect(() => {
-  //   document.addEventListener("keydown", (e) => {
-  //     if (e.key === "Escape") toggleSidebar();
-  //   });
-  // }
-
   return (
     <div className="flex overflow-hidden">
       <Sidebar isSidebarOpen={isSidebarOpen}>
