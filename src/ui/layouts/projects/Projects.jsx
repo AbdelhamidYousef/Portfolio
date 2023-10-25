@@ -1,20 +1,11 @@
-import { useEffect, useRef } from "react";
 import { projects } from "../../../htmlContent/projects";
 import SectionTitle from "../../shared/SectionTitle";
 import Project from "./Project";
-import { useActiveSection } from "../../../context/ActiveSection";
+import Section from "../../shared/Section";
 
 const Projects = () => {
-  const ref = useRef(null);
-  const { sectionsRef } = useActiveSection();
-
-  useEffect(() => {
-    sectionsRef.current.push(ref.current);
-  }, [sectionsRef]);
-
   return (
-    <section
-      ref={ref}
+    <Section
       id="projects"
       className="py-20 lg:py-28 border-b-2 animate-slideLeft"
     >
@@ -25,7 +16,7 @@ const Projects = () => {
           <Project key={project.id} data={project} />
         ))}
       </ul>
-    </section>
+    </Section>
   );
 };
 

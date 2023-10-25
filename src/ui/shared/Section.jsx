@@ -1,21 +1,25 @@
 import Proptypes from "prop-types";
+import { useEffect, useRef } from "react";
+import { useActiveSection } from "../../context/ActiveSection";
 
-const Section = ({ addRef, id, classes, children }) => {
+const Section = ({ id, className, children }) => {
+  const ref = useRef(null);
+  const { sectionsRef } = useActiveSection();
+
+  useEffect(() => {
+    sectionsRef.current.push(ref.current);
+  }, [sectionsRef]);
+
   return (
-    <section
-      ref={addRef}
-      id={id}
-      className={`${classes} py-20 lg:py-28 border-b-2 animate-slideLeft`}
-    >
+    <section ref={ref} id={id} className={className}>
       {children}
     </section>
   );
 };
 
 Section.propTypes = {
-  addRef: Proptypes.func.isRequired,
   id: Proptypes.string.isRequired,
-  classes: Proptypes.string,
+  className: Proptypes.string,
   children: Proptypes.node,
 };
 

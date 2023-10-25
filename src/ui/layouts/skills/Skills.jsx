@@ -1,19 +1,10 @@
-import { useEffect, useRef } from "react";
 import SectionTitle from "../../shared/SectionTitle";
 import SkillsContainer from "./SkillsContainer";
-import { useActiveSection } from "../../../context/ActiveSection";
+import Section from "../../shared/Section";
 
 const Skills = () => {
-  const ref = useRef(null);
-  const { sectionsRef } = useActiveSection();
-
-  useEffect(() => {
-    sectionsRef.current.push(ref.current);
-  }, [sectionsRef]);
-
   return (
-    <section
-      ref={ref}
+    <Section
       id="skills"
       className="py-20 lg:py-28 border-b-2 animate-slideLeft"
     >
@@ -22,7 +13,7 @@ const Skills = () => {
       </SectionTitle>
 
       <SkillsContainer />
-    </section>
+    </Section>
   );
 };
 
