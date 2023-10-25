@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <Section
       id="contact"
-      className="py-20 lg:py-28 border-b-2 animate-slideLeft"
+      className="py-10 flex flex-col items-center gap-y-7 xl:flex-row xl:justify-between animate-slideLeft bg-inherit relative z-[11] border-b-2"
     >
       <SectionTitle
         initialStyle={false}
