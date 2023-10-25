@@ -13,14 +13,14 @@ const Sidebar = () => {
   useKeydown("Escape", closeSidebar);
 
   return (
-    <>
+    <aside>
       <SidebarBtn isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
       <SidebarContent
         isSidebarOpen={isSidebarOpen}
         closeSidebar={closeSidebar}
       />
-    </>
+    </aside>
   );
 };
 

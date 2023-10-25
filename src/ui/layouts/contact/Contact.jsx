@@ -1,14 +1,10 @@
 import SectionTitle from "../../shared/SectionTitle";
 import Socials from "../../shared/Socials";
 import Download from "./Download";
-import { useActiveSection } from "../../../context/ActiveSectionContext";
 
 const Contact = () => {
-  const { sectionsRef } = useActiveSection();
-
   return (
     <section
-      ref={(el) => sectionsRef.current.push(el)}
       id="contact"
       className="py-20 lg:py-28 border-b-2 animate-slideLeft"
     >

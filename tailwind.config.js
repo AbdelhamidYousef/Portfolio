@@ -28,6 +28,10 @@ export default {
         sidebarBtn: "90",
       },
 
+      height: {
+        screen: "100dvh",
+      },
+
       /* Borders */
       borderWidth: {
         6: "6px",

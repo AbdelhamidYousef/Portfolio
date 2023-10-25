@@ -1,3 +1,4 @@
+/*
 import { PropTypes } from "prop-types";
 import { useState, createContext, useRef, useContext, useEffect } from "react";
 
@@ -5,7 +6,9 @@ const activeSectionContext = createContext();
 
 export const ActiveSectionProvider = ({ children }) => {
   const [activeSection, setActiveSection] = useState(null);
+
   const sectionsRef = useRef([]);
+  // const sectionsRef = useRef({});
 
   useEffect(() => {
     // Callback Function
@@ -22,15 +25,12 @@ export const ActiveSectionProvider = ({ children }) => {
     sectionsRef.current.forEach((section) => {
       if (section) observer.observe(section);
     });
+    // Object.values(sectionsRef.current).forEach((section) => {
+    //   if (section) observer.observe(section);
+    // });
+
     // return () => observer.disconnect();
   }, []);
-
-  // useEffect(() => {
-  //   console.log("ActiveSectionProvider activeSection:", activeSection);
-  // }, [activeSection]);
-
-  // useEffect(() => {
-  //   console.log("ActiveSectionProvider sectionsRef:", sectionsRef);
   // }, [sectionsRef]);
 
   return (
@@ -54,3 +54,4 @@ export const useActiveSection = () => {
 ActiveSectionProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
+*/

@@ -1,14 +1,10 @@
 import { projects } from "../../../htmlContent/projects";
 import SectionTitle from "../../shared/SectionTitle";
 import Project from "./Project";
-import { useActiveSection } from "../../../context/ActiveSectionContext";
 
 const Projects = () => {
-  const { sectionsRef } = useActiveSection();
-
   return (
     <section
-      ref={(el) => sectionsRef.current.push(el)}
       id="projects"
       className="py-20 lg:py-28 border-b-2 animate-slideLeft"
     >
