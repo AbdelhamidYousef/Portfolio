@@ -1,7 +1,10 @@
 import { PropTypes } from "prop-types";
 import { navLinks } from "../../../htmlContent/sidebar";
+import { useActiveSection } from "../../../context/ActiveSection";
 
 const Nav = ({ closeSidebar }) => {
+  const { activeSection } = useActiveSection();
+
   const scrollToSection = (e, sectionId) => {
     e.preventDefault();
 
@@ -18,7 +21,9 @@ const Nav = ({ closeSidebar }) => {
         {navLinks.map((link, i) => (
           <li
             key={i}
-            className={`mb-4 text-lg font-semibold uppercase text-white/70 hover:text-white/95`}
+            className={`${
+              activeSection === link ? "!text-white" : ""
+            } mb-4 text-lg font-semibold uppercase text-white/70 hover:text-white/95`}
           >
             <a
               href={`#${link}`}

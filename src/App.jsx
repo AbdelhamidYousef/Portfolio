@@ -6,9 +6,11 @@ import Projects from "./ui/layouts/projects/Projects";
 import Contact from "./ui/layouts/contact/Contact";
 import ToTopBtn from "./ui/shared/ToTopBtn";
 
+import { ActiveSectionProvider } from "./context/ActiveSection";
+
 const App = () => {
   return (
-    <>
+    <ActiveSectionProvider>
       <Sidebar />
 
       <Main>
@@ -19,7 +21,7 @@ const App = () => {
 
         <ToTopBtn />
       </Main>
-    </>
+    </ActiveSectionProvider>
   );
 };
 

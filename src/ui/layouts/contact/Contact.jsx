@@ -1,10 +1,20 @@
+import { useEffect, useRef } from "react";
 import SectionTitle from "../../shared/SectionTitle";
 import Socials from "../../shared/Socials";
 import Download from "./Download";
+import { useActiveSection } from "../../../context/ActiveSection";
 
 const Contact = () => {
+  const ref = useRef(null);
+  const { sectionsRef } = useActiveSection();
+
+  useEffect(() => {
+    sectionsRef.current.push(ref.current);
+  }, [sectionsRef]);
+
   return (
     <section
+      ref={ref}
       id="contact"
       className="py-20 lg:py-28 border-b-2 animate-slideLeft"
     >
