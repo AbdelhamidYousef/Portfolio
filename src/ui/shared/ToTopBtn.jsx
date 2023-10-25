@@ -1,4 +1,4 @@
-import UpArrow from "../../svgs/UpArrow";
+import UpArrow from "../svgs/UpArrow";
 
 const ToTopBtn = () => {
   return (

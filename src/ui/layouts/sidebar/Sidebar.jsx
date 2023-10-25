@@ -1,26 +1,27 @@
-import { PropTypes } from "prop-types";
+import { useState } from "react";
+import SidebarBtn from "./SidebarBtn";
+import SidebarContent from "./SidebarContent";
+import { useKeydown } from "../../../hooks/useKeydown";
 
-const Sidebar = ({ isSidebarOpen, children }) => {
+const Sidebar = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleSidebar = () =>
+    setIsSidebarOpen((isSidebarOpen) => !isSidebarOpen);
+  const closeSidebar = () => setIsSidebarOpen(false);
+
+  useKeydown("Escape", closeSidebar);
+
   return (
-    <aside
-      className={`${
-        isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-      } fixed left-0 top-0 w-full sm:w-60 lg:w-72 lg:translate-x-0 h-screen z-20 bg-primary-600 transition-all duration-1000`}
-    >
-      <div
-        className={`${
-          isSidebarOpen ? "scale-x-100" : "scale-x-0"
-        } absolute inset-0 lg:scale-x-100 grid place-content-center text-center animate-bounceRight transition-all duration-1000`}
-      >
-        {children}
-      </div>
-    </aside>
-  );
-};
+    <>
+      <SidebarBtn isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
 
-Sidebar.propTypes = {
-  isSidebarOpen: PropTypes.bool.isRequired,
-  children: PropTypes.node.isRequired,
+      <SidebarContent
+        isSidebarOpen={isSidebarOpen}
+        closeSidebar={closeSidebar}
+      />
+    </>
+  );
 };
 
 export default Sidebar;

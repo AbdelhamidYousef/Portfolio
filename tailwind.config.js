@@ -22,6 +22,12 @@ export default {
         "primary-800": "hsl(17, 54%, 35%)",
       },
 
+      /* Positioning */
+      zIndex: {
+        sidebarContainer: "20",
+        sidebarBtn: "90",
+      },
+
       /* Borders */
       borderWidth: {
         6: "6px",

@@ -1,17 +1,7 @@
 import { PropTypes } from "prop-types";
 import { navLinks } from "../../../htmlContent/sidebar";
-import { useEffect } from "react";
 
-const Nav = ({ activeSection, toggleSidebar }) => {
-  useEffect(() => {
-    const callback = (e) => {
-      if (e.key === "Escape") toggleSidebar();
-    };
-
-    document.addEventListener("keydown", callback);
-    return () => document.removeEventListener("keydown", callback);
-  }, [toggleSidebar]);
-
+const Nav = ({ closeSidebar }) => {
   const scrollToSection = (e, sectionId) => {
     e.preventDefault();
 
@@ -19,7 +9,7 @@ const Nav = ({ activeSection, toggleSidebar }) => {
     if (!section) return;
 
     section.scrollIntoView({ behavior: "smooth" });
-    toggleSidebar();
+    closeSidebar();
   };
 
   return (
@@ -28,9 +18,7 @@ const Nav = ({ activeSection, toggleSidebar }) => {
         {navLinks.map((link, i) => (
           <li
             key={i}
-            className={`${
-              activeSection === link ? "text-white" : "text-white/50"
-            } hover:text-white/90 mb-4 text-lg font-semibold uppercase text-white`}
+            className={`mb-4 text-lg font-semibold uppercase text-white/70 hover:text-white/95`}
           >
             <a
               href={`#${link}`}
@@ -47,8 +35,11 @@ const Nav = ({ activeSection, toggleSidebar }) => {
 };
 
 Nav.propTypes = {
-  activeSection: PropTypes.string,
-  toggleSidebar: PropTypes.func.isRequired,
+  closeSidebar: PropTypes.func.isRequired,
 };
 
 export default Nav;
+
+// ${
+//   activeSection === link ? "text-white" : "text-white/50"
+// }

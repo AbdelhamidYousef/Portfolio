@@ -1,52 +1,22 @@
-import Skill from "./Skill";
-import { skillsObject } from "../../../htmlContent/skills";
+import SectionTitle from "../../shared/SectionTitle";
+import SkillsContainer from "./SkillsContainer";
+import { useActiveSection } from "../../../context/ActiveSectionContext";
 
 const Skills = () => {
-  const skillsArray = Object.keys(skillsObject);
+  const { sectionsRef } = useActiveSection();
 
   return (
-    <>
-      {/* Mobile & Tablet */}
-      <ul className="lg:hidden flex flex-wrap justify-center sm:justify-start gap-4">
-        {skillsArray.map((key) =>
-          skillsObject[key].map((skill) => (
-            <li key={skill.id}>
-              <Skill
-                name={skill.name}
-                percentage={skill.percentage}
-                circleRadius={60}
-              />
-            </li>
-          ))
-        )}
-      </ul>
+    <section
+      ref={(el) => sectionsRef.current.push(el)}
+      id="skills"
+      className="py-20 lg:py-28 border-b-2 animate-slideLeft"
+    >
+      <SectionTitle classes="lg:!mb-10 !text-center xl:!text-left">
+        Skills
+      </SectionTitle>
 
-      {/* Desktop */}
-      <ul className="ml-1 hidden lg:block">
-        {Object.keys(skillsObject).map((key, i) => (
-          <li
-            key={i}
-            className="grid place-content-center text-center gap-y-5 xl:grid-cols-[22rem_1fr] xl:text-left items-center mb-10"
-          >
-            <h3 className="font-hero font-semibold text-2xl xl:text-3xl text-slate-500 leading-none">
-              {key}
-            </h3>
-
-            <ul className="flex gap-x-5">
-              {skillsObject[key].map((skill) => (
-                <li key={skill.id}>
-                  <Skill
-                    name={skill.name}
-                    percentage={skill.percentage}
-                    circleRadius={60}
-                  />
-                </li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
-    </>
+      <SkillsContainer />
+    </section>
   );
 };
 
