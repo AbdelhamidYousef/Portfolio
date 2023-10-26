@@ -2,9 +2,7 @@ import { PropTypes } from "prop-types";
 
 const Main = ({ children }) => {
   return (
-    <main className="bg-gray-50 px-5 lg:px-10 overflow-x-hidden lg:ml-72">
-      {children}
-    </main>
+    <main className="px-5 lg:px-10 overflow-x-hidden lg:ml-72">{children}</main>
   );
 };
 

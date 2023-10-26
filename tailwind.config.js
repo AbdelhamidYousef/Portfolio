@@ -11,6 +11,7 @@ export default {
       animation: {
         bounceRight: "bounceRight 1s ease-out",
         slideLeft: "slideLeft 1s ease-out",
+        slideTop: "slideTop 1s ease-out",
         rubberband: "rubberband 0.8s ease-out",
       },
       backgroundImage: {
@@ -41,6 +42,11 @@ export default {
           "80%": { transform: "translateX(-2%)" },
           "100%": { opacity: "100%", transform: "translateX(0)" },
         },
+        slideTop: {
+          "0%": { opacity: "0", transform: "translateY(40%)" },
+          "80%": { transform: "translateY(-2%)" },
+          "100%": { opacity: "100%", transform: "translateY(0)" },
+        },
         rubberband: {
           "0%": { transform: "scale(1)" },
           "40%": { transform: "scaleX(1.12) scaleY(0.75)" },
@@ -54,8 +60,10 @@ export default {
         xs: "400px",
       },
       zIndex: {
-        sidebarContainer: "20",
-        sidebarBtn: "90",
+        toTopBtn: "70",
+        footer: "71",
+        sidebarContainer: "80",
+        sidebarBtn: "81",
       },
     },
   },

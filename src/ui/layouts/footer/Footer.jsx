@@ -1,14 +1,10 @@
 import SectionTitle from "../../shared/SectionTitle";
 import Socials from "../../shared/Socials";
 import Download from "./Download";
-import Section from "../../shared/Section";
 
-const Contact = () => {
+const Footer = () => {
   return (
-    <Section
-      id="contact"
-      className="py-10 flex flex-col items-center gap-y-7 xl:flex-row xl:justify-between animate-slideLeft bg-inherit relative z-[11] border-b-2"
-    >
+    <footer className="lg:ml-72 px-5 lg:px-10 py-10 flex flex-col items-center gap-y-7 xl:flex-row xl:justify-between relative z-footer animate-slideTop backdrop-blur-3xl">
       <SectionTitle
         initialStyle={false}
         classes="font-bold text-3xl text-slate-600 hover:text-primary-600 uppercase transition-all duration-300"
@@ -22,8 +18,8 @@ const Contact = () => {
       />
 
       <Download />
-    </Section>
+    </footer>
   );
 };
 
-export default Contact;
+export default Footer;
