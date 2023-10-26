@@ -34,13 +34,12 @@
 
   [data-title-top]:after,
   [data-title-bottom]:after {
-    @apply absolute z-[99] px-2 py-1 rounded-md shadow-[0_0_4px_#333] opacity-0 invisible transition-all duration-300;
+    @apply absolute z-[99] px-2 py-1 rounded-md shadow-[0_0_4px_#333] opacity-0 invisible transition-all duration-300 backdrop-blur-sm bg-gray-50;
     @apply text-slate-900 text-center whitespace-nowrap;
-    backdrop-filter: blur(3px);
   }
   [data-title-top]:after {
     content: attr(data-title-top);
-    @apply -top-9 left-[75%] bg-gray-50;
+    @apply -top-9 left-[75%];
   }
   [data-title-bottom]:after {
     content: attr(data-title-bottom);
