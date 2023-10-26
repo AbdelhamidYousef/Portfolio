@@ -6,7 +6,18 @@ const AboutText = () => {
   return (
     <>
       <h1 className="mb-2 xs:mb-1 font-hero font-bold text-5xl xs:text-[3.375rem] sm:text-8xl text-slate-700 uppercase">
-        {fname} <span className="text-primary-600">{lname}</span>
+        {fname.split("").map((char, i) => (
+          <span key={i} className="hover:animate-rubberband">
+            {char}
+          </span>
+        ))}
+        <span className="text-primary-600">
+          {lname.split("").map((char, i) => (
+            <span key={i} className="hover:animate-rubberband">
+              {char}
+            </span>
+          ))}
+        </span>
       </h1>
 
       <p className="xs:ml-1 mb-3 xs:mb-6 sm:mb-8 lg:mb-10 font-hero font-medium text-lg xs:text-xl sm:text-2xl text-slate-500 uppercase tracking-widest">

@@ -8,12 +8,18 @@ export default {
     },
 
     extend: {
-      /* Screen Sizes */
-      screens: {
-        xs: "400px",
+      animation: {
+        bounceRight: "bounceRight 1s ease-out",
+        slideLeft: "slideLeft 1s ease-out",
+        rubberband: "rubberband 0.8s ease-out",
       },
-
-      /* Colors */
+      backgroundImage: {
+        stripes:
+          "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)",
+      },
+      borderWidth: {
+        6: "6px",
+      },
       colors: {
         "primary-200": "hsl(17, 80%, 80%)",
         "primary-400": "hsl(17, 80%, 60%)",
@@ -21,33 +27,8 @@ export default {
         "primary-600": "hsl(17, 54%, 48%)",
         "primary-800": "hsl(17, 54%, 35%)",
       },
-
-      /* Positioning */
-      zIndex: {
-        sidebarContainer: "20",
-        sidebarBtn: "90",
-      },
-
       height: {
         // screen: "100dvh",
-      },
-
-      /* Borders */
-      borderWidth: {
-        6: "6px",
-      },
-
-      /* Background Image / Gradients */
-      backgroundImage: {
-        stripes:
-          "linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent)",
-      },
-
-      /* Animation */
-      animation: {
-        bounceRight: "bounceRight 1s ease-out",
-        slideLeft: "slideLeft 1s ease-out",
-        stripesProgress: "stripesProgress 2s linear infinite",
       },
       keyframes: {
         bounceRight: {
@@ -60,14 +41,21 @@ export default {
           "80%": { transform: "translateX(-2%)" },
           "100%": { opacity: "100%", transform: "translateX(0)" },
         },
-        stripesProgress: {
-          "0%": {
-            "background-position": "40px 0",
-          },
-          "100%": {
-            "background-position": "0 0",
-          },
+        rubberband: {
+          "0%": { transform: "scale(1)" },
+          "40%": { transform: "scaleX(1.12) scaleY(0.75)" },
+          "55%": { transform: "scaleX(0.85) scaleY(1)" },
+          "65%": { transform: "scaleX(1.09) scaleY(0.85)" },
+          "75%": { transform: "scaleX(0.9) scaleY(1)" },
+          "90%": { transform: "scaleX(1.05) scaleY(0.95)" },
         },
+      },
+      screens: {
+        xs: "400px",
+      },
+      zIndex: {
+        sidebarContainer: "20",
+        sidebarBtn: "90",
       },
     },
   },
