@@ -3,7 +3,7 @@ import FormField from "./FormField";
 
 const ContactForm = () => {
   return (
-    <form className="max-w-5xl ml-1 px-12 py-14 bg-gray-200 rounded-2xl shadow-lg grid gap-y-8">
+    <form className="max-w-5xl ml-1 px-12 py-14 xs:bg-gray-200 xs:rounded-2xl xs:shadow-lg grid gap-y-8">
       <FormField>
         <FormField.Label htmlFor="name">Your Name:</FormField.Label>
         <FormField.Input
@@ -31,9 +31,7 @@ const ContactForm = () => {
         />
       </FormField>
 
-      <div>
-        <Button className="ml-0.5">Send</Button>
-      </div>
+      <Button className="ml-px justify-self-start">Send</Button>
     </form>
   );
 };
