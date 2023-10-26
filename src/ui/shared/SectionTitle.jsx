@@ -9,11 +9,15 @@ const SectionTitle = ({ initialStyle = true, classes, children }) => {
           : ""
       }`}
     >
-      {children.split("").map((char, i) => (
-        <span key={i} className="hover:animate-rubberband">
-          {char}
-        </span>
-      ))}
+      {children.split("").map((char, i) => {
+        if (char === " ") return " ";
+
+        return (
+          <span key={i} className="hover:animate-rubberband">
+            {char}
+          </span>
+        );
+      })}
     </h2>
   );
 };

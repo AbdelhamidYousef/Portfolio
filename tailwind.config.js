@@ -26,6 +26,7 @@ export default {
         "primary-400": "hsl(17, 80%, 60%)",
         "primary-500": "hsl(17, 70%, 60%)",
         "primary-600": "hsl(17, 54%, 48%)",
+        "primary-700": "hsl(17, 54%, 43%)",
         "primary-800": "hsl(17, 54%, 35%)",
       },
       height: {
