@@ -18,7 +18,6 @@ const App = () => {
         <Skills />
         <Projects />
         <Contact />
-
         <ToTopBtn />
       </Main>
     </ActiveSectionProvider>
