@@ -5,7 +5,7 @@ const AboutText = () => {
 
   return (
     <>
-      <h1 className="mb-2 xs:mb-0 font-hero font-bold text-5xl xs:text-6xl sm:text-8xl text-slate-700 uppercase">
+      <h1 className="mb-2 xs:mb-1 font-hero font-bold text-5xl xs:text-[3.375rem] sm:text-8xl text-slate-700 uppercase">
         {fname} <span className="text-primary-600">{lname}</span>
       </h1>
 

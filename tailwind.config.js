@@ -29,7 +29,7 @@ export default {
       },
 
       height: {
-        screen: "100dvh",
+        // screen: "100dvh",
       },
 
       /* Borders */
