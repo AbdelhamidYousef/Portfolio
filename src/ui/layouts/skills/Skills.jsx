@@ -13,12 +13,10 @@ const Skills = () => {
       className="py-20 lg:py-28 border-b-2 animate-slideLeft"
     >
       <SkillsProvider>
-        <div className="flex justify-between items-start">
-          <SectionTitle classes="lg:!mb-14 !text-center xl:!text-left">
-            Skills
-          </SectionTitle>
+        <div className="mb-10 md:mb-20 flex flex-col items-center gap-y-10 md:flex-row md:justify-between md:items-center">
+          <SectionTitle className="!m-0">Skills</SectionTitle>
 
-          <div className="flex items-center space-x-6">
+          <div className="flex flex-col gap-y-5 md:flex-row md:items-center md:space-x-6">
             <Searchbar />
             <Select options={skillsMenu} />
           </div>

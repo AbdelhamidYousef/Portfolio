@@ -18,7 +18,7 @@ const Select = ({ options }) => {
 
   return (
     <button
-      className="js-select relative w-full min-w-[11rem] h-10 flex justify-between items-center outline-none"
+      className="js-select relative w-full min-w-[11rem] max-w-[11rem] mx-auto h-10 flex justify-between items-center outline-none"
       onClick={() => setIsOpen((isOpen) => !isOpen)}
     >
       <span className="font-semibold text-sm text-gray-600">
@@ -45,7 +45,7 @@ const Select = ({ options }) => {
         {options.map((option, i) => (
           <li
             key={i}
-            className="my-7 font-medium text-sm text-gray-500 tracking-wide cursor-pointer select-none transition-all duration-300 hover:text-primary-600"
+            className="pt-7 last:pb-7 font-medium text-sm text-gray-500 tracking-wide cursor-pointer select-none transition-all duration-300 hover:text-primary-600"
             onClick={() => {
               setFilterLabel(option.label);
               setFilter(option.value === "all" ? "" : option.value);

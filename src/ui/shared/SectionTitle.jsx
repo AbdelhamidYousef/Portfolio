@@ -1,9 +1,9 @@
 import { PropTypes } from "prop-types";
 
-const SectionTitle = ({ initialStyle = true, classes, children }) => {
+const SectionTitle = ({ initialStyle = true, className, children }) => {
   return (
     <h2
-      className={`${classes} ${
+      className={`${className} ${
         initialStyle
           ? "mb-14 lg:mb-20 font-hero font-bold text-6xl text-slate-700 uppercase tracking-wide text-center sm:text-left"
           : ""
@@ -24,7 +24,7 @@ const SectionTitle = ({ initialStyle = true, classes, children }) => {
 
 SectionTitle.propTypes = {
   initialStyle: PropTypes.bool,
-  classes: PropTypes.string,
+  className: PropTypes.string,
   children: PropTypes.node.isRequired,
 };
 

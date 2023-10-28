@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="lg:ml-72 px-5 lg:px-10 py-10 flex flex-col items-center gap-y-7 xl:flex-row xl:justify-between relative z-footer animate-slideTop backdrop-blur-3xl">
       <SectionTitle
         initialStyle={false}
-        classes="font-bold text-3xl text-slate-600 hover:text-primary-600 uppercase transition-all duration-300"
+        className="font-bold text-3xl text-slate-600 hover:text-primary-600 uppercase transition-all duration-300"
       >
         Get In Touch
       </SectionTitle>
