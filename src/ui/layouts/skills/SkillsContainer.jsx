@@ -1,52 +1,24 @@
-import Skill from "./Skill";
-import { skillsObject } from "../../../htmlContent/skills";
+import { skills } from "../../../htmlContent/skills";
 
 const SkillsContainer = () => {
-  const skillsArray = Object.keys(skillsObject);
-
   return (
-    <>
-      {/* Mobile & Tablet */}
-      <ul className="lg:hidden flex flex-wrap justify-center sm:justify-start gap-4">
-        {skillsArray.map((key) =>
-          skillsObject[key].map((skill) => (
-            <li key={skill.id}>
-              <Skill
-                name={skill.name}
-                percentage={skill.percentage}
-                circleRadius={60}
-              />
-            </li>
-          ))
-        )}
-      </ul>
+    <ul className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
+      {skills.map((skill) => (
+        <li
+          key={skill.id}
+          className="group relative h-16 xl:h-20 rounded-xl border border-gray-100 shadow-sm overflow-hidden flex items-center hover:scale-105 transition-all duration-300"
+        >
+          <p className="px-6 text-sm sm:text-base xl:font-medium tracking-wider relative z-10">
+            {skill.title}
+          </p>
 
-      {/* Desktop */}
-      <ul className="ml-1 hidden lg:block">
-        {Object.keys(skillsObject).map((key, i) => (
-          <li
-            key={i}
-            className="grid place-content-center text-center gap-y-5 xl:grid-cols-[22rem_1fr] xl:text-left items-center mb-10"
-          >
-            <h3 className="font-hero font-semibold text-2xl xl:text-3xl text-slate-500 leading-none">
-              {key}
-            </h3>
-
-            <ul className="flex gap-x-5">
-              {skillsObject[key].map((skill) => (
-                <li key={skill.id}>
-                  <Skill
-                    name={skill.name}
-                    percentage={skill.percentage}
-                    circleRadius={60}
-                  />
-                </li>
-              ))}
-            </ul>
-          </li>
-        ))}
-      </ul>
-    </>
+          <span className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 group-hover:-rotate-6 transition-all duration-300">
+            {skill.component}
+          </span>
+          <span className="absolute inset-0 bg-gradient-to-r from-white via-white via-60% to-white/60"></span>
+        </li>
+      ))}
+    </ul>
   );
 };
 
