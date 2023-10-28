@@ -38,13 +38,8 @@ const App = () => {
           error: {
             duration: 3000,
           },
-          style: {
-            fontSize: "16px",
-            maxWidth: "30rem",
-            padding: "1rem 1.5rem",
-            backgroundColor: "#333",
-            color: "#fff",
-          },
+          className:
+            "max-w-xs px-6 py-4 bg-gray-600 rounded-lg border-2 border-gray-200 shadow-lg text-base text-gray-50",
         }}
       />
     </>
