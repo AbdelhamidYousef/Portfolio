@@ -1,7 +1,9 @@
 import SectionTitle from "../../shared/SectionTitle";
 import SkillsContainer from "./SkillsContainer";
 import Section from "../../shared/Section";
-import Searchbar from "./Searchbar";
+import Searchbar from "../../shared/Searchbar";
+import Select from "../../shared/Select";
+import { skillsMenu } from "../../../htmlContent/skills";
 
 const Skills = () => {
   return (
@@ -14,7 +16,10 @@ const Skills = () => {
           Skills
         </SectionTitle>
 
-        <Searchbar />
+        <div className="flex items-center space-x-6">
+          <Searchbar />
+          <Select options={skillsMenu} />
+        </div>
       </div>
 
       <SkillsContainer />

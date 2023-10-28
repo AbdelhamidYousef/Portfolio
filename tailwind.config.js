@@ -61,6 +61,7 @@ export default {
         xs: "400px",
       },
       zIndex: {
+        selectMenu: "60",
         toTopBtn: "70",
         footer: "71",
         sidebarContainer: "80",

@@ -12,6 +12,13 @@ import StyledComponents from "../ui/svgs/StyledComponents";
 import CssModules from "../ui/svgs/CssModules";
 import Git from "../ui/svgs/Git";
 
+export const skillsMenu = [
+  { label: "All", value: "all" },
+  { label: "Core Technologies", value: "core" },
+  { label: "React Ecosystem", value: "react" },
+  { label: "Dev Enviroment", value: "dev" },
+];
+
 export const skills = [
   { id: 1, title: "HTML", component: <Html /> },
   { id: 2, title: "CSS", component: <Css /> },
