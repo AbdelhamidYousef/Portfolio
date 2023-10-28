@@ -1,6 +1,8 @@
-import { skills } from "../../../htmlContent/skills";
+import { useSkills } from "../../../context/SkillsContext";
 
 const SkillsContainer = () => {
+  const { skills } = useSkills();
+
   return (
     <ul className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
       {skills.map((skill) => (
