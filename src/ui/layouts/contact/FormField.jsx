@@ -21,6 +21,7 @@ export const Input = ({
   id = name,
   value,
   onChange,
+  disabled,
   placeholder,
   className = "",
 }) => {
@@ -31,8 +32,9 @@ export const Input = ({
       name={name}
       value={value}
       onChange={onChange}
+      disabled={disabled}
       placeholder={placeholder}
-      className={`${className} w-full px-0.5 xs:px-6 py-3.5 bg-inherit border-b-2 border-gray-300  xs:bg-white xs:rounded-lg font-medium text-xl placeholder:font-main placeholder:text-base outline-none focus:border-primary-400 xs:focus:border-none xs:focus:ring-1 xs:focus:ring-primary-400`}
+      className={`${className} w-full px-0.5 xs:px-6 py-3.5 bg-inherit border-b-2 border-gray-300  xs:bg-white xs:rounded-lg font-medium text-xl placeholder:font-main placeholder:text-base outline-none focus:border-primary-400 xs:focus:border-none xs:focus:ring-1 xs:focus:ring-primary-400 disabled:bg-gray-300 disabled:text-gray-600 disabled:cursor-not-allowed`}
     />
   );
 };
@@ -42,6 +44,7 @@ export const Textarea = ({
   id = name,
   value,
   onChange,
+  disabled,
   placeholder,
   rows,
   className = "",
@@ -52,9 +55,10 @@ export const Textarea = ({
       name={name}
       value={value}
       onChange={onChange}
+      disabled={disabled}
       placeholder={placeholder}
       rows={rows}
-      className={`${className} w-full px-0.5 xs:px-6 py-3.5 bg-inherit border-b-2 border-gray-300  xs:bg-white xs:rounded-lg font-medium text-xl placeholder:font-main placeholder:text-base outline-none focus:border-primary-400 xs:focus:border-none xs:focus:ring-1 xs:focus:ring-primary-400`}
+      className={`${className} w-full px-0.5 xs:px-6 py-3.5 bg-inherit border-b-2 border-gray-300  xs:bg-white xs:rounded-lg font-medium text-xl placeholder:font-main placeholder:text-base outline-none focus:border-primary-400 xs:focus:border-none xs:focus:ring-1 xs:focus:ring-primary-400 disabled:bg-gray-300 disabled:text-gray-600 disabled:cursor-not-allowed`}
     ></textarea>
   );
 };
@@ -78,6 +82,7 @@ Input.propTypes = {
   name: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func,
+  disabled: PropTypes.bool,
   placeholder: PropTypes.string,
   className: PropTypes.string,
 };
@@ -86,6 +91,7 @@ Textarea.propTypes = {
   name: PropTypes.string,
   value: PropTypes.string,
   onChange: PropTypes.func,
+  disabled: PropTypes.bool,
   placeholder: PropTypes.string,
   rows: PropTypes.string,
   className: PropTypes.string,

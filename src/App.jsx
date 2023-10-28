@@ -8,22 +8,46 @@ import ToTopBtn from "./ui/shared/ToTopBtn";
 
 import { ActiveSectionProvider } from "./context/ActiveSection";
 import Footer from "./ui/layouts/footer/Footer";
+import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
-    <ActiveSectionProvider>
-      <Sidebar />
+    <>
+      <ActiveSectionProvider>
+        <Sidebar />
 
-      <Main>
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
-        <ToTopBtn />
-      </Main>
+        <Main>
+          <About />
+          <Skills />
+          <Projects />
+          <Contact />
+          <ToTopBtn />
+        </Main>
 
-      <Footer />
-    </ActiveSectionProvider>
+        <Footer />
+      </ActiveSectionProvider>
+
+      <Toaster
+        position="top-center"
+        gutter={12}
+        containerStyle={{ margin: "0.5rem" }}
+        toastOptions={{
+          success: {
+            duration: 2000,
+          },
+          error: {
+            duration: 3000,
+          },
+          style: {
+            fontSize: "16px",
+            maxWidth: "30rem",
+            padding: "1rem 1.5rem",
+            backgroundColor: "#333",
+            color: "#fff",
+          },
+        }}
+      />
+    </>
   );
 };
 
