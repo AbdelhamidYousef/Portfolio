@@ -10,7 +10,7 @@ const AboutText = () => {
           <span key={i} className="hover:animate-rubberband">
             {char}
           </span>
-        ))}
+        ))}{" "}
         <span className="text-primary-600">
           {lname.split("").map((char, i) => (
             <span key={i} className="hover:animate-rubberband">

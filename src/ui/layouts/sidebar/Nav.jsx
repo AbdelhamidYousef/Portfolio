@@ -22,15 +22,16 @@ const Nav = ({ closeSidebar }) => {
           <li
             key={i}
             className={`${
-              activeSection === link ? "!text-white" : ""
-            } mb-4 text-lg font-semibold uppercase text-white/70 hover:text-white/95`}
+              activeSection === link ? "text-white" : "text-white/70"
+            } group mb-4 text-lg font-semibold uppercase hover:text-white/95`}
           >
             <a
               href={`#${link}`}
               onClick={(e) => scrollToSection(e, link)}
-              className="focus:outline-none focus:border-b-2 focus:border-current focus:border-spacing-2"
+              className="relative outline-none"
             >
               {link}
+              <span className="absolute -left-[5%] top-[115%] w-[110%] h-0.5 bg-current transition-all duration-300 scale-x-0 origin-left group-hover:scale-x-100 "></span>
             </a>
           </li>
         ))}

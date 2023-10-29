@@ -4,7 +4,7 @@ const SkillsContainer = () => {
   const { skills } = useSkills();
 
   return (
-    <ul className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
+    <ul className="min-h-[61rem] sm:min-h-[34rem] 2xl:min-h-[30rem] grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 content-start gap-3 sm:gap-4 lg:gap-5">
       {skills.map((skill) => (
         <li
           key={skill.id}

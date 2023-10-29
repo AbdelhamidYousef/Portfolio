@@ -2,7 +2,7 @@ import { techns } from "../../../htmlContent/about";
 
 const Techs = () => {
   return (
-    <ul className="xs:ml-1 flex flex-wrap justify-center xs:justify-start gap-x-2 sm:gap-x-6 gap-y-3">
+    <ul className="xs:ml-1 flex flex-wrap justify-center xs:justify-start gap-x-2 sm:gap-x-5 md:gap-x-6 gap-y-3">
       {techns.map((tech) => (
         <li
           key={tech.id}
