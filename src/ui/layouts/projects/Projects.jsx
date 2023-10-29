@@ -2,8 +2,11 @@ import { projects } from "../../../htmlContent/projects";
 import SectionTitle from "../../shared/SectionTitle";
 import Project from "./Project";
 import Section from "../../shared/Section";
+import { useState } from "react";
 
 const Projects = () => {
+  const [active, setActive] = useState(1);
+
   return (
     <Section
       id="projects"
@@ -11,9 +14,14 @@ const Projects = () => {
     >
       <SectionTitle>Projects</SectionTitle>
 
-      <ul className="grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 gap-x-5 gap-y-10">
+      <ul className="flex flex-col md:flex-row gap-3 ">
         {projects.map((project) => (
-          <Project key={project.id} data={project} />
+          <Project
+            key={project.id}
+            data={project}
+            active={active}
+            setActive={setActive}
+          />
         ))}
       </ul>
     </Section>
