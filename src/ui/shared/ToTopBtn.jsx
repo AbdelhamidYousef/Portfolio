@@ -3,8 +3,7 @@ import { useActiveSection } from "../../context/ActiveSection";
 
 const ToTopBtn = () => {
   const { activeSection } = useActiveSection();
-  const hidden =
-    !activeSection || activeSection === "about" || activeSection === "contact";
+  const hidden = !activeSection || activeSection === "about";
 
   return (
     <button
