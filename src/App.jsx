@@ -9,6 +9,7 @@ import ToTopBtn from "./ui/shared/ToTopBtn";
 import { ActiveSectionProvider } from "./context/ActiveSection";
 import Footer from "./ui/layouts/footer/Footer";
 import { Toaster } from "react-hot-toast";
+import ThemeBtn from "./ui/shared/ThemeBtn";
 
 const App = () => {
   return (
@@ -21,6 +22,8 @@ const App = () => {
           <Skills />
           <Projects />
           <Contact />
+
+          <ThemeBtn />
           <ToTopBtn />
         </Main>
 

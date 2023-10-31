@@ -7,7 +7,7 @@
     @apply scroll-smooth;
   }
   body {
-    @apply font-main text-base bg-gray-50 selection:bg-primary-500 selection:text-gray-50;
+    @apply font-main text-base bg-gray-50 dark:bg-slate-900 selection:bg-primary-500 selection:text-gray-50;
   }
 
   span {
