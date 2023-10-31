@@ -27,7 +27,7 @@ const SidebarContent = ({ isSidebarOpen, closeSidebar }) => {
           <Nav closeSidebar={closeSidebar} />
           <Socials
             containerClasses="absolute left-1/2 -translate-x-1/2 bottom-6 flex gap-5"
-            elementClasses="w-7 h-7 text-gray-50 hover:text-primary-200 cursor-help"
+            elementClasses="w-7 h-7 text-gray-50 hover:text-primary-200 focus-within:text-primary-200 cursor-help"
           />
         </div>
       </div>

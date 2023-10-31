@@ -14,7 +14,7 @@ const Socials = ({ containerClasses, elementClasses }) => {
             href={social.link}
             target="_blank"
             rel="noreferrer"
-            className="focus:outline-none"
+            className="outline-none"
           >
             {social.component}
           </a>

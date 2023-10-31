@@ -28,10 +28,10 @@ const Nav = ({ closeSidebar }) => {
             <a
               href={`#${link}`}
               onClick={(e) => scrollToSection(e, link)}
-              className="relative outline-none"
+              className="relative outline-none group"
             >
               {link}
-              <span className="absolute -left-[5%] top-[115%] w-[110%] h-0.5 bg-current transition-all duration-300 scale-x-0 origin-left group-hover:scale-x-100 "></span>
+              <span className="absolute -left-[5%] top-[115%] w-[110%] h-0.5 bg-current transition-all duration-300 scale-x-0 origin-left group-hover:scale-x-100 group-focus:scale-x-100"></span>
             </a>
           </li>
         ))}
