@@ -13,6 +13,7 @@ export default {
         slideLeft: "slideLeft 1s ease-out",
         slideTop: "slideTop 1s ease-out",
         rubberband: "rubberband 0.8s ease-out",
+        bounceFast: "bounce 0.5s infinite",
       },
       backgroundImage: {
         stripes:

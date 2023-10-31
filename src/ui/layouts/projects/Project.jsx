@@ -10,7 +10,7 @@ const Project = ({ data, active, setActive }) => {
     <li
       className={`${
         isActive ? "" : "h-20 sm:h-28 md:flex-1 cursor-pointer"
-      } relative md:h-[28rem] rounded-xl md:rounded-3xl border-2 border-gray-200 shadow-md overflow-hidden`}
+      } relative md:h-[28rem] rounded-xl md:rounded-3xl border-2 border-gray-100 shadow-md overflow-hidden`}
       onClick={() => setActive(id)}
     >
       {/* Background Image */}
@@ -29,7 +29,7 @@ const Project = ({ data, active, setActive }) => {
         <span
           className={`${
             active === id ? "hidden" : ""
-          } font-hero font-extrabold text-2xl text-gray-300 tracking-widest whitespace-nowrap md:-rotate-90 md:w-10 md:mb-10`}
+          } font-hero font-extrabold text-2xl text-gray-100 tracking-widest whitespace-nowrap md:-rotate-90 md:w-10 md:mb-10`}
         >
           {title}
         </span>
@@ -37,16 +37,14 @@ const Project = ({ data, active, setActive }) => {
 
       {/* Content */}
       <div
-        className={`${
-          isActive
-            ? "translate-0"
-            : "translate-y-[200%] md:-translate-x-[200%] md:translate-y-0"
-        } absolute inset-0 px-5 sm:px-10 grid content-center text-center transition-all duration-300 selection:bg-gray-400`}
+        className={`
+          ${isActive ? "translate-0" : "translate-y-[200%]"} 
+          absolute inset-0 px-5 sm:px-10 grid content-center text-center  selection:bg-gray-400`}
       >
-        <h3 className="-mt-[10%] xs:-mt-[15%] mb-2 xs:mb-3 font-hero font-semibold text-2xl xs:text-4xl text-gray-300 uppercase tracking-wide">
+        <h3 className="-mt-[10%] xs:-mt-[15%] mb-2 xs:mb-3 font-hero font-semibold text-2xl xs:text-4xl text-gray-100 uppercase tracking-wide">
           {title}
         </h3>
-        <p className="font-medium text-sm xs:text-base sm:text-lg text-gray-300">
+        <p className="font-medium text-sm xs:text-base sm:text-lg text-gray-100">
           {description}
         </p>
 
@@ -55,7 +53,7 @@ const Project = ({ data, active, setActive }) => {
           target="_blank"
           rel="noreferrer"
           title="Code Source"
-          className="absolute right-4 top-4 xs:right-5 xs:top-5 xl:right-6 xl:top-6 w-6 h-6 xs:w-8 xs:h-8 text-gray-200 drop-shadow-[0_0_20px_#fff] hover:drop-shadow-[0_0_10px_#fff] transition-all duration-300 outline-none focus:drop-shadow-[0_0_7px_#fff]"
+          className="absolute right-4 top-4 xs:right-5 xs:top-5 xl:right-6 xl:top-6 w-6 h-6 xs:w-8 xs:h-8 text-gray-100 drop-shadow-[0_0_20px_#fff] hover:drop-shadow-[0_0_10px_#fff] transition-all duration-300 outline-none focus:drop-shadow-[0_0_7px_#fff]"
         >
           <Github />
         </a>
@@ -63,7 +61,7 @@ const Project = ({ data, active, setActive }) => {
           href={demoLink}
           target="_blank"
           rel="noreferrer"
-          className="absolute left-1/2 -translate-x-1/2 bottom-5 xs:bottom-8 xl:bottom-10 px-5 py-1.5 xs:px-6 xs:py-2 md:px-8 md:py-3 border-2 border-gray-100 rounded-full text-gray-100 hover:text-slate-700 flex items-center hover:border-transparent hover:bg-gray-200 hover:drop-shadow-[0_0_3px_#fff] transition-all duration-700 outline-none focus:bg-gray-200 focus:text-slate-700"
+          className="absolute left-1/2 -translate-x-1/2 bottom-5 xs:bottom-8 xl:bottom-10 px-5 py-1.5 xs:px-6 xs:py-2 md:px-8 md:py-3 border-2 border-gray-100 rounded-full text-gray-100 hover:text-slate-700 flex items-center hover:border-transparent hover:bg-gray-100 hover:drop-shadow-[0_0_3px_#fff] transition-all duration-700 outline-none focus:bg-gray-100 focus:text-slate-700"
         >
           <span className="font-medium text-sm xs:text-md sm:text-lg whitespace-nowrap mr-2">
             Live Preview
