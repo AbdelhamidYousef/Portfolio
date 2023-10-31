@@ -10,7 +10,7 @@ const Project = ({ data, active, setActive }) => {
     <li
       className={`${
         isActive ? "" : "h-20 sm:h-28 md:flex-1 cursor-pointer"
-      } relative md:h-[28rem] rounded-xl md:rounded-3xl border-2 border-gray-100 shadow-md overflow-hidden`}
+      } relative md:h-[28rem] rounded-xl md:rounded-3xl border-2 border-gray-100 shadow-md overflow-hidden dark:border-slate-800`}
       onClick={() => setActive(id)}
     >
       {/* Background Image */}

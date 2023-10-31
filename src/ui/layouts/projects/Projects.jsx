@@ -8,10 +8,7 @@ const Projects = () => {
   const [active, setActive] = useState(1);
 
   return (
-    <Section
-      id="projects"
-      className="py-20 lg:py-28 border-b-2 animate-slideLeft"
-    >
+    <Section id="projects" className="py-20 lg:py-28 animate-slideLeft">
       <SectionTitle>Projects</SectionTitle>
 
       <ul className="flex flex-col md:flex-row gap-3 ">

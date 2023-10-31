@@ -11,7 +11,11 @@ const Section = ({ id, className, children }) => {
   }, [sectionsRef]);
 
   return (
-    <section ref={ref} id={id} className={className}>
+    <section
+      ref={ref}
+      id={id}
+      className={`${className} border-b-2 dark:border-gray-400`}
+    >
       {children}
     </section>
   );

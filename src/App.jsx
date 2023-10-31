@@ -18,12 +18,11 @@ const App = () => {
         <Sidebar />
 
         <Main>
+          <ThemeBtn />
           <About />
           <Skills />
           <Projects />
           <Contact />
-
-          <ThemeBtn />
           <ToTopBtn />
         </Main>
 
@@ -42,7 +41,7 @@ const App = () => {
             duration: 3000,
           },
           className:
-            "max-w-xs px-6 py-4 bg-gray-600 rounded-lg border-2 border-gray-200 shadow-lg text-base text-gray-50",
+            "max-w-xs px-6 py-4 bg-slate-700 border-2 dark:border-slate-600 rounded-lg shadow-lg text-base text-gray-50",
         }}
       />
     </>
