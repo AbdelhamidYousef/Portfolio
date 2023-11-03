@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { useRef } from "react";
-import Button from "./Button";
-import FormField from "./FormField";
+import { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-hot-toast";
+import { m } from "framer-motion";
+import Button from "./Button";
+import FormField from "./FormField";
+import { fadeIn } from "../../../utils/motion";
 
 const initialInputs = { name: "", email: "", message: "" };
 
@@ -41,11 +42,12 @@ const ContactForm = () => {
   };
 
   return (
-    <form
+    <m.form
       method="POST"
       onSubmit={handleSubmit}
       ref={formRef}
       className="max-w-5xl ml-1 px-4 xs:px-8 sm:px-12 py-8 xs:py-10 sm:py-14 xs:bg-gray-200 xs:rounded-2xl xs:shadow-lg grid gap-y-8 dark:xs:bg-slate-800"
+      {...fadeIn("right", "tween")}
     >
       <FormField>
         <FormField.Label htmlFor="name">Your Name:</FormField.Label>
@@ -86,7 +88,7 @@ const ContactForm = () => {
       <Button disabled={isLoading} className="ml-px justify-self-start">
         {isLoading ? "Sending..." : "Send"}
       </Button>
-    </form>
+    </m.form>
   );
 };
 

@@ -2,7 +2,7 @@ import { PropTypes } from "prop-types";
 import { m } from "framer-motion";
 import ExternalLink from "../../svgs/ExternalLink";
 import Github from "../../svgs/Github";
-import { projectsAnimation } from "../../../utils/motion";
+import { fadeIn } from "../../../utils/motion";
 
 const Project = ({ data, active, setActive }) => {
   const { id, image, title, description, githubLink, demoLink } = data;
@@ -11,10 +11,10 @@ const Project = ({ data, active, setActive }) => {
   return (
     <m.li
       onClick={() => setActive(id)}
-      {...projectsAnimation(id)}
       className={`${
         isActive ? "" : "h-20 sm:h-28 md:flex-1 cursor-pointer"
       } relative md:h-[28rem] rounded-xl md:rounded-3xl shadow-[0_2px_6px_#9b9b9b4d,0_0_4px_#9b9b9b38] overflow-hidden dark:border-slate-800`}
+      {...fadeIn("right", "tween", 0.2, 0.5 * id)}
     >
       {/* Background Image */}
       <img
