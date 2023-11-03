@@ -11,11 +11,11 @@ export default {
     extend: {
       animation: {
         bounceLeft: "bounceLeft 1s ease-out",
-        bounceRight: "bounceRight 1s ease-out",
-        slideLeft: "slideLeft 0.8s ease-out",
-        slideRight: "slideRight 0.8s ease-out",
+        bounceRight: "bounceRight 1s ease-out", // For Sidebar Content
+        slideLeft: "slideLeft 0.8s ease-out", // For Theme Button
+        slideRight: "slideRight 0.8s ease-out", // For Sidebar Toggle Button
         slideTop: "slideTop 1s ease-out",
-        rubberband: "rubberband 0.8s ease-out",
+        rubberband: "rubberband 0.8s ease-out", // For Hero Text & Section Titles
         bounceFast: "bounce 0.5s infinite",
       },
       borderWidth: {

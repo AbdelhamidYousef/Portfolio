@@ -1,28 +1,15 @@
 import { aboutText } from "../../../htmlContent/about";
+import RubberChars from "../../shared/RubberChars";
 
 const AboutText = () => {
   const { fname, lname, jobs, description } = aboutText;
 
   return (
     <>
-      <h1 className="mb-2 xs:mb-1 font-hero font-bold text-5xl xs:text-[3.375rem] sm:text-8xl uppercase">
-        {fname.split("").map((char, i) => (
-          <span
-            key={i}
-            className="text-slate-700 dark:text-gray-50 hover:animate-rubberband"
-          >
-            {char}
-          </span>
-        ))}{" "}
-        <span>
-          {lname.split("").map((char, i) => (
-            <span
-              key={i}
-              className="text-primary-600 dark:text-primary-400 hover:animate-rubberband"
-            >
-              {char}
-            </span>
-          ))}
+      <h1 className="mb-2 xs:mb-1 font-hero font-bold text-5xl xs:text-[3.375rem] sm:text-8xl uppercase text-slate-700 dark:text-gray-50">
+        <RubberChars>{fname}</RubberChars>{" "}
+        <span className="text-primary-600 dark:text-primary-400">
+          <RubberChars>{lname}</RubberChars>
         </span>
       </h1>
 

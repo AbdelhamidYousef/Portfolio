@@ -6,7 +6,7 @@ const Techs = () => {
       {techns.map((tech) => (
         <li
           key={tech.id}
-          className="w-6 h-6 xs:w-8 xs:h-8 lg:w-9 lg:h-9 grid place-content-center drop-shadow-[0_0_3px_#33333340] cursor-help hover:scale-110 sm:hover:scale-[1.2] "
+          className="w-6 h-6 xs:w-8 xs:h-8 lg:w-9 lg:h-9 grid place-content-center drop-shadow-[0_0_3px_#33333340] cursor-help hover:scale-110 sm:hover:scale-[1.2] transition-all duration-300"
           data-title-bottom={tech.title}
         >
           {tech.component}
