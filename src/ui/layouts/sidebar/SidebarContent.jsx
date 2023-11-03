@@ -20,7 +20,7 @@ const SidebarContent = ({ isSidebarOpen, closeSidebar }) => {
       <div
         className={`${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } w-72 h-full bg-primary-600 transition-all duration-300 lg:translate-x-0`}
+        } w-72 h-full bg-primary-600 transition-all duration-300 lg:translate-x-0 dark:bg-black-700`}
       >
         <div className="h-full grid place-content-center text-center lg:animate-bounceRight">
           <ProfilePic />
