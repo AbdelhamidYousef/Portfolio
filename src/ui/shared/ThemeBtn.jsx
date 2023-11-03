@@ -7,7 +7,7 @@ const ThemeBtn = () => {
   const [currentTheme, setCurrentTheme] = useTheme();
 
   return (
-    <div className="group fixed right-5 top-5 xl:right-10 xl:top-7 w-11 hover:w-40 h-11 xl:w-12 xl:h-12 rounded-full bg-slate-700/70 flex justify-center items-center gap-x-5 transition-all duration-300 focus-within:w-40">
+    <div className="group fixed right-5 top-5 xl:right-10 xl:top-7 z-mainBtns w-11 hover:w-40 h-11 xl:w-12 xl:h-12 rounded-full bg-slate-700/70 flex justify-center items-center gap-x-5 animate-slideLeft transition-all duration-300 focus-within:w-40">
       {themeBtns.map((theme, i) => (
         <button
           key={i}

@@ -7,7 +7,7 @@ import SkillsOperations from "./SkillsOperations";
 
 const Skills = () => {
   return (
-    <Section id="skills" className="py-20 lg:py-28 animate-slideLeft">
+    <Section id="skills" className="py-20 lg:py-28">
       <SkillsProvider>
         <div className="mb-10 md:mb-20 flex flex-col items-center gap-y-10 md:flex-row md:justify-between md:items-center">
           <SectionTitle className="!m-0">Skills</SectionTitle>

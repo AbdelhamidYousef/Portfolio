@@ -10,8 +10,10 @@ export default {
 
     extend: {
       animation: {
+        bounceLeft: "bounceLeft 1s ease-out",
         bounceRight: "bounceRight 1s ease-out",
-        slideLeft: "slideLeft 1s ease-out",
+        slideLeft: "slideLeft 0.8s ease-out",
+        slideRight: "slideRight 0.8s ease-out",
         slideTop: "slideTop 1s ease-out",
         rubberband: "rubberband 0.8s ease-out",
         bounceFast: "bounce 0.5s infinite",
@@ -31,14 +33,24 @@ export default {
         screen: "100dvh",
       },
       keyframes: {
+        bounceLeft: {
+          "0%": { opacity: "0", transform: "translateX(-50%)" },
+          "80%": { transform: "translateX(1%)" },
+          "100%": { opacity: "100%", transform: "translateX(0)" },
+        },
         bounceRight: {
           "0%": { opacity: "0", transform: "translateX(-100%)" },
           "80%": { transform: "translateX(5%)" },
           "100%": { opacity: "100%", transform: "translateX(0)" },
         },
         slideLeft: {
-          "0%": { opacity: "0", transform: "translateX(40%)" },
+          "0%": { opacity: "0", transform: "translateX(75%)" },
           "80%": { transform: "translateX(-2%)" },
+          "100%": { opacity: "100%", transform: "translateX(0)" },
+        },
+        slideRight: {
+          "0%": { opacity: "0", transform: "translateX(-75%)" },
+          "80%": { transform: "translateX(2%)" },
           "100%": { opacity: "100%", transform: "translateX(0)" },
         },
         slideTop: {
@@ -63,7 +75,7 @@ export default {
         toTopBtn: "70",
         footer: "71",
         sidebarContainer: "80",
-        sidebarBtn: "81",
+        mainBtns: "81",
       },
     },
   },

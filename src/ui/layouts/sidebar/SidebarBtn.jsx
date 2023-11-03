@@ -6,7 +6,7 @@ const SidebarBtn = ({ isSidebarOpen, toggleSidebar }) => {
   return (
     <button
       onClick={toggleSidebar}
-      className="lg:hidden fixed left-5 top-5 w-11 h-11 rounded-full bg-slate-700/80 z-sidebarBtn grid place-content-center hover:bg-slate-700/70 outline-none focus:ring-2 focus:ring-slate-600 transition-all duration-300"
+      className="lg:hidden fixed left-5 top-5 w-11 h-11 rounded-full bg-slate-700/80 z-mainBtns grid place-content-center hover:bg-slate-700/70 outline-none focus:ring-2 focus:ring-slate-600 transition-all duration-300 animate-slideRight"
     >
       <span
         className={`${
