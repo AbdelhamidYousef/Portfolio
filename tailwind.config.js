@@ -26,11 +26,9 @@ export default {
         "primary-600": "hsl(17, 54%, 48%)",
         "primary-700": "hsl(17, 54%, 43%)",
         "primary-800": "hsl(17, 54%, 35%)",
-        "black-700": "hsl(0,0%,5%)",
-        "black-900": "hsl(0,0%,8%)",
       },
       height: {
-        // screen: "100dvh",
+        screen: "100dvh",
       },
       keyframes: {
         bounceRight: {

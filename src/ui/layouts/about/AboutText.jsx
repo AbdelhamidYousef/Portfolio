@@ -14,14 +14,16 @@ const AboutText = () => {
             {char}
           </span>
         ))}{" "}
-        {lname.split("").map((char, i) => (
-          <span
-            key={i}
-            className="text-primary-600 dark:text-primary-400 hover:animate-rubberband"
-          >
-            {char}
-          </span>
-        ))}
+        <span>
+          {lname.split("").map((char, i) => (
+            <span
+              key={i}
+              className="text-primary-600 dark:text-primary-400 hover:animate-rubberband"
+            >
+              {char}
+            </span>
+          ))}
+        </span>
       </h1>
 
       <p className="xs:ml-1 mb-3 xs:mb-6 sm:mb-8 lg:mb-10 font-hero font-medium text-lg xs:text-xl sm:text-2xl uppercase tracking-widest">

@@ -14,7 +14,7 @@ const ThemeBtn = () => {
           className={`${
             currentTheme !== theme
               ? "opacity-0 invisible absolute group-hover:opacity-100 group-hover:visible group-hover:relative"
-              : ""
+              : "text-slate-200"
           } w-6 h-6 xl:w-[26px] xl:h-[26px] text-white hover:text-slate-200 group-focus-within:opacity-100 group-focus-within:visible group-focus-within:relative focus:text-slate-300`}
           onClick={() => setCurrentTheme(theme)}
         >
