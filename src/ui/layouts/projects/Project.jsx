@@ -1,29 +1,32 @@
 import { PropTypes } from "prop-types";
+import { m } from "framer-motion";
 import ExternalLink from "../../svgs/ExternalLink";
 import Github from "../../svgs/Github";
+import { projectsAnimation } from "../../../utils/motion";
 
 const Project = ({ data, active, setActive }) => {
   const { id, image, title, description, githubLink, demoLink } = data;
   const isActive = active === id;
 
   return (
-    <li
+    <m.li
+      onClick={() => setActive(id)}
+      {...projectsAnimation(id)}
       className={`${
         isActive ? "" : "h-20 sm:h-28 md:flex-1 cursor-pointer"
-      } relative md:h-[28rem] rounded-xl md:rounded-3xl border-2 border-gray-100 shadow-md overflow-hidden dark:border-slate-800`}
-      onClick={() => setActive(id)}
+      } relative md:h-[28rem] rounded-xl md:rounded-3xl shadow-[0_2px_6px_#9b9b9b4d,0_0_4px_#9b9b9b38] overflow-hidden dark:border-slate-800`}
     >
       {/* Background Image */}
       <img
         src={image}
         alt="Project Sample"
-        className="w-full h-full max-h-[30rem] object-cover object-left-top"
+        className="w-full h-full max-h-[30rem] object-cover object-left-top grayscale-0"
       />
 
       {/* Overlay & Title */}
       <div
         className={`${
-          isActive ? "backdrop-blur-[1px]" : ""
+          isActive ? "backdrop-blur-[0.5px]" : ""
         } absolute inset-0 bg-black/50 grid justify-center content-center md:justify-end md:content-end`}
       >
         <span
@@ -39,7 +42,7 @@ const Project = ({ data, active, setActive }) => {
       <div
         className={`
           ${isActive ? "translate-0" : "translate-y-[200%]"} 
-          absolute inset-0 px-5 sm:px-10 grid content-center text-center  selection:bg-gray-400`}
+          absolute inset-0 px-5 sm:px-10 grid content-center text-center selection:bg-gray-400`}
       >
         <h3 className="-mt-[10%] xs:-mt-[15%] mb-2 xs:mb-3 font-hero font-semibold text-2xl xs:text-4xl text-gray-100 uppercase tracking-wide">
           {title}
@@ -71,7 +74,7 @@ const Project = ({ data, active, setActive }) => {
           </span>
         </a>
       </div>
-    </li>
+    </m.li>
   );
 };
 

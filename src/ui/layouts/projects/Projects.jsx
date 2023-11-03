@@ -11,7 +11,7 @@ const Projects = () => {
     <Section id="projects" className="py-20 lg:py-28">
       <SectionTitle>Projects</SectionTitle>
 
-      <ul className="flex flex-col md:flex-row gap-3 ">
+      <ul className="flex flex-col md:flex-row gap-5">
         {projects.map((project) => (
           <Project
             key={project.id}
