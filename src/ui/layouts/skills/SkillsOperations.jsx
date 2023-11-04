@@ -7,7 +7,7 @@ import { fadeIn } from "../../../utils/motion";
 const SkillsOperations = () => {
   return (
     <m.div
-      className="flex flex-col-reverse gap-y-5 md:flex-row md:items-center md:space-x-6"
+      className="flex flex-col-reverse gap-y-5 md:flex-row md:items-center md:space-x-6 z-selectMenu"
       {...fadeIn("left")}
     >
       <Searchbar />
