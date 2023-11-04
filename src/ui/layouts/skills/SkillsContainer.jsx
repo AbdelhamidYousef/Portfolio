@@ -8,7 +8,10 @@ const SkillsContainer = () => {
   return (
     <ul className="min-h-[61rem] sm:min-h-[34rem] 2xl:min-h-[30rem] grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 content-start gap-3 sm:gap-4 lg:gap-5">
       {skills.map((skill, index) => (
-        <m.li key={skill.id} {...fadeIn("left", "spring", 1.8, 0.2 * index)}>
+        <m.li
+          key={skill.id}
+          variants={fadeIn("left", "spring", 1.8, 0.2 * index)}
+        >
           <div className="group relative h-16 xl:h-20 rounded-xl border border-gray-100 shadow-sm overflow-hidden flex items-center hover:scale-105 transition-all duration-300 dark:bg-slate-700 dark:border-gray-600">
             <p className="px-6 text-sm sm:text-base xl:font-medium text-slate-500 tracking-wider relative z-10 dark:text-gray-50">
               {skill.title}

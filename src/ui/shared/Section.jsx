@@ -1,5 +1,6 @@
 import Proptypes from "prop-types";
 import { useEffect, useRef } from "react";
+import { m } from "framer-motion";
 import { useActiveSection } from "../../context/ActiveSection";
 
 const Section = ({ id, className, children }) => {
@@ -11,13 +12,16 @@ const Section = ({ id, className, children }) => {
   }, [sectionsRef]);
 
   return (
-    <section
+    <m.section
       ref={ref}
       id={id}
       className={`${className} border-b-2 dark:border-gray-400`}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.2 }}
     >
       {children}
-    </section>
+    </m.section>
   );
 };
 

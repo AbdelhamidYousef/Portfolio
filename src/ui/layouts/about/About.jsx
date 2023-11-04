@@ -10,7 +10,7 @@ const About = () => {
       id="about"
       className="h-screen min-h-[40rem] box-content grid content-center text-center xs:text-left"
     >
-      <m.div {...fadeIn("right", "tween", 0.8)}>
+      <m.div variants={fadeIn("right", "tween", 0.8)}>
         <AboutText />
         <Techs />
       </m.div>

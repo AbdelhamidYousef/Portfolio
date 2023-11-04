@@ -47,7 +47,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       ref={formRef}
       className="max-w-5xl ml-1 px-4 xs:px-8 sm:px-12 py-8 xs:py-10 sm:py-14 xs:bg-gray-200 xs:rounded-2xl xs:shadow-lg grid gap-y-8 dark:xs:bg-slate-800"
-      {...fadeIn("right", "tween")}
+      variants={fadeIn("right", "tween")}
     >
       <FormField>
         <FormField.Label htmlFor="name">Your Name:</FormField.Label>

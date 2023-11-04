@@ -8,7 +8,7 @@ const SkillsOperations = () => {
   return (
     <m.div
       className="flex flex-col-reverse gap-y-5 md:flex-row md:items-center md:space-x-6 z-selectMenu"
-      {...fadeIn("left")}
+      variants={fadeIn("left")}
     >
       <Searchbar />
       <Select options={skillsMenu} />
