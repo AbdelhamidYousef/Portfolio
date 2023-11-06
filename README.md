@@ -10,8 +10,8 @@ This repository contains the code for my personal portfolio website.
 - EsLint
 - Other libraries:
   - Framer Motion
-  - React Hot Toast
   - Email JS
+  - React Hot Toast
 
 **Live Demo:**
 
