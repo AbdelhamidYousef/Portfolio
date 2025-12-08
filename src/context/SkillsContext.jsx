@@ -1,13 +1,13 @@
-import { PropTypes } from "prop-types";
-import { useContext, useState } from "react";
-import { createContext } from "react";
-import { skills } from "../htmlContent/skills";
+import { PropTypes } from 'prop-types';
+import { useContext, useState } from 'react';
+import { createContext } from 'react';
+import { skills } from '../content/skills';
 
 const skillsContext = createContext();
 
 export const SkillsProvider = ({ children }) => {
-  const [query, setQuery] = useState("");
-  const [filter, setFilter] = useState("");
+  const [query, setQuery] = useState('');
+  const [filter, setFilter] = useState('');
 
   let filteredSkills = skills;
   if (filter) filteredSkills = skills.filter((skill) => skill.type === filter);
@@ -29,7 +29,7 @@ export const useSkills = () => {
   const context = useContext(skillsContext);
 
   if (!context)
-    throw new Error("useSkills must be used within a SkillsContextProvider");
+    throw new Error('useSkills must be used within a SkillsContextProvider');
 
   return context;
 };

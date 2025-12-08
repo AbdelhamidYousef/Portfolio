@@ -1,4 +1,4 @@
-import { techns } from "../../../htmlContent/about";
+import { techns } from '../../../content/about';
 
 const Techs = () => {
   return (

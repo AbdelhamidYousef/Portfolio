@@ -1,8 +1,8 @@
-import { projects } from "../../../htmlContent/projects";
-import SectionTitle from "../../shared/SectionTitle";
-import Project from "./Project";
-import Section from "../../shared/Section";
-import { useState } from "react";
+import { projects } from '../../../content/projects';
+import SectionTitle from '../../shared/SectionTitle';
+import Project from './Project';
+import Section from '../../shared/Section';
+import { useState } from 'react';
 
 const Projects = () => {
   const [active, setActive] = useState(1);
