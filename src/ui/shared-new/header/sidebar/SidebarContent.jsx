@@ -1,8 +1,8 @@
 import Proptypes from 'prop-types';
-import FullWidthOverlay from '../../../simple-components/FullWidthOverlay';
-import ProfilePic from '../../../simple-components/ProfilePic';
+import FullWidthOverlay from '../../simple-components/FullWidthOverlay';
+import ProfilePic from '../../simple-components/ProfilePic';
 import Nav from '../Nav';
-import Socials from '../../../footer/socials/Socials';
+import Socials from '../../footer/socials/Socials';
 
 /**
  * SidebarContent component for the sidebar
