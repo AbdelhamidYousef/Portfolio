@@ -1,6 +1,8 @@
 # My Portfolio
 
-Welcome to my portfolio! This project showcases my skills using React, Tailwind, ESLint, and Vite. It includes a brief introduction about me, my projects, the technologies I've worked with, and my experience. You'll also find a contact form at the bottom and my social media links below it. Feel free to explore and connect with me!
+Welcome to my portfolio! 
+
+This project includes a brief introduction about me, my projects, the technologies I've worked with, and my experience. You'll also find a contact form at the bottom and my social media links below it. Feel free to explore and connect with me!
 
 <div align="center">
   <br>
@@ -38,7 +40,7 @@ To clone and run this application, you'll need [Git](https://git-scm.com), [Node
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/bl33h/whosbl33h
+$ git clone https://github.com/AbdelhamidYousef/Portfolio.git
 
 # Install dependencies
 $ npm i
@@ -52,5 +54,5 @@ $ npm run dev
 ## Contact
 
 - [abdelhamedy33@gmail.com](mailto:abdelhamedy33@gmail.com)
-- [LinkedIn](https://www.linkedin.com/in/abdulhamidyousef/)
+- [LinkedIn](https://www.linkedin.com/in/abdelhamidy/)
 <!-- - [Personal Website](https://abdelhamid99.netlify.app/) -->
