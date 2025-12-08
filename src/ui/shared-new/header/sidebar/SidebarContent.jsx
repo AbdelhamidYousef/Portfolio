@@ -45,7 +45,7 @@ const SidebarContent = ({ isSidebarOpen, closeSidebar, content }) => {
       <div
         className={`
           ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
-          w-screen sm:w-96 bg-primary-600 transition-all duration-300 lg:translate-x-0 dark:bg-gray-900 dark:border-r dark:border-gray-800 h-full grid place-content-center text-center lg:animate-bounceRight
+          w-screen sm:w-72 bg-primary-600 transition-all duration-300 lg:translate-x-0 dark:bg-gray-900 dark:border-r dark:border-gray-800 h-full grid place-content-center text-center lg:animate-bounceRight
         `}
       >
         <ProfilePic imageUrl={content.profilePicUrl} />
