@@ -9,7 +9,7 @@ import Contact from './ui/layouts/contact/Contact';
 import ToTopBtn from './ui/shared/ToTopBtn';
 import Footer from './ui/layouts/footer/Footer';
 import { ActiveSectionProvider } from './context/ActiveSection';
-import Sidebar from './ui/shared-new/header-and-sidebar/sidebar/Sidebar';
+import Sidebar from './library/components/header-and-sidebar/sidebar/Sidebar';
 import { socials } from './content/socials';
 import { navLinks } from './content/navLinks';
 import { profilePic as profilePicUrl } from './assets';
