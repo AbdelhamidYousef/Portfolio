@@ -18,4 +18,3 @@ const Dark = () => {
 };
 
 export default Dark;
-

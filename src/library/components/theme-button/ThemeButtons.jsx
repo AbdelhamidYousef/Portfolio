@@ -22,10 +22,7 @@ const DEFAULT_THEMES = ['system', 'dark', 'light'];
  *   className="my-custom-class"
  * />
  */
-const ThemeButtons = ({
-  themes = DEFAULT_THEMES,
-  className = '',
-}) => {
+const ThemeButtons = ({ themes = DEFAULT_THEMES, className = '' }) => {
   const [currentTheme, setCurrentTheme] = useTheme();
 
   return (
@@ -50,4 +47,3 @@ ThemeButtons.propTypes = {
 };
 
 export default ThemeButtons;
-

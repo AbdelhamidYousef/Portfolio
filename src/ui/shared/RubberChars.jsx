@@ -1,9 +1,9 @@
-import { PropTypes } from "prop-types";
+import { PropTypes } from 'prop-types';
 const RubberChars = ({ children }) => {
   return (
     <>
-      {children.split("").map((char, i) => {
-        if (char === " ") return " ";
+      {children.split('').map((char, i) => {
+        if (char === ' ') return ' ';
 
         return (
           <span key={i} className="hover:animate-rubberband">

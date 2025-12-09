@@ -18,8 +18,16 @@ const FloatingThemeButtons = ({ themes, styled = 'right' }) => {
   return (
     <FloatingSpan
       className={`
-        ${styled === 'left' ? '!left-5 !top-5 xl:!left-10 xl:!top-7 animate-slideRight' : ''}
-        ${styled === 'right' ? '!right-5 !top-5 xl:!right-10 xl:!top-7 animate-slideLeft': ''}
+        ${
+          styled === 'left'
+            ? '!left-5 !top-5 xl:!left-10 xl:!top-7 animate-slideRight'
+            : ''
+        }
+        ${
+          styled === 'right'
+            ? '!right-5 !top-5 xl:!right-10 xl:!top-7 animate-slideLeft'
+            : ''
+        }
         z-mainBtns
       `}
     >
@@ -34,4 +42,3 @@ FloatingThemeButtons.propTypes = {
 };
 
 export default FloatingThemeButtons;
-

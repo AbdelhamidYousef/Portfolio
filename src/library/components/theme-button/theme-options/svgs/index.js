@@ -19,4 +19,3 @@ export default {
   dark: Dark,
   system: System,
 };
-

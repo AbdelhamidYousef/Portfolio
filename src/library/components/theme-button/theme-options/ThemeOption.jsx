@@ -49,4 +49,3 @@ ThemeOption.propTypes = {
 };
 
 export default ThemeOption;
-

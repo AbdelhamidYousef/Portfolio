@@ -1,10 +1,10 @@
-import { PropTypes } from "prop-types";
+import { PropTypes } from 'prop-types';
 
-const FormField = ({ className = "", children }) => {
+const FormField = ({ className = '', children }) => {
   return <div className={`${className} grid gap-y-3`}>{children}</div>;
 };
 
-export const Label = ({ htmlFor, className = "", children }) => {
+export const Label = ({ htmlFor, className = '', children }) => {
   return (
     <label
       htmlFor={htmlFor}
@@ -23,7 +23,7 @@ export const Input = ({
   onChange,
   disabled,
   placeholder,
-  className = "",
+  className = '',
 }) => {
   return (
     <input
@@ -47,7 +47,7 @@ export const Textarea = ({
   disabled,
   placeholder,
   rows,
-  className = "",
+  className = '',
 }) => {
   return (
     <textarea

@@ -1,7 +1,7 @@
-import Proptypes from "prop-types";
-import { useEffect, useRef } from "react";
-import { m } from "framer-motion";
-import { useActiveSection } from "../../context/ActiveSection";
+import Proptypes from 'prop-types';
+import { useEffect, useRef } from 'react';
+import { m } from 'framer-motion';
+import { useActiveSection } from '../../context/ActiveSection';
 
 const Section = ({ id, className, children }) => {
   const ref = useRef(null);

@@ -1,5 +1,5 @@
 export default {
-  navLinks: ["about", "skills", "projects", "contact"],
+  navLinks: ['about', 'skills', 'projects', 'contact'],
   socials: [
     {
       id: 1,
@@ -20,4 +20,4 @@ export default {
       link: 'mailto:abdelhamedy33@gmail.com',
     },
   ],
-}
+};

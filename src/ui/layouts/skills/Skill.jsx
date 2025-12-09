@@ -1,11 +1,11 @@
-import Proptypes from "prop-types";
-import { useEffect, useState } from "react";
+import Proptypes from 'prop-types';
+import { useEffect, useState } from 'react';
 
 const Skill = ({
   name,
   percentage,
   circleRadius = 60,
-  barColor = "#eb7647",
+  barColor = '#eb7647',
   barWidth = 2,
 }) => {
   const [progress, setProgress] = useState(0);
@@ -65,7 +65,7 @@ const Skill = ({
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-11/12 h-11/12 grid place-content-center text-center">
         <span
           className={`${
-            name.split(" ").length > 1 ? "text-base" : "text-lg"
+            name.split(' ').length > 1 ? 'text-base' : 'text-lg'
           } font-bold whitespace-normal text-slate-600`}
         >
           {name}

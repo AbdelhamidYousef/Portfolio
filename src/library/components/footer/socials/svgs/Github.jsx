@@ -1,4 +1,4 @@
-import Proptypes from "prop-types";
+import Proptypes from 'prop-types';
 
 const Github = () => {
   return (

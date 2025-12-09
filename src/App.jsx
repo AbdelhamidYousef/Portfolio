@@ -18,7 +18,13 @@ const App = () => {
     <>
       <LazyMotion features={domAnimation} strict>
         <ActiveSectionProvider>
-          <Sidebar content={{ profilePicUrl, navLinks: content.navLinks, socials: content.socials }} />
+          <Sidebar
+            content={{
+              profilePicUrl,
+              navLinks: content.navLinks,
+              socials: content.socials,
+            }}
+          />
 
           <Main>
             <FloatingThemeButtons />
