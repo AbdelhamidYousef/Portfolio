@@ -1,7 +1,7 @@
 import { PropTypes } from "prop-types";
 import { useState } from "react";
 import ArrowHead from "../svgs/ArrowHead";
-import { useKeydown } from "../../hooks/useKeydown";
+import { useKeydown } from "../../library/hooks/useKeydown";
 import { useClickOutside } from "../../hooks/useClickOutside";
 import { useSkills } from "../../context/SkillsContext";
 

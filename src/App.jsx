@@ -1,15 +1,15 @@
 import { LazyMotion, domAnimation } from 'framer-motion';
 import { Toaster } from 'react-hot-toast';
-import ThemeBtn from './ui/shared/ThemeBtn';
+import { ActiveSectionProvider } from './context/ActiveSection';
+import Sidebar from './library/components/header-and-sidebar/sidebar/Sidebar';
 import Main from './ui/shared/Main';
+import FloatingThemeButtons from './library/components/theme-button/FloatingThemeButtons';
 import About from './ui/layouts/about/About';
 import Skills from './ui/layouts/skills/Skills';
 import Projects from './ui/layouts/projects/Projects';
 import Contact from './ui/layouts/contact/Contact';
 import ToTopBtn from './ui/shared/ToTopBtn';
 import Footer from './ui/layouts/footer/Footer';
-import { ActiveSectionProvider } from './context/ActiveSection';
-import Sidebar from './library/components/header-and-sidebar/sidebar/Sidebar';
 import content from './content';
 import { profilePic as profilePicUrl } from './assets';
 
@@ -21,7 +21,7 @@ const App = () => {
           <Sidebar content={{ profilePicUrl, navLinks: content.navLinks, socials: content.socials }} />
 
           <Main>
-            <ThemeBtn />
+            <FloatingThemeButtons />
             <About />
             <Skills />
             <Projects />

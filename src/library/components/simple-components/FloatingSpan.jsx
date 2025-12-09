@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
  * @returns {React.ReactElement} The FloatingSpan component
  */
 const FloatingSpan = ({ children, className = '' }) => {
-  return <span className={`${className} fixed left-1 top-1`}>{children}</span>;
+  return <span className={`${className} fixed`}>{children}</span>;
 };
 
 FloatingSpan.propTypes = {

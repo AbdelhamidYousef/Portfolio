@@ -1,6 +1,6 @@
 import Search from "../svgs/Search";
 import { useSkills } from "../../context/SkillsContext";
-import { useKeydown } from "../../hooks/useKeydown";
+import { useKeydown } from "../../library/hooks/useKeydown";
 
 const Searchbar = () => {
   const { query, setQuery } = useSkills();
