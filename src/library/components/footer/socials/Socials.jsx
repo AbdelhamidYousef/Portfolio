@@ -63,7 +63,6 @@ const Socials = ({ socialsContent, containerClasses, itemClasses }) => {
 
 Socials.propTypes = {
   socialsContent: PropTypes.array.isRequired,
-  socialIconMap: PropTypes.objectOf(PropTypes.elementType).isRequired,
   containerClasses: PropTypes.string,
   itemClasses: PropTypes.string,
 };
