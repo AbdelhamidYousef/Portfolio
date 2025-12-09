@@ -3,7 +3,7 @@ export const socials = [
     id: 1,
     title: 'Linkedin Account',
     iconName: 'Linkedin',
-    link: 'https://www.linkedin.com/in/abdulhamidyousef/',
+    link: 'https://www.linkedin.com/in/abdelhamidy/',
   },
   {
     id: 2,
