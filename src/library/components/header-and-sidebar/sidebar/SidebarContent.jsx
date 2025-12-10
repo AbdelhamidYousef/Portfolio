@@ -38,25 +38,31 @@ import Socials from '../../footer/socials/Socials';
  */
 const SidebarContent = ({ isSidebarOpen, closeSidebar, content }) => {
   return (
-    <div className="fixed left-0 top-0 h-screen z-sidebarContainer lg:opacity-100 lg:visible">
+    <div
+      className={`
+        ${isSidebarOpen ? '' : 'opacity-0 invisible'}
+        fixed left-0 top-0 h-screen z-sidebarContainer lg:opacity-100 lg:visible `}
+    >
       <FullWidthOverlay isOpen={isSidebarOpen} onClick={closeSidebar} />
 
       {/* Sidebar Content */}
       <div
         className={`
           ${isSidebarOpen ? 'translate-x-0' : '-translate-x-full'}
-          w-screen sm:w-72 bg-primary-600 transition-all duration-300 lg:translate-x-0 dark:bg-gray-900 dark:border-r dark:border-gray-800 h-full grid place-content-center text-center lg:animate-bounceRight
+          w-72 h-full bg-primary-600 transition-all duration-300 lg:translate-x-0 dark:bg-gray-900 dark:border-r dark:border-gray-800
         `}
       >
-        <ProfilePic imageUrl={content.profilePicUrl} />
+        <div className="h-full grid place-content-center text-center lg:animate-bounceRight">
+          <ProfilePic imageUrl={content.profilePicUrl} />
 
-        <Nav navLinksContent={content.navLinks} closeSidebar={closeSidebar} />
+          <Nav navLinksContent={content.navLinks} closeSidebar={closeSidebar} />
 
-        <Socials
-          containerClasses="absolute left-1/2 -translate-x-1/2 bottom-6 flex gap-5"
-          itemClasses="w-7 h-7 text-gray-50 cursor-help"
-          socialsContent={content.socials}
-        />
+          <Socials
+            containerClasses="absolute left-1/2 -translate-x-1/2 bottom-6 flex gap-5"
+            itemClasses="w-7 h-7 text-gray-50 cursor-help"
+            socialsContent={content.socials}
+          />
+        </div>
       </div>
     </div>
   );
