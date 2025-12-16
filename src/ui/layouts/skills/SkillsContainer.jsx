@@ -1,11 +1,9 @@
+import PropTypes from 'prop-types';
 import { m } from 'framer-motion';
 import { fadeIn } from '../../../utils/motion';
 import Icon, { hasIcon } from '../../../library/components/icon/Icon';
-import { useList } from '../../../library/context/ListContext';
 
-const SkillsContainer = () => {
-  const { list } = useList();
-
+const SkillsContainer = ({ list }) => {
   return (
     <ul className="min-h-[61rem] sm:min-h-[34rem] 2xl:min-h-[30rem] grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 content-start gap-3 sm:gap-4 lg:gap-5">
       {list.map((skill, index) => {
@@ -36,6 +34,17 @@ const SkillsContainer = () => {
       })}
     </ul>
   );
+};
+
+SkillsContainer.propTypes = {
+  list: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      title: PropTypes.string.isRequired,
+      iconName: PropTypes.string.isRequired,
+      type: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default SkillsContainer;

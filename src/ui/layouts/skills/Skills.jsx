@@ -24,7 +24,7 @@ const Skills = ({ content }) => {
           />
         </div>
 
-        <SkillsContainer />
+        <SkillsContainer list={skillsList} />
       </ListProvider>
     </Section>
   );

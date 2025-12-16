@@ -1,5 +1,5 @@
 import { PropTypes } from 'prop-types';
-import { useActiveSection } from '../../../context/ActiveSection';
+import { useActiveSection } from '../../../../context/ActiveSection';
 
 /**
  * Function to scroll to a section

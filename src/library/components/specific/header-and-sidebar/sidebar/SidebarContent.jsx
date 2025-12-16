@@ -1,6 +1,6 @@
 import Proptypes from 'prop-types';
-import FullWidthOverlay from '../../simple-components/FullWidthOverlay';
-import ProfilePic from '../../simple-components/ProfilePic';
+import FullWidthOverlay from '../../../general/simple-components/FullWidthOverlay';
+import ProfilePic from '../../../general/simple-components/ProfilePic';
 import Nav from '../Nav';
 import Socials from '../../footer/socials/Socials';
 
