@@ -29,7 +29,10 @@ const App = () => {
           <Main>
             <FloatingThemeButtons />
             <About
-              content={{ text: content.aboutText, techs: content.techs }}
+              content={{
+                text: content.aboutText,
+                technologies: content.technologies,
+              }}
             />
             <Skills />
             <Projects />

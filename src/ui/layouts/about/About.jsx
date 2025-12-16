@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { m } from 'framer-motion';
 import AboutText from './AboutText';
-import Techs from '../../../library/components/technologies/Technologies';
+import Technologies from '../../../library/components/technologies/Technologies';
 import Section from '../../shared/Section';
 import { fadeIn } from '../../../utils/motion';
 
@@ -13,7 +13,7 @@ const About = ({ content }) => {
     >
       <m.div variants={fadeIn('right', 'tween', 0.8)}>
         <AboutText content={content.text} />
-        <Techs content={content.techs} />
+        <Technologies content={content.technologies} />
       </m.div>
     </Section>
   );
