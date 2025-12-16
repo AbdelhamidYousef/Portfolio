@@ -1,9 +1,5 @@
 import PropTypes from 'prop-types';
-
-/**
- * Import the icon map from the svgs folder
- */
-import svgMap from '../../svgs/index.js';
+import Icon, { hasIcon } from '../icon/Icon';
 
 const Technologies = ({ content, className = '', itemClassName = '' }) => {
   return (
@@ -11,22 +7,15 @@ const Technologies = ({ content, className = '', itemClassName = '' }) => {
       className={`xs:ml-1 flex flex-wrap justify-center xs:justify-start gap-x-2 sm:gap-x-5 md:gap-x-6 gap-y-3 ${className}`}
     >
       {content.map((tech) => {
-        const IconComponent = svgMap?.[tech.iconName];
-
-        if (!IconComponent) {
-          console.error(
-            `About Section / Technologies Component: Icon component for technology [${tech.iconName}] not found`
-          );
-          return null;
-        }
+        if (!hasIcon(tech.iconName)) return null;
 
         return (
           <li
             key={tech.id}
-            className={`w-6 h-6 xs:w-8 xs:h-8 lg:w-9 lg:h-9 grid place-content-center drop-shadow-[0_0_3px_#33333340] cursor-help hover:scale-110 sm:hover:scale-[1.2] transition-all duration-300 ${itemClassName}`}
+            className={`grid place-content-center drop-shadow-[0_0_3px_#33333340] cursor-help hover:scale-110 sm:hover:scale-[1.2] transition-all duration-300 [&>svg]:w-6 [&>svg]:h-6 xs:[&>svg]:w-8 xs:[&>svg]:h-8 lg:[&>svg]:w-9 lg:[&>svg]:h-9 ${itemClassName}`}
             data-title-bottom={tech.title}
           >
-            <IconComponent />
+            <Icon name={tech.iconName} />
           </li>
         );
       })}
