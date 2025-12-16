@@ -79,9 +79,9 @@ export default {
       imageName: 'infinity-web',
       copy: "A landing page for a web design agency. Showcases the company's ability to display outstanding but also simple design using modern CSS technologiesniques",
       technologies: [
-        { id: 1, title: 'vanilla JS', iconName: 'Javascript' },
-        { id: 2, title: 'Tailwindcss', iconName: 'Tailwind' },
         { id: 3, title: 'HTML', iconName: 'Html' },
+        { id: 2, title: 'Tailwindcss', iconName: 'Tailwind' },
+        { id: 1, title: 'vanilla JS', iconName: 'Javascript' },
       ],
       githubLink: 'https://github.com/AbdelhamidYousef/InfinityWeb',
       demoLink: 'https://infinityweb99.netlify.app',
