@@ -3,6 +3,7 @@ import Searchbar from '../../../library/components/search/Searchbar';
 import Select from './Select';
 import { m } from 'framer-motion';
 import { fadeIn } from '../../../utils/motion';
+import { useList } from '../../../library/context/ListContext';
 
 const SkillsOperations = ({ skillsFilters }) => {
   return (
@@ -10,7 +11,7 @@ const SkillsOperations = ({ skillsFilters }) => {
       className="flex flex-col-reverse gap-y-5 md:flex-row md:items-center md:space-x-6 z-selectMenu"
       variants={fadeIn('left')}
     >
-      <Searchbar />
+      <Searchbar useProvider={useList} placeholder="Search skills..." />
       <Select options={skillsFilters} />
     </m.div>
   );
