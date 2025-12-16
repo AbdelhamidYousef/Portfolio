@@ -9,7 +9,12 @@ const SkillsContainer = () => {
   return (
     <ul className="min-h-[61rem] sm:min-h-[34rem] 2xl:min-h-[30rem] grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 content-start gap-3 sm:gap-4 lg:gap-5">
       {list.map((skill, index) => {
-        if (!hasIcon(skill.iconName)) return null;
+        if (!hasIcon(skill.iconName)) {
+          console.error(
+            `Icon component for skill [${skill.iconName}] not found`
+          );
+          return null;
+        }
 
         return (
           <m.li
