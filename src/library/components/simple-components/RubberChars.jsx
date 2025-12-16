@@ -1,4 +1,15 @@
 import { PropTypes } from 'prop-types';
+
+/**
+ * RubberChars component that renders a string of characters with a rubberband animation
+ *
+ * @param {Object} props - The component props
+ * @param {string} props.children - The string of characters to render
+ * @returns {JSX.Element} The RubberChars component
+ *
+ * @Example:
+ * <RubberChars>Hello World</RubberChars>
+ */
 const RubberChars = ({ children }) => {
   return (
     <>

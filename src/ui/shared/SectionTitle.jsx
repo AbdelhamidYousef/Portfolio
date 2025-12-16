@@ -1,6 +1,6 @@
 import { PropTypes } from 'prop-types';
 import { m } from 'framer-motion';
-import RubberChars from './RubberChars';
+import RubberChars from '../../library/components/simple-components/RubberChars';
 import { fadeIn } from '../../utils/motion';
 
 const SectionTitle = ({ className = '', children }) => {

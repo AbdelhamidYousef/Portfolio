@@ -1,4 +1,4 @@
-import RubberChars from '../../shared/RubberChars';
+import RubberChars from '../../../library/components/simple-components/RubberChars';
 import Download from './Download';
 
 const Footer = () => {

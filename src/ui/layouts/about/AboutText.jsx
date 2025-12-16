@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import RubberChars from '../../shared/RubberChars';
+import RubberChars from '../../../library/components/simple-components/RubberChars';
 
 const AboutText = ({ content }) => {
   const { firstName, lastName, jobTitles, copy } = content;
