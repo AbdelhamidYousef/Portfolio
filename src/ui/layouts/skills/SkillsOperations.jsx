@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import Searchbar from '../../../library/components/search/Searchbar';
-import Select from '../../../library/components/select/Select';
+import Searchbar from '../../../library/components/general/filter-and-search/search/Searchbar';
+import Select from '../../../library/components/general/filter-and-search/select/Select';
 import { m } from 'framer-motion';
 import { fadeIn } from '../../../utils/motion';
 import { useList } from '../../../library/context/ListContext';

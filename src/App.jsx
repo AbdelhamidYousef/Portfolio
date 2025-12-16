@@ -1,9 +1,9 @@
 import { LazyMotion, domAnimation } from 'framer-motion';
 import { Toaster } from 'react-hot-toast';
 import { ActiveSectionProvider } from './context/ActiveSection';
-import Sidebar from './library/components/header-and-sidebar/sidebar/Sidebar';
-import Main from './library/components/layout/Main';
-import FloatingThemeButtons from './library/components/theme-button/FloatingThemeButtons';
+import Sidebar from './library/components/specific/header-and-sidebar/sidebar/Sidebar';
+import Main from './library/components/specific/layout/Main';
+import FloatingThemeButtons from './library/components/specific/theme-button/FloatingThemeButtons';
 import About from './ui/layouts/about/About';
 import Skills from './ui/layouts/skills/Skills';
 import Projects from './ui/layouts/projects/Projects';

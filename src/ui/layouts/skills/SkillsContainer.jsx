@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { m } from 'framer-motion';
 import { fadeIn } from '../../../utils/motion';
-import Icon, { hasIcon } from '../../../library/components/icon/Icon';
+import Icon, { hasIcon } from '../../../library/components/general/Icon';
 
 const SkillsContainer = ({ list }) => {
   return (

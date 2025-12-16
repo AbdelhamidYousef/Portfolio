@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import FloatingSpan from '../../simple-components/FloatingSpan';
+import FloatingSpan from '../../../general/simple-components/FloatingSpan';
 import HamburgerToggleButton from '../buttons/HamburgerToggleButton';
 
 /**

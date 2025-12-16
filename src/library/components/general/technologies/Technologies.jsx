@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Icon, { hasIcon } from '../icon/Icon';
+import Icon, { hasIcon } from '../../general/Icon';
 
 /**
  * Technologies component that renders a list of technologies

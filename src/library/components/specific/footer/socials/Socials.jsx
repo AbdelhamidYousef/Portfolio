@@ -3,7 +3,7 @@ import { PropTypes } from 'prop-types';
 /**
  * Import the icon map from the svgs folder
  */
-import svgMap from '../../../svgs';
+import svgMap from '../../../../svgs';
 
 /**
  * Socials component that renders a list of social items with their corresponding icons

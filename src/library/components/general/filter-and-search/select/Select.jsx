@@ -1,8 +1,8 @@
 import { PropTypes } from 'prop-types';
 import { useState } from 'react';
-import ArrowHead from '../../svgs/ArrowHead';
-import { useKeydown } from '../../hooks/useKeydown';
-import { useClickOutside } from '../../../hooks/useClickOutside';
+import ArrowHead from '../../../../svgs/ArrowHead';
+import { useKeydown } from '../../../../hooks/useKeydown';
+import { useClickOutside } from '../../../../hooks/useClickOutside';
 
 /**
  * A reusable select/dropdown component that pulls filter state from a provided hook
@@ -84,4 +84,3 @@ Select.propTypes = {
 };
 
 export default Select;
-

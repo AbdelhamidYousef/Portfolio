@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { useKeydown } from '../../../hooks/useKeydown';
+import { useKeydown } from '../../../../hooks/useKeydown';
 import SidebarToggleButton from './SidebarToggleButton';
 import SidebarContent from './SidebarContent';
 
