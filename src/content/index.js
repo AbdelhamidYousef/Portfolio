@@ -44,12 +44,21 @@ export default {
   ],
 
   skills: {
-    filters: [
-      { label: 'All', value: 'all' },
-      { label: 'Core Technologies', value: 'core' },
-      { label: 'React Ecosystem', value: 'react' },
-      { label: 'Dev Environment', value: 'dev' },
-    ],
+    filter: {
+      placeholder: 'Filter by technology',
+      key: 'type',
+      options: [
+        { label: 'All', value: 'all' },
+        { label: 'Core Technologies', value: 'core' },
+        { label: 'React Ecosystem', value: 'react' },
+        { label: 'Dev Environment', value: 'dev' },
+      ],
+    },
+
+    search: {
+      placeholder: 'Search skills...',
+      key: 'title',
+    },
 
     list: [
       { id: 1, title: 'HTML', iconName: 'Html', type: 'core' },

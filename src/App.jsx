@@ -38,7 +38,8 @@ const App = () => {
             <Skills
               content={{
                 skillsList: content.skills.list,
-                skillsFilters: content.skills.filters,
+                skillsFilters: content.skills.filter,
+                skillsSearch: content.skills.search,
               }}
             />
             <Projects content={content.projects} imageMap={assets} />

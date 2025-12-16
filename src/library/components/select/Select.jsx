@@ -1,15 +1,28 @@
 import { PropTypes } from 'prop-types';
 import { useState } from 'react';
-import ArrowHead from '../../../library/svgs/ArrowHead';
-import { useKeydown } from '../../../library/hooks/useKeydown';
+import ArrowHead from '../../svgs/ArrowHead';
+import { useKeydown } from '../../hooks/useKeydown';
 import { useClickOutside } from '../../../hooks/useClickOutside';
-import { useList } from '../../../library/context/ListContext';
 
-const Select = ({ options }) => {
+/**
+ * A reusable select/dropdown component that pulls filter state from a provided hook
+ *
+ * @param {Object} props - The component props
+ * @param {Function} props.useProvider - A hook that returns { setFilter }
+ * @param {Array} props.options - Array of { label, value } options
+ * @param {string} props.placeholder - Placeholder text when no option selected
+ * @param {string} props.className - Additional CSS classes
+ */
+const Select = ({
+  useProvider,
+  options,
+  placeholder = 'Select...',
+  className = '',
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [filterLabel, setFilterLabel] = useState('');
 
-  const { setFilter } = useList();
+  const { setFilter } = useProvider();
 
   const closeMenu = () => setIsOpen(false);
 
@@ -18,14 +31,14 @@ const Select = ({ options }) => {
 
   return (
     <button
-      className={` ${
+      className={`${
         isOpen ? 'after:!w-0' : 'focus:after:w-full '
-      } js-select relative w-full min-w-[12rem] max-w-[11rem] mx-auto h-10 flex justify-between items-center outline-none after:absolute after:left-1/2 after:-translate-x-1/2 after:-ml-0.5 after:bottom-0 after:h-0.5 after:bg-gray-200 after:transition-all after:duration-300`}
+      } js-select relative w-full min-w-[12rem] max-w-[11rem] mx-auto h-10 flex justify-between items-center outline-none after:absolute after:left-1/2 after:-translate-x-1/2 after:-ml-0.5 after:bottom-0 after:h-0.5 after:bg-gray-200 after:transition-all after:duration-300 ${className}`}
       onClick={() => setIsOpen((isOpen) => !isOpen)}
     >
       <span className="font-semibold text-sm text-slate-500 dark:text-gray-50">
         {!filterLabel || filterLabel === options[0].label
-          ? 'Filter by technology'
+          ? placeholder
           : filterLabel}
       </span>
 
@@ -48,9 +61,11 @@ const Select = ({ options }) => {
           <li
             key={i}
             className="pt-6 last:pb-6 font-medium text-sm text-gray-500 dark:text-gray-50 tracking-wide cursor-pointer select-none transition-all duration-300 hover:text-primary-600 dark:hover:text-primary-400"
-            onClick={() => {
+            onClick={(e) => {
+              e.stopPropagation();
               setFilterLabel(option.label);
               setFilter(option.value === 'all' ? '' : option.value);
+              setIsOpen(false);
             }}
           >
             {option.label}
@@ -62,7 +77,11 @@ const Select = ({ options }) => {
 };
 
 Select.propTypes = {
+  useProvider: PropTypes.func.isRequired,
   options: PropTypes.array.isRequired,
+  placeholder: PropTypes.string,
+  className: PropTypes.string,
 };
 
 export default Select;
+
