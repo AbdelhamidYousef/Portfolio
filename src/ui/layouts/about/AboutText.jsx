@@ -1,31 +1,37 @@
-import { aboutText } from '../../../content/about';
+import PropTypes from 'prop-types';
 import RubberChars from '../../shared/RubberChars';
 
-const AboutText = () => {
-  const { fname, lname, jobs, description } = aboutText;
+const AboutText = ({ content }) => {
+  const { firstName, lastName, jobTitles, copy } = content;
 
   return (
     <>
       <h1 className="mb-2 xs:mb-1 font-hero font-bold text-5xl xs:text-[3.375rem] sm:text-8xl uppercase text-slate-700 dark:text-gray-50">
-        <RubberChars>{fname}</RubberChars>{' '}
+        <RubberChars>{firstName}</RubberChars>{' '}
         <span className="text-primary-600 dark:text-primary-400">
-          <RubberChars>{lname}</RubberChars>
+          <RubberChars>{lastName}</RubberChars>
         </span>
       </h1>
 
       <p className="xs:ml-1 mb-3 xs:mb-6 sm:mb-8 lg:mb-10 font-hero font-medium text-lg xs:text-xl sm:text-2xl uppercase tracking-widest">
-        <span className="block xs:inline-block leading-none">{jobs[0]}</span>
+        <span className="block xs:inline-block leading-none">
+          {jobTitles[0]}
+        </span>
         <span className="hidden xs:inline-block mx-1">|</span>
         <span className="text-primary-600 dark:text-primary-400">
-          {jobs[1]}
+          {jobTitles[1]}
         </span>
       </p>
 
       <p className="max-w-6xl xs:ml-1 mb-7 xs:mb-10 sm:mb-12 lg:mb-14 text-sm xs:text-lg text-slate-500/80 dark:text-gray-200">
-        {description}
+        {copy}
       </p>
     </>
   );
+};
+
+AboutText.propTypes = {
+  content: PropTypes.object.isRequired,
 };
 
 export default AboutText;
