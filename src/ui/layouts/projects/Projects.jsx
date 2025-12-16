@@ -1,10 +1,10 @@
-import { projects } from '../../../content/projects';
+import PropTypes from 'prop-types';
 import SectionTitle from '../../shared/SectionTitle';
 import Project from './Project';
 import Section from '../../shared/Section';
 import { useState } from 'react';
 
-const Projects = () => {
+const Projects = ({ content, imageMap }) => {
   const [active, setActive] = useState(1);
 
   return (
@@ -12,17 +12,23 @@ const Projects = () => {
       <SectionTitle>Projects</SectionTitle>
 
       <ul className="flex flex-col md:flex-row gap-5">
-        {projects.map((project) => (
+        {content.map((project) => (
           <Project
             key={project.id}
             data={project}
             active={active}
             setActive={setActive}
+            imageMap={imageMap}
           />
         ))}
       </ul>
     </Section>
   );
+};
+
+Projects.propTypes = {
+  content: PropTypes.array.isRequired,
+  imageMap: PropTypes.object.isRequired,
 };
 
 export default Projects;

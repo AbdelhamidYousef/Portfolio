@@ -12,6 +12,7 @@ import ToTopBtn from './ui/shared/ToTopBtn';
 import Footer from './ui/layouts/footer/Footer';
 import content from './content';
 import { profilePic as profilePicUrl } from './assets';
+import assets from './assets';
 
 const App = () => {
   return (
@@ -35,7 +36,7 @@ const App = () => {
               }}
             />
             <Skills />
-            <Projects />
+            <Projects content={content.projects} imageMap={assets} />
             <Contact />
             <ToTopBtn />
           </Main>

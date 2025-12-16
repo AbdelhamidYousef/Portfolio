@@ -4,9 +4,30 @@ import ExternalLink from '../../../library/svgs/ExternalLink';
 import Github from '../../../library/svgs/socials/Github';
 import { fadeIn } from '../../../utils/motion';
 
-const Project = ({ data, active, setActive }) => {
-  const { id, image, title, description, githubLink, demoLink } = data;
+const Project = ({ data, active, setActive, imageMap }) => {
+  const { id, title, imageName, copy, technologies, githubLink, demoLink } =
+    data;
+
   const isActive = active === id;
+
+  const normalizedImageName = imageName.toLowerCase().replaceAll('-', '');
+
+  const imageKey = Object.keys(imageMap).find(
+    (imageKey) => imageKey.toLowerCase() === normalizedImageName
+  );
+
+  const image = imageMap?.[imageKey];
+
+  if (!image) {
+    console.error(
+      `Image for project [${title}] not found\n`,
+      `Received image map:`,
+      imageMap,
+      `Received image name: ${imageName}\n`,
+      `Normalized image name: ${normalizedImageName}\n`
+    );
+    return null;
+  }
 
   return (
     <m.li
@@ -48,7 +69,7 @@ const Project = ({ data, active, setActive }) => {
           {title}
         </h3>
         <p className="font-medium text-sm xs:text-base sm:text-lg text-gray-100">
-          {description}
+          {copy}
         </p>
 
         <a
@@ -82,6 +103,7 @@ Project.propTypes = {
   data: PropTypes.object.isRequired,
   active: PropTypes.number,
   setActive: PropTypes.func,
+  imageMap: PropTypes.object.isRequired,
 };
 
 export default Project;

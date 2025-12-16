@@ -43,62 +43,75 @@ export default {
     { id: 11, title: 'Vite', iconName: 'Vite' },
   ],
 
-  // projects: [
-  //   {
-  //     id: 1,
-  //     image: project1,
-  //     title: 'Wild Oasis',
-  //     description:
-  //       'A web application for a hotel management system, browse the dashboard, cabin/bookings data, check-in guests, and create new ones',
-  //     tech: [
-  //       'React',
-  //       'React Router',
-  //       'React Query',
-  //       'Supabase',
-  //       'Styled Components',
-  //     ],
-  //     githubLink: 'https://github.com/AbdelhamidYousef/WildOasis',
-  //     demoLink: 'https://wildoasis99.netlify.app/',
-  //   },
-  //   {
-  //     id: 2,
-  //     image: project2,
-  //     title: 'Pizza Slice',
-  //     description:
-  //       'A web application to order pizzas, browse the menu, order pizza, and follow order progress easily.',
-  //     tech: ['React', 'Redux', 'React-Router', 'Tailwindcss.'],
-  //     githubLink: 'https://github.com/AbdelhamidYousef/PizzaSlice',
-  //     demoLink: 'https://pizzaslice99.netlify.app/',
-  //   },
-  //   {
-  //     id: 3,
-  //     image: project3,
-  //     title: 'Infinity Web',
-  //     description:
-  //       "A landing page for a web design agency. Showcases the company's ability to display outstanding but also simple design using modern CSS techniques",
-  //     tech: ['vanilla JS', 'Tailwindcss', 'HTML'],
-  //     githubLink: 'https://github.com/AbdelhamidYousef/InfinityWeb',
-  //     demoLink: 'https://infinityweb99.netlify.app',
-  //   },
-  //   {
-  //     id: 4,
-  //     image: project4,
-  //     title: 'Forkify',
-  //     description:
-  //       'A web application to search food recipes, where you are able to change servings and bookmark recipes.',
-  //     tech: ['vanilla JS', 'SASS', 'HTML', 'Parcel'],
-  //     githubLink: 'https://github.com/AbdelhamidYousef/Forkify',
-  //     demoLink: 'https://forkify99.netlify.app',
-  //   },
-  //   {
-  //     id: 5,
-  //     image: project5,
-  //     title: 'Natours',
-  //     description:
-  //       'A web page for a traveling company, where you can book different tours for wonderful places.',
-  //     tech: ['vanilla JS', 'SASS', 'Parcel'],
-  //     githubLink: 'https://github.com/AbdelhamidYousef/Natours',
-  //     demoLink: 'https://natours99.netlify.app',
-  //   },
-  // ],
+  projects: [
+    {
+      id: 1,
+      title: 'Wild Oasis',
+      imageName: 'wild-oasis',
+      copy: 'A web application for a hotel management system, browse the dashboard, cabin/bookings data, check-in guests, and create new ones',
+      technologies: [
+        { id: 1, title: 'React', iconName: 'React' },
+        { id: 2, title: 'React Router', iconName: 'ReactRouter' },
+        { id: 3, title: 'React Query', iconName: 'ReactQuery' },
+        { id: 4, title: 'Supabase', iconName: 'Supabase' },
+        { id: 5, title: 'Styled Components', iconName: 'StyledComponents' },
+      ],
+      githubLink: 'https://github.com/AbdelhamidYousef/WildOasis',
+      demoLink: 'https://wildoasis99.netlify.app/',
+    },
+    {
+      id: 2,
+      title: 'Pizza Slice',
+      imageName: 'pizza-slice',
+      copy: 'A web application to order pizzas, browse the menu, order pizza, and follow order progress easily.',
+      technologies: [
+        { id: 1, title: 'React', iconName: 'React' },
+        { id: 2, title: 'Redux', iconName: 'Redux' },
+        { id: 3, title: 'React Router', iconName: 'ReactRouter' },
+        { id: 4, title: 'Tailwindcss', iconName: 'Tailwind' },
+      ],
+      githubLink: 'https://github.com/AbdelhamidYousef/PizzaSlice',
+      demoLink: 'https://pizzaslice99.netlify.app/',
+    },
+    {
+      id: 3,
+      title: 'Infinity Web',
+      imageName: 'infinity-web',
+      copy: "A landing page for a web design agency. Showcases the company's ability to display outstanding but also simple design using modern CSS technologiesniques",
+      technologies: [
+        { id: 1, title: 'vanilla JS', iconName: 'Javascript' },
+        { id: 2, title: 'Tailwindcss', iconName: 'Tailwind' },
+        { id: 3, title: 'HTML', iconName: 'Html' },
+      ],
+      githubLink: 'https://github.com/AbdelhamidYousef/InfinityWeb',
+      demoLink: 'https://infinityweb99.netlify.app',
+    },
+    {
+      id: 4,
+      title: 'Forkify',
+      imageName: 'forkify',
+      copy: 'A web application to search food recipes, where you are able to change servings and bookmark recipes.',
+      technologies: [
+        { id: 1, title: 'vanilla JS', iconName: 'Javascript' },
+        { id: 2, title: 'SASS', iconName: 'Sass' },
+        { id: 3, title: 'HTML', iconName: 'Html' },
+        { id: 4, title: 'Parcel', iconName: 'Parcel' },
+      ],
+      githubLink: 'https://github.com/AbdelhamidYousef/Forkify',
+      demoLink: 'https://forkify99.netlify.app',
+    },
+    // {
+    //   id: 5,
+    //   title: 'Natours',
+    //   imageName: 'natours',
+    //   copy: 'A web page for a traveling company, where you can book different tours for wonderful places.',
+    //   technologies: [
+    //     { id: 1, title: 'vanilla JS', iconName: 'Javascript' },
+    //     { id: 2, title: 'SASS', iconName: 'Sass' },
+    //     { id: 3, title: 'Parcel', iconName: 'Parcel' },
+    //   ],
+    //   githubLink: 'https://github.com/AbdelhamidYousef/Natours',
+    //   demoLink: 'https://natours99.netlify.app',
+    // },
+  ],
 };
