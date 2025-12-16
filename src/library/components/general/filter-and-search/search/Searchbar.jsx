@@ -1,22 +1,22 @@
 import PropTypes from 'prop-types';
-import Search from '../../../../svgs/Search';
+import SearchIcon from '../../../../svgs/SearchIcon';
 import { useKeydown } from '../../../../hooks/useKeydown';
 
 /**
  * A reusable search bar component that pulls query state from a provided hook
  *
  * @param {Object} props - The component props
- * @param {Function} props.useProvider - A hook that returns { query, setQuery }
+ * @param {string} props.query - The query string
+ * @param {Function} props.setQuery - The function to set the query string
  * @param {string} props.placeholder - Placeholder text for the input
  * @param {string} props.className - Additional CSS classes
  */
 const Searchbar = ({
-  useProvider,
+  query,
+  setQuery,
   placeholder = 'Search...',
   className = '',
 }) => {
-  const { query, setQuery } = useProvider();
-
   useKeydown('Escape', () => setQuery(''));
 
   return (
@@ -30,14 +30,15 @@ const Searchbar = ({
       />
 
       <span className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 sm:w-6 sm:h-6 text-gray-400/70 transition-all duration-300 peer-focus:text-gray-400">
-        <Search />
+        <SearchIcon />
       </span>
     </div>
   );
 };
 
 Searchbar.propTypes = {
-  useProvider: PropTypes.func.isRequired,
+  query: PropTypes.string.isRequired,
+  setQuery: PropTypes.func.isRequired,
   placeholder: PropTypes.string,
   className: PropTypes.string,
 };

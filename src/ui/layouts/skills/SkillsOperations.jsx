@@ -6,12 +6,18 @@ import { fadeIn } from '../../../utils/motion';
 import { useList } from '../../../library/context/ListContext';
 
 const SkillsOperations = ({ skillsFilters, skillsSearch }) => {
+  const { query, setQuery } = useList();
+
   return (
     <m.div
       className="flex flex-col-reverse gap-y-5 md:flex-row md:items-center md:space-x-6 z-selectMenu"
       variants={fadeIn('left')}
     >
-      <Searchbar useProvider={useList} placeholder={skillsSearch.placeholder} />
+      <Searchbar
+        query={query}
+        setQuery={setQuery}
+        placeholder={skillsSearch.placeholder}
+      />
       <Select
         useProvider={useList}
         options={skillsFilters.options}
