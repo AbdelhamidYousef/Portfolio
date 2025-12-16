@@ -1,28 +1,26 @@
 import { PropTypes } from 'prop-types';
 import { useState } from 'react';
-import ArrowHead from '../../../../svgs/ArrowHead';
-import { useKeydown } from '../../../../hooks/useKeydown';
-import { useClickOutside } from '../../../../hooks/useClickOutside';
+import ArrowHead from '../../../svgs/ArrowHead';
+import { useKeydown } from '../../../hooks/useKeydown';
+import { useClickOutside } from '../../../hooks/useClickOutside';
 
 /**
- * A reusable select/dropdown component that pulls filter state from a provided hook
+ * A reusable select/dropdown component
  *
  * @param {Object} props - The component props
- * @param {Function} props.useProvider - A hook that returns { setFilter }
+ * @param {Function} props.setFilter - Function to set the filter value
  * @param {Array} props.options - Array of { label, value } options
  * @param {string} props.placeholder - Placeholder text when no option selected
  * @param {string} props.className - Additional CSS classes
  */
 const Select = ({
-  useProvider,
+  setFilter,
   options,
   placeholder = 'Select...',
   className = '',
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [filterLabel, setFilterLabel] = useState('');
-
-  const { setFilter } = useProvider();
+  const [filterLabel, setFilterLabel] = useState();
 
   const closeMenu = () => setIsOpen(false);
 
@@ -31,9 +29,11 @@ const Select = ({
 
   return (
     <button
-      className={`${
-        isOpen ? 'after:!w-0' : 'focus:after:w-full '
-      } js-select relative w-full min-w-[12rem] max-w-[11rem] mx-auto h-10 flex justify-between items-center outline-none after:absolute after:left-1/2 after:-translate-x-1/2 after:-ml-0.5 after:bottom-0 after:h-0.5 after:bg-gray-200 after:transition-all after:duration-300 ${className}`}
+      className={`
+        ${isOpen ? 'after:!w-0' : 'focus:after:w-full '}
+        ${className}
+        js-select relative w-full min-w-[12rem] max-w-[11rem] mx-auto h-10 flex justify-between items-center outline-none after:absolute after:left-1/2 after:-translate-x-1/2 after:-ml-0.5 after:bottom-0 after:h-0.5 after:bg-gray-200 after:transition-all after:duration-300
+      `}
       onClick={() => setIsOpen((isOpen) => !isOpen)}
     >
       <span className="font-semibold text-sm text-slate-500 dark:text-gray-50">
@@ -77,7 +77,7 @@ const Select = ({
 };
 
 Select.propTypes = {
-  useProvider: PropTypes.func.isRequired,
+  setFilter: PropTypes.func.isRequired,
   options: PropTypes.array.isRequired,
   placeholder: PropTypes.string,
   className: PropTypes.string,

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import SearchIcon from '../../../../svgs/SearchIcon';
-import { useKeydown } from '../../../../hooks/useKeydown';
+import SearchIcon from '../../../svgs/SearchIcon';
+import { useKeydown } from '../../../hooks/useKeydown';
 
 /**
  * A reusable search bar component that pulls query state from a provided hook
