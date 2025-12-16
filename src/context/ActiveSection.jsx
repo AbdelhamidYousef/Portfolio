@@ -1,5 +1,5 @@
-import { PropTypes } from "prop-types";
-import { useState, useRef, createContext, useContext, useEffect } from "react";
+import { PropTypes } from 'prop-types';
+import { useState, useRef, createContext, useContext, useEffect } from 'react';
 
 const activeSectionContext = createContext();
 
@@ -31,7 +31,7 @@ export const useActiveSection = () => {
 
   if (!context)
     throw new Error(
-      "useActiveSection must be used within an ActiveSectionProvider"
+      'useActiveSection must be used within an ActiveSectionProvider'
     );
 
   return context;

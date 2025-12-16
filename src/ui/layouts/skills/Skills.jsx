@@ -1,8 +1,8 @@
-import SectionTitle from "../../shared/SectionTitle";
-import SkillsContainer from "./SkillsContainer";
-import Section from "../../shared/Section";
-import { SkillsProvider } from "../../../context/SkillsContext";
-import SkillsOperations from "./SkillsOperations";
+import SectionTitle from '../../shared/SectionTitle';
+import SkillsContainer from './SkillsContainer';
+import Section from '../../shared/Section';
+import { SkillsProvider } from '../../../context/SkillsContext';
+import SkillsOperations from './SkillsOperations';
 
 const Skills = () => {
   return (

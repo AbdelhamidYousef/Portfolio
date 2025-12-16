@@ -1,12 +1,12 @@
-import { useState, useRef } from "react";
-import emailjs from "@emailjs/browser";
-import { toast } from "react-hot-toast";
-import { m } from "framer-motion";
-import Button from "./Button";
-import FormField from "./FormField";
-import { fadeIn } from "../../../utils/motion";
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-hot-toast';
+import { m } from 'framer-motion';
+import Button from './Button';
+import FormField from './FormField';
+import { fadeIn } from '../../../utils/motion';
 
-const initialInputs = { name: "", email: "", message: "" };
+const initialInputs = { name: '', email: '', message: '' };
 
 const ContactForm = () => {
   const [inputs, setInputs] = useState(initialInputs);
@@ -16,22 +16,22 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (Object.values(inputs).some((inp) => inp === ""))
-      return toast.error("Please fill all the fields");
+    if (Object.values(inputs).some((inp) => inp === ''))
+      return toast.error('Please fill all the fields');
 
     setIsLoading(true);
 
     emailjs
       .sendForm(
-        "XOOD",
-        "template_du3hgn7",
+        'XOOD',
+        'template_du3hgn7',
         formRef.current,
-        "Ev07SA8St-0U8Vl1q"
+        'Ev07SA8St-0U8Vl1q'
       )
       .then(
         () => {
           setInputs(initialInputs);
-          toast.success("Email Sent!");
+          toast.success('Email Sent!');
         },
         (error) => {
           console.error(error);
@@ -47,7 +47,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       ref={formRef}
       className="max-w-5xl ml-1 px-4 xs:px-8 sm:px-12 py-8 xs:py-10 sm:py-14 xs:bg-gray-200 xs:rounded-2xl xs:shadow-lg grid gap-y-8 dark:xs:bg-slate-800"
-      variants={fadeIn("right", "tween")}
+      variants={fadeIn('right', 'tween')}
     >
       <FormField>
         <FormField.Label htmlFor="name">Your Name:</FormField.Label>
@@ -86,7 +86,7 @@ const ContactForm = () => {
       </FormField>
 
       <Button disabled={isLoading} className="ml-px justify-self-start">
-        {isLoading ? "Sending..." : "Send"}
+        {isLoading ? 'Sending...' : 'Send'}
       </Button>
     </m.form>
   );

@@ -1,13 +1,13 @@
 export const fadeIn = (
   direction,
-  type = "spring",
+  type = 'spring',
   duration = 1,
   delay = 0
 ) => ({
   hidden: {
     opacity: 0,
-    x: direction === "left" ? "50%" : direction === "right" ? "-50%" : 0,
-    y: direction === "up" ? "50%" : direction === "down" ? "-50%" : 0,
+    x: direction === 'left' ? '50%' : direction === 'right' ? '-50%' : 0,
+    y: direction === 'up' ? '50%' : direction === 'down' ? '-50%' : 0,
   },
   show: {
     opacity: 1,

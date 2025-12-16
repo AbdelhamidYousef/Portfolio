@@ -1,7 +1,7 @@
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 const ThemeIcons = ({ type }) => {
-  if (type === "light")
+  if (type === 'light')
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +18,7 @@ const ThemeIcons = ({ type }) => {
       </svg>
     );
 
-  if (type === "dark")
+  if (type === 'dark')
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +31,7 @@ const ThemeIcons = ({ type }) => {
       </svg>
     );
 
-  if (type === "system")
+  if (type === 'system')
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -1,6 +1,6 @@
-import Section from "../../shared/Section";
-import SectionTitle from "../../shared/SectionTitle";
-import ContactForm from "./ContactForm";
+import Section from '../../shared/Section';
+import SectionTitle from '../../shared/SectionTitle';
+import ContactForm from './ContactForm';
 
 const Contact = () => {
   return (

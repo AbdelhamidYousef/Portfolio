@@ -1,6 +1,5 @@
-import RubberChars from "../../shared/RubberChars";
-import Socials from "../../shared/Socials";
-import Download from "./Download";
+import RubberChars from '../../shared/RubberChars';
+import Download from './Download';
 
 const Footer = () => {
   return (
@@ -9,10 +8,12 @@ const Footer = () => {
         <RubberChars>Get In Touch</RubberChars>
       </h2>
 
-      <Socials
+      {/* <Socials
         containerClasses="flex gap-5 xl:gap-14"
         elementClasses="w-6 h-6 md:w-8 md:h-8 text-slate-600 hover:text-primary-600 transition-all duration-300 focus-within:border-b-2 focus-within:border-slate-600 focus-within:border-spacing-2 dark:text-gray-50 dark:hover:text-primary-400 focus-within:focus:border-slate-400"
-      />
+        data={socials}
+        iconMap={socialIcons}
+      /> */}
 
       <Download />
     </footer>
