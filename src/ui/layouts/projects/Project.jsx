@@ -75,9 +75,8 @@ const Project = ({ data, active, setActive, imageMap }) => {
 
         <Technologies
           content={technologies}
-          className="mt-4 xs:mt-5 justify-center xs:justify-center"
-          itemClassName="drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]"
-          iconClassName="w-full max-w-[35px] h-full [&_svg]:w-full [&_svg]:h-full"
+          className="mt-4 xs:mt-5 gap-x-4 justify-center xs:justify-center"
+          itemClassName="w-8 h-8 xs:w-9 xs:h-9 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]"
         />
 
         <a
