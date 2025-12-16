@@ -1,10 +1,13 @@
-const Eslint = () => {
+import PropTypes from 'prop-types';
+
+const Eslint = ({ className = '' }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 67 58"
       width="100%"
       height="100%"
+      className={className}
     >
       <path
         d="M46.5572 21.1093L34.0167 13.8691C33.7029 13.6879 33.3161 13.6879 33.0023 13.8691L20.4616 21.1093C20.148 21.2905 19.9543 21.6253 19.9543 21.9878V36.4681C19.9543 36.8304 20.148 37.1654 20.4616 37.347L33.0023 44.5871C33.3161 44.7684 33.7029 44.7684 34.0167 44.5871L46.5572 37.347C46.871 37.1657 47.0644 36.8306 47.0644 36.4681V21.9878C47.0641 21.6253 46.8707 21.2905 46.5572 21.1093Z"
@@ -16,6 +19,10 @@ const Eslint = () => {
       ></path>
     </svg>
   );
+};
+
+Eslint.propTypes = {
+  className: PropTypes.string,
 };
 
 export default Eslint;

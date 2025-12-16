@@ -1,4 +1,6 @@
-const Html = () => {
+import PropTypes from 'prop-types';
+
+const Html = ({ className = '' }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,6 +8,7 @@ const Html = () => {
       viewBox="0 0 512 512"
       width="100%"
       height="100%"
+      className={className}
     >
       <path
         fill="#ff7816"
@@ -26,6 +29,10 @@ const Html = () => {
       ></path>
     </svg>
   );
+};
+
+Html.propTypes = {
+  className: PropTypes.string,
 };
 
 export default Html;

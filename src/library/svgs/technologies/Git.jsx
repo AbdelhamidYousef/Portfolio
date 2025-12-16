@@ -1,4 +1,6 @@
-const Git = () => {
+import PropTypes from 'prop-types';
+
+const Git = ({ className = '' }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,6 +8,7 @@ const Git = () => {
       viewBox="20 20 465 465"
       width="100%"
       height="100%"
+      className={className}
     >
       <path fill="#f14e32" d="m256 31 225 225-225 225L31 256z"></path>
       <path
@@ -14,6 +17,10 @@ const Git = () => {
       ></path>
     </svg>
   );
+};
+
+Git.propTypes = {
+  className: PropTypes.string,
 };
 
 export default Git;

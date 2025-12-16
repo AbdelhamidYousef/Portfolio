@@ -19,6 +19,7 @@ export const hasIcon = (iconName) => {
  *
  * @param {Object} props - The component props
  * @param {string} props.name - The name of the icon to render (must match a key in svgMap)
+ * @param {string} props.className - Optional className to pass to the SVG component
  *
  * @returns {JSX.Element|null} The icon component or null if not found
  *
@@ -27,9 +28,9 @@ export const hasIcon = (iconName) => {
  * if (!hasIcon('React')) return null;
  *
  * Render the icon:
- * <Icon name="React" />
+ * <Icon name="React" className="w-8 h-8" />
  */
-const Icon = ({ name }) => {
+const Icon = ({ name, className = '' }) => {
   const IconComponent = svgMap?.[name];
 
   if (!IconComponent) {
@@ -37,11 +38,12 @@ const Icon = ({ name }) => {
     return null;
   }
 
-  return <IconComponent />;
+  return <IconComponent className={className} />;
 };
 
 Icon.propTypes = {
   name: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 export default Icon;

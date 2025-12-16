@@ -1,10 +1,13 @@
-const Sass = () => {
+import PropTypes from 'prop-types';
+
+const Sass = ({ className = '' }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 384"
       width="100%"
       height="100%"
+      className={className}
     >
       <path
         fill="#CF649A"
@@ -12,6 +15,10 @@ const Sass = () => {
       />
     </svg>
   );
+};
+
+Sass.propTypes = {
+  className: PropTypes.string,
 };
 
 export default Sass;

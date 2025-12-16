@@ -1,4 +1,6 @@
-const Css = () => {
+import PropTypes from 'prop-types';
+
+const Css = ({ className = '' }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,6 +8,7 @@ const Css = () => {
       viewBox="0 0 512 512"
       width="100%"
       height="100%"
+      className={className}
     >
       <path
         d="m32 0 40.8 460.8L256 512l183.136-51.168L480 0z"
@@ -18,6 +21,10 @@ const Css = () => {
       ></path>
     </svg>
   );
+};
+
+Css.propTypes = {
+  className: PropTypes.string,
 };
 
 export default Css;

@@ -1,4 +1,6 @@
-const CssModules = () => {
+import PropTypes from 'prop-types';
+
+const CssModules = ({ className = '' }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,6 +8,7 @@ const CssModules = () => {
       width="100%"
       height="100%"
       version="1.1"
+      className={className}
     >
       <g id="layer1" transform="translate(3.7129 -62.36)">
         <g
@@ -66,6 +69,10 @@ const CssModules = () => {
       </g>
     </svg>
   );
+};
+
+CssModules.propTypes = {
+  className: PropTypes.string,
 };
 
 export default CssModules;

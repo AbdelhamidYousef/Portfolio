@@ -1,10 +1,13 @@
-const ReactQuery = () => {
+import PropTypes from 'prop-types';
+
+const ReactQuery = ({ className = '' }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 256 230"
       width="99%"
       height="100%"
+      className={className}
     >
       <path
         fill="#00435B"
@@ -24,6 +27,10 @@ const ReactQuery = () => {
       />
     </svg>
   );
+};
+
+ReactQuery.propTypes = {
+  className: PropTypes.string,
 };
 
 export default ReactQuery;

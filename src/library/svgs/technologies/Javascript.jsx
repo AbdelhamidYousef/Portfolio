@@ -1,4 +1,6 @@
-const Javascript = () => {
+import PropTypes from 'prop-types';
+
+const Javascript = ({ className = '' }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,6 +8,7 @@ const Javascript = () => {
       viewBox="0 0 512 512"
       width="100%"
       height="100%"
+      className={className}
     >
       <g>
         <path fill="#ffdf00" d="M0 0h512v512H0z"></path>
@@ -16,6 +19,10 @@ const Javascript = () => {
       </g>
     </svg>
   );
+};
+
+Javascript.propTypes = {
+  className: PropTypes.string,
 };
 
 export default Javascript;
