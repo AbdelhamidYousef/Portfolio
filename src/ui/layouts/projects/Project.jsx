@@ -2,6 +2,7 @@ import { PropTypes } from 'prop-types';
 import { m } from 'framer-motion';
 import ExternalLink from '../../../library/svgs/ExternalLink';
 import Github from '../../../library/svgs/socials/Github';
+import Technologies from '../../../library/components/technologies/Technologies';
 import { fadeIn } from '../../../utils/motion';
 
 const Project = ({ data, active, setActive, imageMap }) => {
@@ -71,6 +72,10 @@ const Project = ({ data, active, setActive, imageMap }) => {
         <p className="font-medium text-sm xs:text-base sm:text-lg text-gray-100">
           {copy}
         </p>
+
+        <div className="mt-4 xs:mt-5 [&_ul]:justify-center [&_li]:drop-shadow-[0_0_8px_rgba(255,255,255,0.2)] [&_svg]:w-full [&_svg]:max-w-[35px] [&_svg]:h-full">
+          <Technologies content={technologies} />
+        </div>
 
         <a
           href={githubLink}
