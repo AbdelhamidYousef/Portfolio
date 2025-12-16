@@ -17,12 +17,39 @@
       rel="icon"
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📍</text></svg>"
     /> -->
+
+    <!-- Icon & Title -->
     <link
       rel="icon"
       type="image/svg+xml"
       href="./src/assets/images/avatar.png"
     />
     <title>Abdulhamid - Frontend Engineer</title>
+
+    <!-- Mida Installation Scripts -->
+    <!-- Anti-flickering script -->
+    <script>
+      var timeout = 3000; // Timeout value to remove the flicker (in milliseconds)
+      !(function (h, i, d, e) {
+        var t,
+          n = h.createElement('style');
+        (n.id = e),
+          (n.innerHTML = 'body{opacity:0}'),
+          h.head.appendChild(n),
+          (t = d),
+          (i.rmfk = function () {
+            var t = h.getElementById(e);
+            t && t.parentNode.removeChild(t);
+          }),
+          setTimeout(i.rmfk, t);
+      })(document, window, timeout, 'abhide');
+    </script>
+    <!-- Mida A/B Testing Script (Place in <HEAD> for speed & no flicker) -->
+    <script
+      type="text/javascript"
+      async
+      src="https://cdn.mida.so/js/optimize.js?key=oGbNAlraYnge9RxvJV54EL"
+    ></script>
   </head>
   <body>
     <div id="root"></div>
