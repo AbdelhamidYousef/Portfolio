@@ -63,7 +63,7 @@ const Project = ({ data, active, setActive, imageMap }) => {
       {/* Content */}
       <div
         className={`
-          ${isActive ? 'translate-0' : 'translate-y-[200%]'} 
+          ${isActive ? 'translate-0' : 'translate-y-[200%]'}
           absolute inset-0 px-5 sm:px-10 grid content-center text-center selection:bg-gray-400`}
       >
         <h3 className="-mt-[10%] xs:-mt-[15%] mb-2 xs:mb-3 font-hero font-semibold text-2xl xs:text-4xl text-gray-100 uppercase tracking-wide">
@@ -73,9 +73,12 @@ const Project = ({ data, active, setActive, imageMap }) => {
           {copy}
         </p>
 
-        <div className="mt-4 xs:mt-5 [&_ul]:justify-center [&_li]:drop-shadow-[0_0_8px_rgba(255,255,255,0.2)] [&_svg]:w-full [&_svg]:max-w-[35px] [&_svg]:h-full">
-          <Technologies content={technologies} />
-        </div>
+        <Technologies
+          content={technologies}
+          className="mt-4 xs:mt-5 justify-center xs:justify-center"
+          itemClassName="drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]"
+          iconClassName="w-full max-w-[35px] h-full [&_svg]:w-full [&_svg]:h-full"
+        />
 
         <a
           href={githubLink}
