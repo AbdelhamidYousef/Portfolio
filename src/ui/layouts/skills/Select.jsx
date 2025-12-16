@@ -3,13 +3,13 @@ import { useState } from 'react';
 import ArrowHead from '../../../library/svgs/ArrowHead';
 import { useKeydown } from '../../../library/hooks/useKeydown';
 import { useClickOutside } from '../../../hooks/useClickOutside';
-import { useFilterableList } from '../../../library/context/FilterableListContext';
+import { useList } from '../../../library/context/ListContext';
 
 const Select = ({ options }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [filterLabel, setFilterLabel] = useState('');
 
-  const { setFilter } = useFilterableList();
+  const { setFilter } = useList();
 
   const closeMenu = () => setIsOpen(false);
 

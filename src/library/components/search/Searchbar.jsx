@@ -1,9 +1,9 @@
 import Search from '../../svgs/Search';
-import { useFilterableList } from '../../context/FilterableListContext';
+import { useList } from '../../context/ListContext';
 import { useKeydown } from '../../hooks/useKeydown';
 
 const Searchbar = () => {
-  const { query, setQuery } = useFilterableList();
+  const { query, setQuery } = useList();
 
   useKeydown('Escape', () => setQuery(''));
 
