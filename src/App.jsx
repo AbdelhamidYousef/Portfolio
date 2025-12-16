@@ -35,7 +35,12 @@ const App = () => {
                 technologies: content.technologies,
               }}
             />
-            <Skills />
+            <Skills
+              content={{
+                skillsList: content.skills.list,
+                skillsFilters: content.skills.filters,
+              }}
+            />
             <Projects content={content.projects} imageMap={assets} />
             <Contact />
             <ToTopBtn />

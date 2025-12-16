@@ -1,9 +1,9 @@
 import { PropTypes } from 'prop-types';
 import { useState } from 'react';
-import ArrowHead from '../../library/svgs/ArrowHead';
-import { useKeydown } from '../../library/hooks/useKeydown';
-import { useClickOutside } from '../../hooks/useClickOutside';
-import { useSkills } from '../../context/SkillsContext';
+import ArrowHead from '../../../library/svgs/ArrowHead';
+import { useKeydown } from '../../../library/hooks/useKeydown';
+import { useClickOutside } from '../../../hooks/useClickOutside';
+import { useSkills } from '../../../context/SkillsContext';
 
 const Select = ({ options }) => {
   const [isOpen, setIsOpen] = useState(false);
