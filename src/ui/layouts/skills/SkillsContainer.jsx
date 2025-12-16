@@ -1,14 +1,14 @@
 import { m } from 'framer-motion';
 import { fadeIn } from '../../../utils/motion';
 import Icon, { hasIcon } from '../../../library/components/icon/Icon';
-import { useSkills } from '../../../context/SkillsContext';
+import { useFilterableList } from '../../../library/context/FilterableListContext';
 
 const SkillsContainer = () => {
-  const { skillsList } = useSkills();
+  const { items } = useFilterableList();
 
   return (
     <ul className="min-h-[61rem] sm:min-h-[34rem] 2xl:min-h-[30rem] grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 content-start gap-3 sm:gap-4 lg:gap-5">
-      {skillsList.map((skill, index) => {
+      {items.map((skill, index) => {
         if (!hasIcon(skill.iconName)) return null;
 
         return (
