@@ -1,4 +1,4 @@
-export const socials = [
+export default [
   {
     id: 1,
     title: 'Linkedin Account',

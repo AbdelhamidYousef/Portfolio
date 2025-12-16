@@ -1,4 +1,4 @@
-import Search from '../svgs/Search';
+import Search from '../../library/svgs/Search';
 import { useSkills } from '../../context/SkillsContext';
 import { useKeydown } from '../../library/hooks/useKeydown';
 

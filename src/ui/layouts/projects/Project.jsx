@@ -1,7 +1,7 @@
 import { PropTypes } from 'prop-types';
 import { m } from 'framer-motion';
-import ExternalLink from '../../svgs/ExternalLink';
-import Github from '../../svgs/Github';
+import ExternalLink from '../../../library/svgs/ExternalLink';
+import Github from '../../../library/svgs/socials/Github';
 import { fadeIn } from '../../../utils/motion';
 
 const Project = ({ data, active, setActive }) => {

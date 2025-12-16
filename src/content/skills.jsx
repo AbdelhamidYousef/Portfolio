@@ -1,16 +1,16 @@
-import Html from '../ui/svgs/Html';
-import Css from '../ui/svgs/Css';
-import Javascript from '../ui/svgs/Javascript';
-import React from '../ui/svgs/React';
-import ReactRouter from '../ui/svgs/ReactRouter';
-import Redux from '../ui/svgs/Redux';
-import ReactQuery from '../ui/svgs/ReactQuery';
-import ReactHookForm from '../ui/svgs/ReactHookForm';
-import Tailwind from '../ui/svgs/Tailwind';
-import Sass from '../ui/svgs/Sass';
-import StyledComponents from '../ui/svgs/StyledComponents';
-import CssModules from '../ui/svgs/CssModules';
-import Git from '../ui/svgs/Git';
+import Html from '../library/svgs/technologies/Html';
+import Css from '../library/svgs/technologies/Css';
+import Javascript from '../library/svgs/technologies/Javascript';
+import React from '../library/svgs/technologies/React';
+import ReactRouter from '../library/svgs/technologies/ReactRouter';
+import Redux from '../library/svgs/technologies/Redux';
+import ReactQuery from '../library/svgs/technologies/ReactQuery';
+import ReactHookForm from '../library/svgs/technologies/ReactHookForm';
+import Tailwind from '../library/svgs/technologies/Tailwind';
+import Sass from '../library/svgs/technologies/Sass';
+import StyledComponents from '../library/svgs/technologies/StyledComponents';
+import CssModules from '../library/svgs/technologies/CssModules';
+import Git from '../library/svgs/technologies/Git';
 
 export const skillsMenu = [
   { label: 'All', value: 'all' },

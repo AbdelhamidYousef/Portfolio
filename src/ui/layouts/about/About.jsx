@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { m } from 'framer-motion';
 import AboutText from './AboutText';
-import Techs from './Techs';
+import Techs from '../../../library/components/technologies/Technologies';
 import Section from '../../shared/Section';
 import { fadeIn } from '../../../utils/motion';
 

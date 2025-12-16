@@ -1,6 +1,6 @@
 import { PropTypes } from 'prop-types';
 import { useState } from 'react';
-import ArrowHead from '../svgs/ArrowHead';
+import ArrowHead from '../../library/svgs/ArrowHead';
 import { useKeydown } from '../../library/hooks/useKeydown';
 import { useClickOutside } from '../../hooks/useClickOutside';
 import { useSkills } from '../../context/SkillsContext';
