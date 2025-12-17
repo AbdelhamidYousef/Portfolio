@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { m } from 'framer-motion';
-import { fadeIn } from '../../../../utils/motion';
-import Icon, { hasIcon } from '../Icon';
+import { fadeIn } from '../../../../../utils/motion';
+import Icon, { hasIcon } from '../../Icon';
 
 /**
  * A generic component that renders a list of items with icons in card format

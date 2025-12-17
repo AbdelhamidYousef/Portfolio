@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import SectionTitle from '../../shared/SectionTitle';
-import IconCardList from '../../../library/components/general/icon-card-list/IconCardList';
+import IconCardList from '../../../library/components/general/cards/icon-card-list/IconCardList';
 import { useList } from '../../../library/context/ListContext';
-import FilterAndSearch from '../../../library/components/general/filter-and-search/FilterAndSearch';
+import FilterAndSearch from '../../../library/components/specific/filter-and-search/FilterAndSearch';
 
 const SkillsContent = ({ skillsFilters, skillsSearch }) => {
   const { list } = useList();
