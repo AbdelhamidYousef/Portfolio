@@ -21,7 +21,7 @@ const SkillsContent = ({ skillsFilters, skillsSearch }) => {
 
       <IconCardList
         list={list}
-        className="min-h-[61rem] sm:min-h-[34rem] 2xl:min-h-[30rem]"
+        containerClassName="min-h-[61rem] sm:min-h-[34rem] 2xl:min-h-[30rem]"
       />
     </>
   );
