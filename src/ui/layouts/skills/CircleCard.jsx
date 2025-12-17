@@ -1,9 +1,9 @@
-import Proptypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 
-const Skill = ({
-  name,
-  percentage,
+const CircleCard = ({
+  name = 'Skill',
+  percentage = 100,
   circleRadius = 60,
   barColor = '#eb7647',
   barWidth = 2,
@@ -76,12 +76,12 @@ const Skill = ({
   );
 };
 
-Skill.propTypes = {
-  name: Proptypes.string.isRequired,
-  percentage: Proptypes.number.isRequired,
-  circleRadius: Proptypes.number,
-  barColor: Proptypes.string,
-  barWidth: Proptypes.number,
+CircleCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  percentage: PropTypes.number.isRequired,
+  circleRadius: PropTypes.number,
+  barColor: PropTypes.string,
+  barWidth: PropTypes.number,
 };
 
-export default Skill;
+export default CircleCard;
