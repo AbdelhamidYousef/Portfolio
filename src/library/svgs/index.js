@@ -4,6 +4,8 @@ import Github from './socials/Github';
 import Linkedin from './socials/Linkedin';
 
 // Technologies
+import AdobeAnalytics from './technologies/AdobeAnalytics';
+import AdobeTarget from './technologies/AdobeTarget';
 import Css from './technologies/Css';
 import CssModules from './technologies/CssModules';
 import Eslint from './technologies/Eslint';
@@ -24,6 +26,8 @@ export default {
   Email,
   Github,
   Linkedin,
+  AdobeAnalytics,
+  AdobeTarget,
   Css,
   CssModules,
   Eslint,
