@@ -12,7 +12,7 @@ const Footer = () => {
 
       <Socials
         containerClasses="flex gap-5 xl:gap-14"
-        elementClasses="w-6 h-6 md:w-8 md:h-8 text-slate-600 hover:text-primary-600 transition-all duration-300 focus-within:border-b-2 focus-within:border-slate-600 focus-within:border-spacing-2 dark:text-gray-50 dark:hover:text-primary-400 focus-within:focus:border-slate-400"
+        itemClasses="w-6 h-6 md:w-8 md:h-8 text-slate-600 hover:text-primary-600 transition-all duration-300 focus-within:border-b-2 focus-within:border-slate-600 focus-within:border-spacing-2 dark:text-gray-50 dark:hover:text-primary-400 focus-within:focus:border-slate-400"
         socialsContent={content.socials}
       />
 
