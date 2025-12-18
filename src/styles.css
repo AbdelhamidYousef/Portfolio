@@ -51,15 +51,8 @@
 }
 
 @layer base {
-  html {
-    @apply scroll-smooth;
-  }
   body {
     @apply bg-gray-50 dark:bg-gray-900 font-main text-base text-slate-500 dark:text-gray-200 transition-colors duration-300 selection:bg-primary-500 dark:selection:bg-primary-800 selection:text-gray-50;
-  }
-
-  span {
-    @apply inline-block;
   }
 
   ::-webkit-scrollbar {
