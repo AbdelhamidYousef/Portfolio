@@ -1,9 +1,14 @@
 @import 'tailwindcss';
 
+/* Now instead of dark:* utilities being applied based on prefers-color-scheme */
+/* They will be applied whenever the dark class is present earlier in the HTML tree */
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --font-*: initial;
+  /*
+    Theme Variables
+    - Theme variables are special CSS variables, that influence which utility classes exist in your project.
+  */
   --font-main: Open Sans, sans-serif;
   --font-hero: Saira Extra Condensed, cursive, serif;
 
@@ -14,8 +19,6 @@
   --animate-slideTop: slideTop 1s ease-out;
   --animate-rubberband: rubberband 0.8s ease-out;
   --animate-bounceFast: bounce 0.5s infinite;
-
-  --border-width-6: 6px;
 
   --color-primary-200: hsl(17, 80%, 80%);
   --color-primary-400: hsl(17, 80%, 60%);

@@ -58,7 +58,7 @@ const IconCardList = ({
                 <span className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 group-hover:-rotate-6 transition-all duration-300">
                   <Icon name={item.iconName} />
                 </span>
-                <span className="absolute inset-0 bg-linear-to-r from-white via-white via-60% to-white/60 dark:from-slate-700 dark:via-slate-700 dark:to-gray-slate-700/60"></span>
+                <span className="absolute inset-0 bg-linear-to-r from-white via-white via-60% to-white/60 dark:from-slate-700 dark:via-slate-700 dark:to-slate-700/20"></span>
               </div>
             </m.li>
           );
