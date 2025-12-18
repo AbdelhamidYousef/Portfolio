@@ -1,12 +1,12 @@
 export default {
-  navLinks: ['about', 'skills', 'projects', 'contact'],
-
   aboutText: {
     firstName: 'Abdulhamid',
     lastName: 'Yosef',
-    jobTitles: ['Adobe Target Developer', 'A/B Testing Specialist'],
+    jobTitles: ['Certified Adobe Target Developer', 'A/B Testing Specialist'],
     copy: "A certified Adobe Target Developer with extensive experience in A/B testing and personalization. I've implemented over 500 A/B tests and personalization experiences, working with Adobe Audience Manager, Analytics for Target (A4T), and Adobe Launch. I combine two years of front-end development experience with data-driven optimization to deliver measurable results.",
   },
+
+  navLinks: ['about', 'skills', 'projects', 'contact'],
 
   socials: [
     {
@@ -30,13 +30,20 @@ export default {
   ],
 
   technologies: [
-    { id: 1, title: 'Adobe Target', iconName: 'AdobeTarget' },
-    { id: 2, title: 'Adobe Analytics', iconName: 'AdobeAnalytics' },
-    { id: 3, title: 'JavaScript', iconName: 'Javascript' },
-    { id: 4, title: 'CSS', iconName: 'Css' },
-    { id: 5, title: 'HTML', iconName: 'Html' },
-    { id: 6, title: 'React', iconName: 'React' },
-    { id: 7, title: 'Tailwindcss', iconName: 'Tailwind' },
+    {
+      id: 1,
+      title: 'Adobe Experience Cloud',
+      iconName: 'AdobeExperienceCloud',
+    },
+    { id: 2, title: 'Adobe Target', iconName: 'AdobeTarget' },
+    { id: 3, title: 'Adobe Analytics', iconName: 'AdobeAnalytics' },
+    { id: 6, title: 'HTML', iconName: 'Html' },
+    { id: 5, title: 'CSS', iconName: 'Css' },
+    { id: 9, title: 'SASS', iconName: 'Sass' },
+    { id: 8, title: 'Tailwindcss', iconName: 'Tailwind' },
+    { id: 4, title: 'JavaScript', iconName: 'Javascript' },
+    { id: 7, title: 'React', iconName: 'React' },
+    { id: 10, title: 'Git', iconName: 'Git' },
   ],
 
   skills: {
@@ -48,6 +55,7 @@ export default {
         { label: 'Adobe Tools', value: 'adobe' },
         { label: 'Core Technologies', value: 'core' },
         { label: 'React Ecosystem', value: 'react' },
+        { label: 'Dev Environment', value: 'dev' },
       ],
     },
 
@@ -57,21 +65,26 @@ export default {
     },
 
     list: [
-      { id: 1, title: 'Adobe Target', iconName: 'AdobeTarget', type: 'adobe' },
       {
-        id: 2,
+        id: 1,
+        title: 'Adobe Experience Cloud',
+        iconName: 'AdobeExperienceCloud',
+        type: 'adobe',
+      },
+      { id: 2, title: 'Adobe Target', iconName: 'AdobeTarget', type: 'adobe' },
+      {
+        id: 3,
         title: 'Adobe Analytics',
         iconName: 'AdobeAnalytics',
         type: 'adobe',
       },
-      { id: 3, title: 'HTML', iconName: 'Html', type: 'core' },
-      { id: 4, title: 'CSS', iconName: 'Css', type: 'core' },
-      { id: 5, title: 'JavaScript', iconName: 'Javascript', type: 'core' },
-      { id: 6, title: 'React', iconName: 'React', type: 'react' },
-      { id: 7, title: 'Redux/RTK', iconName: 'Redux', type: 'react' },
-      { id: 8, title: 'Tailwindcss', iconName: 'Tailwind', type: 'react' },
-      { id: 9, title: 'SASS', iconName: 'Sass', type: 'react' },
-      { id: 10, title: 'Git', iconName: 'Git', type: 'core' },
+      { id: 4, title: 'HTML', iconName: 'Html', type: 'core' },
+      { id: 5, title: 'CSS', iconName: 'Css', type: 'core' },
+      { id: 6, title: 'SASS', iconName: 'Sass', type: 'react' },
+      { id: 7, title: 'Tailwindcss', iconName: 'Tailwind', type: 'react' },
+      { id: 8, title: 'JavaScript', iconName: 'Javascript', type: 'core' },
+      { id: 9, title: 'React', iconName: 'React', type: 'react' },
+      { id: 10, title: 'Git', iconName: 'Git', type: 'dev' },
     ],
   },
 
@@ -97,21 +110,8 @@ export default {
         { id: 1, title: 'Adobe Target', iconName: 'AdobeTarget' },
         { id: 2, title: 'Adobe Analytics', iconName: 'AdobeAnalytics' },
         { id: 3, title: 'JavaScript', iconName: 'Javascript' },
-        { id: 4, title: 'CSS', iconName: 'Css' },
+        { id: 4, title: 'SASS', iconName: 'Sass' },
       ],
-    },
-    {
-      id: 3,
-      title: 'Forkify',
-      imageName: 'forkify',
-      copy: 'A web application to search food recipes, where you are able to change servings and bookmark recipes.',
-      technologies: [
-        { id: 1, title: 'vanilla JS', iconName: 'Javascript' },
-        { id: 2, title: 'SASS', iconName: 'Sass' },
-        { id: 3, title: 'HTML', iconName: 'Html' },
-      ],
-      githubLink: 'https://github.com/AbdelhamidYousef/Forkify',
-      demoLink: 'https://forkify99.netlify.app',
     },
   ],
 };

@@ -1,12 +1,12 @@
 export default {
-  navLinks: ['about', 'skills', 'projects', 'contact'],
-
   aboutText: {
     firstName: 'Abdulhamid',
     lastName: 'Yosef',
     jobTitles: ['Frontend Engineer', 'React Developer'],
     copy: "I'm a frontend engineer with a deep understanding of frontend technologies, with a focus on the React ecosystem. I'm passionate about building high-quality, user-friendly web applications that create immersive user experiences.",
   },
+
+  navLinks: ['about', 'skills', 'projects', 'contact'],
 
   socials: [
     {

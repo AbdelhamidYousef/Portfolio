@@ -1,19 +1,24 @@
 import PropTypes from 'prop-types';
 
-const AdobeTarget = ({ className = '' }) => {
+const AdobeTargetRectangle = ({ className = '' }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      enableBackground="new 0 0 512 512"
       viewBox="0 0 512 512"
       width="100%"
       height="100%"
       className={className}
     >
-      {/* Circular background */}
-      <circle cx="256" cy="256" r="256" fill="#00D8FF" />
-      <circle cx="256" cy="256" r="230" fill="#041A1E" />
-      {/* Icon centered */}
-      <g transform="scale(1)">
+      <path
+        fill="#00D8FF"
+        d="M93.867,12.8h326.016C470.547,12.8,512,54.253,512,104.918v314.965C512,470.547,470.547,512,419.883,512H92.118C41.453,512,0,470.547,0,419.882V106.667C0,54.933,42.134,12.8,93.867,12.8"
+      />
+      <path
+        fill="#041A1E"
+        d="M98.133,34.133h317.482c41.45,0,75.051,33.601,75.051,75.051v306.431c0,41.45-33.602,75.051-75.051,75.051H96.384c-41.45,0-75.051-33.602-75.051-75.051V110.933C21.333,68.266,55.466,34.133,98.133,34.133"
+      />
+      <g>
         <circle cx="344.516" cy="262.984" r="19.684" fill="#CAF0FF" />
         <path
           fill="#CAF0FF"
@@ -24,8 +29,8 @@ const AdobeTarget = ({ className = '' }) => {
   );
 };
 
-AdobeTarget.propTypes = {
+AdobeTargetRectangle.propTypes = {
   className: PropTypes.string,
 };
 
-export default AdobeTarget;
+export default AdobeTargetRectangle;

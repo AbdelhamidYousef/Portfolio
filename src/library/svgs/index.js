@@ -5,7 +5,10 @@ import Linkedin from './socials/Linkedin';
 
 // Technologies
 import AdobeAnalytics from './technologies/AdobeAnalytics';
+import AdobeAnalyticsRectangle from './technologies/AdobeAnalyticsRectangle';
+import AdobeExperienceCloud from './technologies/AdobeExperienceCloud';
 import AdobeTarget from './technologies/AdobeTarget';
+import AdobeTargetRectangle from './technologies/AdobeTargetRectangle';
 import Css from './technologies/Css';
 import CssModules from './technologies/CssModules';
 import Eslint from './technologies/Eslint';
@@ -27,7 +30,10 @@ export default {
   Github,
   Linkedin,
   AdobeAnalytics,
+  AdobeAnalyticsRectangle,
+  AdobeExperienceCloud,
   AdobeTarget,
+  AdobeTargetRectangle,
   Css,
   CssModules,
   Eslint,

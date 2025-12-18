@@ -1,18 +1,23 @@
 import PropTypes from 'prop-types';
 
-const AdobeAnalytics = ({ className = '' }) => {
+const AdobeAnalyticsRectangle = ({ className = '' }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      enableBackground="new 0 0 512 512"
       viewBox="0 0 512 512"
       width="100%"
       height="100%"
       className={className}
     >
-      {/* Circular background */}
-      <circle cx="256" cy="256" r="256" fill="#9F7FFF" />
-      <circle cx="256" cy="256" r="230" fill="#130732" />
-      {/* Icon centered */}
+      <path
+        fill="#9F7FFF"
+        d="M93.867,12.8h324.267C469.867,12.8,512,54.933,512,106.667v311.467C512,469.867,469.867,512,418.134,512H93.867C42.134,512,0,469.867,0,418.133V106.667C0,54.933,42.134,12.8,93.867,12.8"
+      />
+      <path
+        fill="#130732"
+        d="M98.133,34.133h315.733c42.667,0,76.8,34.133,76.8,76.8v302.933c0,42.667-34.133,76.8-76.8,76.8H98.133c-42.667,0-76.8-34.133-76.8-76.8V110.933C21.333,68.267,55.466,34.133,98.133,34.133"
+      />
       <g>
         <path
           fill="#FFF"
@@ -28,8 +33,8 @@ const AdobeAnalytics = ({ className = '' }) => {
   );
 };
 
-AdobeAnalytics.propTypes = {
+AdobeAnalyticsRectangle.propTypes = {
   className: PropTypes.string,
 };
 
-export default AdobeAnalytics;
+export default AdobeAnalyticsRectangle;
