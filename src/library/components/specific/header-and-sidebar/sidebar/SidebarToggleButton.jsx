@@ -16,7 +16,7 @@ import HamburgerToggleButton from '../buttons/HamburgerToggleButton';
  */
 const SidebarToggleButton = ({ isSidebarOpen, toggleSidebar }) => {
   return (
-    <FloatingSpan className="lg:hidden left-5! top-5! z-mainBtns outline-hidden focus:ring-2 focus:ring-slate-600 transition-all duration-300 animate-slideRight">
+    <FloatingSpan className="lg:hidden left-5! top-5! z-mainBtns outline-hidden focus:ring-2 focus:ring-slate-600 transition-all duration-300 animate-overshootRight-2">
       <HamburgerToggleButton
         isMenuOpen={isSidebarOpen}
         onClick={toggleSidebar}

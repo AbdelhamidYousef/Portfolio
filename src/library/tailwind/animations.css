@@ -1,10 +1,16 @@
 @theme {
+  /* ********************** Using Default Tailwind Animations ********************** */
+  --animate-bounceFast: bounce 0.5s infinite;
+
+  /* ********************** Custom Animations ********************** */
+
   /*
-    Element slides in from the left with a bounce overshoot effect.
-    Starts invisible and offset 50% left, overshoots 5% right, then settles at origin.
+    Overshoot Animations
+    Element slides in with a bounce overshoot effect.
   */
-  --animate-bounceLeft: bounceLeft 1s ease-out;
-  @keyframes bounceLeft {
+
+  --animate-overshootLeft-5: overshootLeft-5 1s ease-out;
+  @keyframes overshootLeft-5 {
     0% {
       opacity: 0;
       transform: translateX(75%);
@@ -18,12 +24,8 @@
     }
   }
 
-  /*
-    Element slides in from the right with a bounce overshoot effect.
-    Starts invisible and offset 100% right, overshoots 5% right, then settles at origin.
-  */
-  --animate-bounceRight: bounceRight 1s ease-out;
-  @keyframes bounceRight {
+  --animate-overshootRight-5: overshootRight-5 1s ease-out;
+  @keyframes overshootRight-5 {
     0% {
       opacity: 0;
       transform: translateX(-75%);
@@ -37,12 +39,8 @@
     }
   }
 
-  /*
-    Element slides in from the left.
-    Starts invisible and offset 50% left, overshoots 5% right, then settles at origin.
-  */
-  --animate-slideLeft: slideLeft 0.8s ease-out;
-  @keyframes slideLeft {
+  --animate-overshootLeft-2: overshootLeft-2 0.8s ease-out;
+  @keyframes overshootLeft-2 {
     0% {
       opacity: 0;
       transform: translateX(75%);
@@ -56,8 +54,8 @@
     }
   }
 
-  --animate-slideRight: slideRight 0.8s ease-out;
-  @keyframes slideRight {
+  --animate-overshootRight-2: overshootRight-2 0.8s ease-out;
+  @keyframes overshootRight-2 {
     0% {
       opacity: 0;
       transform: translateX(-75%);
@@ -71,23 +69,11 @@
     }
   }
 
-  --animate-slideTop: slideTop 1s ease-out;
+  /*
+    Rubberband Animation
+    Element vibrates with a rubberband effect.
+  */
   --animate-rubberband: rubberband 0.8s ease-out;
-  --animate-bounceFast: bounce 0.5s infinite;
-
-  @keyframes slideTop {
-    0% {
-      opacity: 0;
-      transform: translateY(40%);
-    }
-    80% {
-      transform: translateY(-2%);
-    }
-    100% {
-      opacity: 100%;
-      transform: translateY(0);
-    }
-  }
   @keyframes rubberband {
     0% {
       transform: scale(1);

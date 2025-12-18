@@ -20,12 +20,12 @@ const FloatingThemeButtons = ({ themes, styled = 'right' }) => {
       className={`
         ${
           styled === 'left'
-            ? 'left-5! top-5! xl:left-10! xl:top-7! animate-slideRight'
+            ? 'left-5! top-5! xl:left-10! xl:top-7! animate-overshootRight-2'
             : ''
         }
         ${
           styled === 'right'
-            ? 'right-5! top-5! xl:right-10! xl:top-7! animate-slideLeft'
+            ? 'right-5! top-5! xl:right-10! xl:top-7! animate-overshootLeft-2'
             : ''
         }
         z-mainBtns

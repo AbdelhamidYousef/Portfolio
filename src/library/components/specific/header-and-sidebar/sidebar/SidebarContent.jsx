@@ -52,7 +52,7 @@ const SidebarContent = ({ isSidebarOpen, closeSidebar, content }) => {
           w-72 h-full bg-primary-600 transition-all duration-300 lg:translate-x-0 dark:bg-gray-900 dark:border-r dark:border-gray-800
         `}
       >
-        <div className="h-full grid place-content-center text-center lg:animate-bounceRight">
+        <div className="h-full grid place-content-center text-center lg:animate-overshootRight-5">
           <ProfilePic imageUrl={content.profilePicUrl} />
 
           <Nav navLinksContent={content.navLinks} closeSidebar={closeSidebar} />
