@@ -33,16 +33,22 @@ const Project = ({ data, active, setActive, imageMap }) => {
   return (
     <m.li
       onClick={() => setActive(id)}
-      className={`${
-        isActive ? '' : 'h-20 sm:h-28 md:flex-1 cursor-pointer'
-      } relative md:h-[28rem] rounded-xl md:rounded-3xl shadow-[0_2px_6px_#9b9b9b4d,0_0_4px_#9b9b9b38] overflow-hidden dark:border-slate-800`}
+      className={`
+        ${
+          isActive
+            ? 'min-w-[min(400px,80vw)] md:w-[600px] h-[400px] xs:h-[440px]'
+            : 'md:max-w-[150px] h-20 sm:h-28 md:flex-1 cursor-pointer'
+        }
+        relative md:h-[550px] rounded-xl md:rounded-3xl shadow-[0_2px_6px_#9b9b9b4d,0_0_4px_#9b9b9b38] overflow-hidden dark:border-slate-800`}
       variants={fadeIn('right', 'tween', 0.2, 0.5 * id)}
     >
       {/* Background Image */}
       <img
         src={image}
         alt="Project Sample"
-        className="w-full h-full max-h-[30rem] object-cover object-left-top grayscale-0"
+        className={`w-full h-full object-cover object-left-top grayscale-0 transition-all duration-500 ${
+          isActive ? 'blur-[1px]' : ''
+        }`}
       />
 
       {/* Overlay & Title */}
@@ -63,7 +69,11 @@ const Project = ({ data, active, setActive, imageMap }) => {
       {/* Content */}
       <div
         className={`
-          ${isActive ? 'translate-0' : 'translate-y-[200%]'}
+          ${
+            isActive
+              ? 'translate-0 opacity-100'
+              : 'translate-y-[200%] opacity-0'
+          }
           absolute inset-0 px-5 sm:px-10 grid content-center text-center selection:bg-gray-400`}
       >
         <h3 className="-mt-[10%] xs:-mt-[15%] mb-2 xs:mb-3 font-hero font-semibold text-2xl xs:text-4xl text-gray-100 uppercase tracking-wide">
