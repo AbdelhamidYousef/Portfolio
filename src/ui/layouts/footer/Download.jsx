@@ -1,4 +1,4 @@
-import DownloadArrow from '../../svgs/DownloadArrow';
+import DownloadArrow from '../../../library/svgs/DownloadArrow';
 import { resume } from '../../../assets';
 
 const Download = () => {
