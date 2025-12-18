@@ -20,7 +20,7 @@ const SidebarToggleButton = ({ isSidebarOpen, toggleSidebar }) => {
       <HamburgerToggleButton
         isMenuOpen={isSidebarOpen}
         onClick={toggleSidebar}
-        className="w-10 h-10 text-gray-50"
+        className="w-11 h-11 text-gray-50"
         styled="rounded"
       />
     </FloatingSpan>

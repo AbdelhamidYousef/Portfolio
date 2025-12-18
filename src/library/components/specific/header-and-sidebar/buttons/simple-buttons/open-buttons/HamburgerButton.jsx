@@ -15,7 +15,7 @@ import PropTypes from 'prop-types';
  */
 const HamburgerButton = ({ className = '', styled, onClick }) => {
   const extraStyles =
-    styled === 'rounded-sm' ? 'text-white bg-slate-700/70 rounded-full p-2' : '';
+    styled === 'rounded' ? 'text-white bg-slate-700/70 rounded-full p-2' : '';
 
   return (
     <button onClick={onClick}>

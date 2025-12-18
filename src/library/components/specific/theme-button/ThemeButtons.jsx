@@ -27,7 +27,7 @@ const ThemeButtons = ({ themes = DEFAULT_THEMES, className = '' }) => {
 
   return (
     <div
-      className={`${className} group w-11 hover:w-40 h-11 xl:w-12 xl:h-12 rounded-full bg-slate-700/70 flex justify-center items-center gap-x-5 transition-all duration-300 focus-within:w-40`}
+      className={`${className} group w-11 hover:w-40 h-11 rounded-full bg-slate-700/70 flex justify-center items-center gap-x-5 transition-all duration-300 focus-within:w-40`}
     >
       {themes.map((theme) => (
         <ThemeOption
