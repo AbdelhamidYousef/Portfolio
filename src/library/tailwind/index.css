@@ -1,4 +1,5 @@
 @import './animations.css';
+@import './title-attribute.css';
 
 /* Now instead of dark:* utilities being applied based on prefers-color-scheme */
 /* They will be applied whenever the dark class is present earlier in the HTML tree */
