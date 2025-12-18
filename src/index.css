@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@import './library/tailwind';
+
 /* Now instead of dark:* utilities being applied based on prefers-color-scheme */
 /* They will be applied whenever the dark class is present earlier in the HTML tree */
 @custom-variant dark (&:is(.dark *));
@@ -9,119 +11,25 @@
     Theme Variables
     - Theme variables are special CSS variables, that influence which utility classes exist in your project.
   */
-  --font-main: Open Sans, sans-serif;
-  --font-hero: Saira Extra Condensed, cursive, serif;
 
-  --animate-bounceLeft: bounceLeft 1s ease-out;
-  --animate-bounceRight: bounceRight 1s ease-out;
-  --animate-slideLeft: slideLeft 0.8s ease-out;
-  --animate-slideRight: slideRight 0.8s ease-out;
-  --animate-slideTop: slideTop 1s ease-out;
-  --animate-rubberband: rubberband 0.8s ease-out;
-  --animate-bounceFast: bounce 0.5s infinite;
+  /* Font Families */
+  --font-main: var(--font-open-sans);
+  --font-headlines: var(--font-saira);
 
-  --color-primary-200: hsl(17, 80%, 80%);
-  --color-primary-400: hsl(17, 80%, 60%);
-  --color-primary-500: hsl(17, 70%, 60%);
-  --color-primary-600: hsl(17, 54%, 48%);
-  --color-primary-700: hsl(17, 54%, 43%);
-  --color-primary-800: hsl(17, 54%, 35%);
+  /* Colors */
+  --color-primary-200: var(--color-rust-200);
+  --color-primary-400: var(--color-rust-400);
+  --color-primary-500: var(--color-rust-500);
+  --color-primary-600: var(--color-rust-600);
+  --color-primary-700: var(--color-rust-700);
+  --color-primary-800: var(--color-rust-800);
 
-  --height-screen: 100dvh;
-
-  --breakpoint-xs: 400px;
-
+  /* Z-Index */
   --z-index-selectMenu: 60;
   --z-index-toTopBtn: 70;
   --z-index-footer: 71;
   --z-index-sidebarContainer: 80;
   --z-index-mainBtns: 81;
-
-  @keyframes bounceLeft {
-    0% {
-      opacity: 0;
-      transform: translateX(-50%);
-    }
-    80% {
-      transform: translateX(1%);
-    }
-    100% {
-      opacity: 100%;
-      transform: translateX(0);
-    }
-  }
-  @keyframes bounceRight {
-    0% {
-      opacity: 0;
-      transform: translateX(-100%);
-    }
-    80% {
-      transform: translateX(5%);
-    }
-    100% {
-      opacity: 100%;
-      transform: translateX(0);
-    }
-  }
-  @keyframes slideLeft {
-    0% {
-      opacity: 0;
-      transform: translateX(75%);
-    }
-    80% {
-      transform: translateX(-2%);
-    }
-    100% {
-      opacity: 100%;
-      transform: translateX(0);
-    }
-  }
-  @keyframes slideRight {
-    0% {
-      opacity: 0;
-      transform: translateX(-75%);
-    }
-    80% {
-      transform: translateX(2%);
-    }
-    100% {
-      opacity: 100%;
-      transform: translateX(0);
-    }
-  }
-  @keyframes slideTop {
-    0% {
-      opacity: 0;
-      transform: translateY(40%);
-    }
-    80% {
-      transform: translateY(-2%);
-    }
-    100% {
-      opacity: 100%;
-      transform: translateY(0);
-    }
-  }
-  @keyframes rubberband {
-    0% {
-      transform: scale(1);
-    }
-    40% {
-      transform: scaleX(1.12) scaleY(0.75);
-    }
-    55% {
-      transform: scaleX(0.85) scaleY(1);
-    }
-    65% {
-      transform: scaleX(1.09) scaleY(0.85);
-    }
-    75% {
-      transform: scaleX(0.9) scaleY(1);
-    }
-    90% {
-      transform: scaleX(1.05) scaleY(0.95);
-    }
-  }
 }
 
 /*

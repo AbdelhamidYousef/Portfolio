@@ -60,7 +60,7 @@ const Project = ({ data, active, setActive, imageMap }) => {
         <span
           className={`${
             active === id ? 'hidden' : ''
-          } font-hero font-extrabold text-2xl text-gray-100 tracking-widest whitespace-nowrap md:-rotate-90 md:w-10 md:mb-10`}
+          } font-headlines font-extrabold text-2xl text-gray-100 tracking-widest whitespace-nowrap md:-rotate-90 md:w-10 md:mb-10`}
         >
           {title}
         </span>
@@ -76,7 +76,7 @@ const Project = ({ data, active, setActive, imageMap }) => {
           }
           absolute inset-0 px-5 sm:px-10 grid content-center text-center selection:bg-gray-400`}
       >
-        <h3 className="-mt-[10%] xs:-mt-[15%] mb-2 xs:mb-3 font-hero font-semibold text-2xl xs:text-4xl text-gray-100 uppercase tracking-wide">
+        <h3 className="-mt-[10%] xs:-mt-[15%] mb-2 xs:mb-3 font-headlines font-semibold text-2xl xs:text-4xl text-gray-100 uppercase tracking-wide">
           {title}
         </h3>
         <p className="font-medium text-sm xs:text-base sm:text-lg text-gray-100">

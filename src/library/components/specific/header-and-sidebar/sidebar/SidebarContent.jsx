@@ -41,7 +41,7 @@ const SidebarContent = ({ isSidebarOpen, closeSidebar, content }) => {
     <div
       className={`
         ${isSidebarOpen ? '' : 'opacity-0 invisible'}
-        fixed left-0 top-0 h-screen z-sidebarContainer lg:opacity-100 lg:visible `}
+        fixed left-0 top-0 h-dvh z-sidebarContainer lg:opacity-100 lg:visible `}
     >
       <FullWidthOverlay isOpen={isSidebarOpen} onClick={closeSidebar} />
 

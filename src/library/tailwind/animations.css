@@ -1,0 +1,111 @@
+@theme {
+  /*
+    Element slides in from the left with a bounce overshoot effect.
+    Starts invisible and offset 50% left, overshoots 5% right, then settles at origin.
+  */
+  --animate-bounceLeft: bounceLeft 1s ease-out;
+  @keyframes bounceLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(75%);
+    }
+    80% {
+      transform: translateX(5%);
+    }
+    100% {
+      opacity: 100%;
+      transform: translateX(0);
+    }
+  }
+
+  /*
+    Element slides in from the right with a bounce overshoot effect.
+    Starts invisible and offset 100% right, overshoots 5% right, then settles at origin.
+  */
+  --animate-bounceRight: bounceRight 1s ease-out;
+  @keyframes bounceRight {
+    0% {
+      opacity: 0;
+      transform: translateX(-75%);
+    }
+    80% {
+      transform: translateX(5%);
+    }
+    100% {
+      opacity: 100%;
+      transform: translateX(0);
+    }
+  }
+
+  /*
+    Element slides in from the left.
+    Starts invisible and offset 50% left, overshoots 5% right, then settles at origin.
+  */
+  --animate-slideLeft: slideLeft 0.8s ease-out;
+  @keyframes slideLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(75%);
+    }
+    80% {
+      transform: translateX(-2%);
+    }
+    100% {
+      opacity: 100%;
+      transform: translateX(0);
+    }
+  }
+
+  --animate-slideRight: slideRight 0.8s ease-out;
+  @keyframes slideRight {
+    0% {
+      opacity: 0;
+      transform: translateX(-75%);
+    }
+    80% {
+      transform: translateX(2%);
+    }
+    100% {
+      opacity: 100%;
+      transform: translateX(0);
+    }
+  }
+
+  --animate-slideTop: slideTop 1s ease-out;
+  --animate-rubberband: rubberband 0.8s ease-out;
+  --animate-bounceFast: bounce 0.5s infinite;
+
+  @keyframes slideTop {
+    0% {
+      opacity: 0;
+      transform: translateY(40%);
+    }
+    80% {
+      transform: translateY(-2%);
+    }
+    100% {
+      opacity: 100%;
+      transform: translateY(0);
+    }
+  }
+  @keyframes rubberband {
+    0% {
+      transform: scale(1);
+    }
+    40% {
+      transform: scaleX(1.12) scaleY(0.75);
+    }
+    55% {
+      transform: scaleX(0.85) scaleY(1);
+    }
+    65% {
+      transform: scaleX(1.09) scaleY(0.85);
+    }
+    75% {
+      transform: scaleX(0.9) scaleY(1);
+    }
+    90% {
+      transform: scaleX(1.05) scaleY(0.95);
+    }
+  }
+}

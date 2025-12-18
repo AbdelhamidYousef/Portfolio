@@ -1,0 +1,35 @@
+@import './animations.css';
+
+/* Now instead of dark:* utilities being applied based on prefers-color-scheme */
+/* They will be applied whenever the dark class is present earlier in the HTML tree */
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /*
+    Theme Variables
+    - Theme variables are special CSS variables, that influence which utility classes exist in your project.
+  */
+
+  /* Breakpoints */
+  --breakpoint-xs: 25rem; /* 400px */
+  /* --breakpoint-sm: 40rem; // 640px // Already defined in Tailwind */
+  /* --breakpoint-md: 48rem; // 768px // Already defined in Tailwind */
+  /* --breakpoint-lg: 65rem; // 1040px // Already defined in Tailwind */
+  /* --breakpoint-xl: 80rem; // 1280px // Already defined in Tailwind */
+  /* --breakpoint-2xl: 96rem; // 1536px // Already defined in Tailwind */
+
+  /* Font Families */
+  --font-open-sans: 'Open Sans', sans-serif;
+  --font-saira: 'Saira Extra Condensed', cursive, serif;
+
+  /* Colors */
+  --color-rust-200: hsl(17, 80%, 80%);
+  --color-rust-400: hsl(17, 80%, 60%);
+  --color-rust-500: hsl(17, 70%, 60%);
+  --color-rust-600: hsl(17, 54%, 48%);
+  --color-rust-700: hsl(17, 54%, 43%);
+  --color-rust-800: hsl(17, 54%, 35%);
+
+  /* Height */
+  /* --height-screen: 100dvh; // Removed because it's now included into Tailwind CSS v4 under h-dvh utility class */
+}

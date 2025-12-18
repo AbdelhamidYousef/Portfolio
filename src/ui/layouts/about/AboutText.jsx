@@ -6,14 +6,14 @@ const AboutText = ({ content }) => {
 
   return (
     <>
-      <h1 className="mb-2 xs:mb-1 font-hero font-bold text-5xl xs:text-[3.375rem] sm:text-8xl uppercase text-slate-700 dark:text-gray-50">
+      <h1 className="mb-2 xs:mb-1 font-headlines font-bold text-5xl xs:text-[3.375rem] sm:text-8xl uppercase text-slate-700 dark:text-gray-50">
         <RubberChars>{firstName}</RubberChars>{' '}
         <span className="text-primary-600 dark:text-primary-400">
           <RubberChars>{lastName}</RubberChars>
         </span>
       </h1>
 
-      <p className="xs:ml-1 mb-3 xs:mb-6 sm:mb-8 lg:mb-10 font-hero font-medium text-lg xs:text-xl sm:text-2xl uppercase tracking-widest">
+      <p className="xs:ml-1 mb-3 xs:mb-6 sm:mb-8 lg:mb-10 font-headlines font-medium text-lg xs:text-xl sm:text-2xl uppercase tracking-widest">
         <span className="block xs:inline-block leading-none">
           {jobTitles[0]}
         </span>
