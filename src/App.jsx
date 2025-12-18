@@ -10,7 +10,7 @@ import Projects from './ui/layouts/projects/Projects';
 import Contact from './ui/layouts/contact/Contact';
 import ToTopBtn from './ui/shared/ToTopBtn';
 import Footer from './ui/layouts/footer/Footer';
-import content from './content/target';
+import content from './content/react';
 import { profilePic as profilePicUrl } from './assets';
 import assets from './assets';
 

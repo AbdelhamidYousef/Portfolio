@@ -90,23 +90,25 @@ const Project = ({ data, active, setActive, imageMap }) => {
           iconClassName="w-8 h-8 xs:w-9 xs:h-9 drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
         />
 
+        {githubLink && (
+          <a
+            href={githubLink}
+            target="_blank"
+            rel="noreferrer"
+            title="Code Source"
+            className="absolute right-4 top-4 xs:right-5 xs:top-5 xl:right-6 xl:top-6 w-6 h-6 xs:w-8 xs:h-8 text-gray-100 drop-shadow-[0_0_20px_#fff] hover:drop-shadow-[0_0_10px_#fff] transition-all duration-300 outline-none focus:drop-shadow-[0_0_7px_#fff]"
+          >
+            <Github />
+          </a>
+        )}
         <a
-          href={githubLink}
-          target="_blank"
-          rel="noreferrer"
-          title="Code Source"
-          className="absolute right-4 top-4 xs:right-5 xs:top-5 xl:right-6 xl:top-6 w-6 h-6 xs:w-8 xs:h-8 text-gray-100 drop-shadow-[0_0_20px_#fff] hover:drop-shadow-[0_0_10px_#fff] transition-all duration-300 outline-none focus:drop-shadow-[0_0_7px_#fff]"
-        >
-          <Github />
-        </a>
-        <a
-          href={demoLink}
+          href={demoLink || image}
           target="_blank"
           rel="noreferrer"
           className="absolute left-1/2 -translate-x-1/2 bottom-5 xs:bottom-8 xl:bottom-10 px-5 py-1.5 xs:px-6 xs:py-2 md:px-8 md:py-3 border-2 border-gray-100 rounded-full text-gray-100 hover:text-slate-700 flex items-center hover:border-transparent hover:bg-gray-100 hover:drop-shadow-[0_0_3px_#fff] transition-all duration-700 outline-none focus:bg-gray-100 focus:text-slate-700"
         >
           <span className="font-medium text-sm xs:text-md sm:text-lg whitespace-nowrap mr-2">
-            Live Preview
+            {demoLink ? 'Live Preview' : 'Preview'}
           </span>
           <span className="inline-block w-3 h-3 sm:w-4 sm:h-4">
             <ExternalLink />

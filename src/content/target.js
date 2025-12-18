@@ -100,8 +100,6 @@ export default {
         { id: 3, title: 'JavaScript', iconName: 'Javascript' },
         { id: 4, title: 'CSS', iconName: 'Css' },
       ],
-      githubLink: 'https://github.com/AbdelhamidYousef/Forkify',
-      demoLink: 'https://forkify99.netlify.app',
     },
     {
       id: 2,
@@ -114,8 +112,6 @@ export default {
         { id: 3, title: 'JavaScript', iconName: 'Javascript' },
         { id: 4, title: 'SASS', iconName: 'Sass' },
       ],
-      githubLink: 'https://github.com/AbdelhamidYousef/Forkify',
-      demoLink: 'https://forkify99.netlify.app',
     },
   ],
 };
