@@ -30,9 +30,9 @@ const Select = ({
   return (
     <button
       className={`
-        ${isOpen ? 'after:!w-0' : 'focus:after:w-full '}
+        ${isOpen ? 'after:w-0!' : 'focus:after:w-full '}
         ${className}
-        js-select relative w-full min-w-[12rem] max-w-[11rem] mx-auto h-10 flex justify-between items-center outline-none after:absolute after:left-1/2 after:-translate-x-1/2 after:-ml-0.5 after:bottom-0 after:h-0.5 after:bg-gray-200 after:transition-all after:duration-300
+        js-select relative w-full min-w-48 max-w-44 mx-auto h-10 flex justify-between items-center outline-hidden after:absolute after:left-1/2 after:-translate-x-1/2 after:-ml-0.5 after:bottom-0 after:h-0.5 after:bg-gray-200 after:transition-all after:duration-300
       `}
       onClick={() => setIsOpen((isOpen) => !isOpen)}
     >

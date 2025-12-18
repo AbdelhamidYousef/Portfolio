@@ -6,7 +6,7 @@ const Download = () => {
     <a
       href={resume}
       download
-      className="group text-slate-600 flex items-center gap-x-2 transition-all duration-300 hover:text-primary-600 hover:border-none outline-none focus:border-b-2 focus:border-slate-600 focus:border-spacing-2 dark:text-gray-50 dark:hover:text-primary-400"
+      className="group text-slate-600 flex items-center gap-x-2 transition-all duration-300 hover:text-primary-600 hover:border-none outline-hidden focus:border-b-2 focus:border-slate-600 focus:border-spacing-2 dark:text-gray-50 dark:hover:text-primary-400"
     >
       <span className="font-bold text-lg xs:text-xl uppercase tracking-tight">
         <span className="md:hidden">Resume</span>

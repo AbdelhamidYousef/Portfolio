@@ -9,7 +9,7 @@ const About = ({ content }) => {
   return (
     <Section
       id="about"
-      className="h-screen min-h-[40rem] box-content grid content-center text-center xs:text-left"
+      className="h-screen min-h-160 box-content grid content-center text-center xs:text-left"
     >
       <m.div variants={fadeIn('right', 'tween', 0.8)}>
         <AboutText content={content.text} />

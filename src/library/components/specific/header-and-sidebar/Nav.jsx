@@ -56,7 +56,7 @@ const Nav = ({ navLinksContent, closeSidebar }) => {
                 scrollToSection(e, link);
                 typeof closeSidebar === 'function' && closeSidebar();
               }}
-              className="relative outline-none group"
+              className="relative outline-hidden group"
             >
               {link}
               <span className="absolute -left-[5%] top-[115%] w-[110%] h-0.5 bg-current transition-all duration-300 scale-x-0 origin-left group-hover:scale-x-100 group-focus:scale-x-100"></span>

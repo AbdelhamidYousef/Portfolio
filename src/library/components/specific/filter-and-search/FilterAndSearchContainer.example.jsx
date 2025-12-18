@@ -10,7 +10,7 @@ const FilterAndSearchContainer = ({ skillsFilters, skillsSearch }) => {
   return (
     <>
       <div className="mb-10 md:mb-20 flex flex-col items-center gap-y-10 md:flex-row md:justify-between md:items-center">
-        <SectionTitle className="!m-0">Skills</SectionTitle>
+        <SectionTitle className="m-0!">Skills</SectionTitle>
 
         <FilterAndSearch
           useProvider={useList()}
@@ -21,7 +21,7 @@ const FilterAndSearchContainer = ({ skillsFilters, skillsSearch }) => {
 
       <IconCardList
         list={list}
-        className="min-h-[61rem] sm:min-h-[34rem] 2xl:min-h-[30rem]"
+        className="min-h-244 sm:min-h-136 2xl:min-h-120"
       />
     </>
   );
