@@ -1,9 +1,9 @@
+import Header from './Header';
+
 const Index = () => {
   return (
     <>
-      <header>
-        <h1>Header</h1>
-      </header>
+      <Header />
       <main>Main</main>
       <footer>
         <h1>Footer</h1>
