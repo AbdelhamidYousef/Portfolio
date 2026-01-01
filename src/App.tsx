@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router';
-import Index from './ui/layout/Index';
-import NotFound from './ui/pages/NotFound';
+import Index from '@/ui/layout/Index';
+import NotFound from '@/ui/pages/NotFound';
 
 const App = () => {
   return (
