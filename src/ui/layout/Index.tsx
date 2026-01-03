@@ -1,15 +1,7 @@
-import Header from './Header';
+import Main from '@/ui/layout/Main';
 
 const Index = () => {
-  return (
-    <>
-      <Header />
-      <main>Main</main>
-      <footer>
-        <h1>Footer</h1>
-      </footer>
-    </>
-  );
+  return <Main />;
 };
 
 export default Index;
