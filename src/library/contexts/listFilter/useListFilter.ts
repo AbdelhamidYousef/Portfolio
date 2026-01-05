@@ -1,18 +1,10 @@
 import { useContext } from 'react';
 import {
   ListFilterContext,
-  type ListFilterContextType,
+  type ListFilterOutputsType,
 } from './ListFilterContext';
 
-/**
- * Hook to access the ListFilter context
- *
- * @returns The context value containing query, filter, list, and actions
- *
- * @example
- * const { list, query, setQuery, filter, setFilter, clearFilters } = useListFilter<Skill>();
- */
-export const useListFilter = <T>(): ListFilterContextType<T> => {
+export const useListFilter = <T>(): ListFilterOutputsType<T> => {
   const context = useContext(ListFilterContext);
 
   if (!context) {
@@ -21,5 +13,5 @@ export const useListFilter = <T>(): ListFilterContextType<T> => {
     );
   }
 
-  return context as ListFilterContextType<T>;
+  return context as ListFilterOutputsType<T>;
 };

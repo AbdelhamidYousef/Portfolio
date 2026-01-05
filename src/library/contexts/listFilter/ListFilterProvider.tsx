@@ -3,43 +3,43 @@ import { ListFilterContext } from './ListFilterContext';
 
 interface ListFilterProviderProps<T> {
   children: ReactNode;
-  list: T[];
-  filterKey: keyof T;
+  originalList: T[];
   searchKey: keyof T;
+  filterKey: keyof T;
 }
 
 /**
  * A generic context provider for filtering and searching arrays of items
  *
  * @example
- * <ListFilterProvider list={skills} filterKey="type" searchKey="title">
+ * <ListFilterProvider originalList={skills} searchKey="title" filterKey="type">
  *   <ChildComponent />
  * </ListFilterProvider>
  */
 export const ListFilterProvider = <T extends object>({
   children,
-  list,
-  filterKey,
+  originalList,
   searchKey,
+  filterKey,
 }: ListFilterProviderProps<T>) => {
   const [query, setQuery] = useState('');
   const [filter, setFilter] = useState('');
 
-  let filteredList = list;
+  let modifiedList = originalList;
 
   // Filter list by the filter key
   if (filter) {
-    filteredList = filteredList.filter((item) => item[filterKey] === filter);
+    modifiedList = modifiedList.filter((item) => item[filterKey] === filter);
   }
 
   // Search list by the search key
   if (query) {
-    filteredList = filteredList.filter((item) =>
+    modifiedList = modifiedList.filter((item) =>
       String(item[searchKey]).toLowerCase().includes(query.toLowerCase())
     );
   }
 
-  const clearFilters = () => {
+  const clearQueryAndFilter = () => {
     setQuery('');
     setFilter('');
   };
@@ -49,11 +49,11 @@ export const ListFilterProvider = <T extends object>({
       value={{
         query,
         filter,
-        list: filteredList,
-        originalList: list,
+        modifiedList,
+        originalList,
         setQuery,
         setFilter,
-        clearFilters,
+        clearQueryAndFilter,
       }}
     >
       {children}
