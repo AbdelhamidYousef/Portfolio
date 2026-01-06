@@ -1,0 +1,35 @@
+@layer components {
+  /* Title Attributes
+    Used to display a title tooltip when hovering over an element.
+    How to use:
+    <div data-title-top="Title">
+      <p>Hover me</p>
+    </div>
+    <div data-title-bottom="Title">
+      <p>Hover me</p>
+    </div>
+  */
+  [data-title-top],
+  [data-title-bottom] {
+    @apply relative;
+  }
+
+  [data-title-top]:after,
+  [data-title-bottom]:after {
+    @apply absolute z-99 px-2 py-1 rounded-md shadow-[0_0_4px_#333] opacity-0 invisible bg-gray-50;
+    @apply text-slate-900 text-center whitespace-nowrap;
+  }
+  [data-title-top]:after {
+    content: attr(data-title-top);
+    @apply -top-9 left-[75%];
+  }
+  [data-title-bottom]:after {
+    content: attr(data-title-bottom);
+    @apply -bottom-8 left-[90%] scale-90;
+  }
+
+  [data-title-top]:hover:after,
+  [data-title-bottom]:hover:after {
+    @apply opacity-100 visible;
+  }
+}
