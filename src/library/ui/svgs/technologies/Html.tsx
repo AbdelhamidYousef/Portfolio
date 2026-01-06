@@ -26,4 +26,3 @@ export const Html = ({ className = '' }: HtmlProps) => (
     />
   </svg>
 );
-

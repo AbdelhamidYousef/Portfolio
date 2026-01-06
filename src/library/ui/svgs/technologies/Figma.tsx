@@ -1,0 +1,31 @@
+interface FigmaProps {
+  className?: string;
+}
+
+export const Figma = ({ className = '' }: FigmaProps) => (
+  <svg
+    className={className}
+    width="100%"
+    height="100%"
+    viewBox="0 0 24 24"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill="#F24E1E"
+      d="M8 24c2.208 0 4-1.792 4-4v-4H8c-2.208 0-4 1.792-4 4s1.792 4 4 4"
+    />
+    <path
+      fill="#A259FF"
+      d="M4 12c0-2.208 1.792-4 4-4h4v8H8c-2.208 0-4-1.792-4-4"
+    />
+    <path
+      fill="#1ABCFE"
+      d="M16 8c2.208 0 4 1.792 4 4s-1.792 4-4 4-4-1.792-4-4 1.792-4 4-4"
+    />
+    <path
+      fill="#0ACF83"
+      d="M4 4c0-2.208 1.792-4 4-4h4v8H8C5.792 8 4 6.208 4 4"
+    />
+    <path fill="#FF7262" d="M12 0h4c2.208 0 4 1.792 4 4s-1.792 4-4 4h-4z" />
+  </svg>
+);
