@@ -1,1 +1,46 @@
 @import '@/library/tailwind/index.css';
+
+@theme {
+  /* Colors */
+  --color-primary-200: var(--color-rust-200);
+  --color-primary-400: var(--color-rust-400);
+  --color-primary-500: var(--color-rust-500);
+  --color-primary-600: var(--color-rust-600);
+  --color-primary-700: var(--color-rust-700);
+  --color-primary-800: var(--color-rust-800);
+
+  /*
+    Font Families:
+      Options:
+      - main: --font-open-sans, --font-jetbrains
+      - mono: --font-jetbrains
+      - headlines: --font-saira
+  */
+  --font-main: var(--font-open-sans);
+  --font-headlines: var(--font-saira);
+
+  /* Z-Index */
+  --z-index-selectMenu: 60;
+  --z-index-toTopBtn: 70;
+  --z-index-footer: 71;
+  --z-index-sidebarContainer: 80;
+  --z-index-mainBtns: 81;
+}
+
+@layer base {
+  /* Body Base Styles */
+  body {
+    @apply bg-gray-50 dark:bg-gray-900 font-main text-base text-slate-500 dark:text-gray-200 transition-colors duration-300 selection:bg-primary-500 dark:selection:bg-primary-800 selection:text-gray-50;
+  }
+
+  /* Scrollbar Styles */
+  ::-webkit-scrollbar {
+    @apply w-1.5 bg-gray-50;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-600;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-600/70;
+  }
+}
