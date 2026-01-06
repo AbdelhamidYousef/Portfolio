@@ -20,4 +20,3 @@ export const Eslint = ({ className = '' }: EslintProps) => (
     />
   </svg>
 );
-

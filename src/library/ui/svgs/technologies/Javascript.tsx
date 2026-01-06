@@ -19,4 +19,3 @@ export const Javascript = ({ className = '' }: JavascriptProps) => (
     </g>
   </svg>
 );
-

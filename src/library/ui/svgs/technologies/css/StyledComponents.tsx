@@ -15,4 +15,3 @@ export const StyledComponents = ({ className = '' }: StyledComponentsProps) => (
     </text>
   </svg>
 );
-

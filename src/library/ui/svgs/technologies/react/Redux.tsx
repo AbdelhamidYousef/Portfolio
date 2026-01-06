@@ -17,4 +17,3 @@ export const Redux = ({ className = '' }: ReduxProps) => (
     </g>
   </svg>
 );
-
