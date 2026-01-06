@@ -1,4 +1,4 @@
-interface MenuIconProps {
+interface HamburgerIconProps {
   className?: string;
   weight?: 'light' | 'regular' | 'bold';
 }
@@ -9,10 +9,10 @@ const strokeWidths = {
   bold: 3,
 };
 
-export const MenuIcon = ({
+export const HamburgerIcon = ({
   className = '',
   weight = 'regular',
-}: MenuIconProps) => (
+}: HamburgerIconProps) => (
   <svg
     className={className}
     width="100%"
@@ -30,4 +30,3 @@ export const MenuIcon = ({
     />
   </svg>
 );
-
