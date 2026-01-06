@@ -1,0 +1,48 @@
+/* Must be imported first */
+@import './font-imports.css';
+
+/* Tailwind CSS v4: base styles, components, and utilities */
+@import 'tailwindcss';
+
+@import './animations.css';
+@import './title-attribute.css';
+
+/*
+  Dark Mode:
+  Now instead of `dark:*` styles being applied based on `prefers-color-scheme`,
+  they will be applied whenever the `dark` class is present earlier in the HTML tree (on the body or root element).
+*/
+@custom-variant dark (&:is(.dark *));
+
+/*
+  Additional Theme Variables:
+*/
+@theme {
+  /* Breakpoints */
+  --breakpoint-xs: 25rem; /* 400px */
+  /* --breakpoint-sm: 40rem; // 640px // Already defined in Tailwind */
+  /* --breakpoint-md: 48rem; // 768px // Already defined in Tailwind */
+  /* --breakpoint-lg: 65rem; // 1040px // Already defined in Tailwind */
+  /* --breakpoint-xl: 80rem; // 1280px // Already defined in Tailwind */
+  /* --breakpoint-2xl: 96rem; // 1536px // Already defined in Tailwind */
+
+  /* Font Families */
+  /* Main: Options: --font-open-sans, --font-outfit */
+  --font-open-sans: 'Open Sans', sans-serif;
+  --font-outfit: 'Outfit', system-ui, sans-serif; /* A bit condensed than open-sans */
+  /* Mono */
+  --font-jetbrains: 'JetBrains Mono', monospace;
+  /* Condensed */
+  --font-saira: 'Saira Extra Condensed', cursive, serif;
+
+  /* Colors */
+  --color-rust-200: hsl(17, 80%, 80%);
+  --color-rust-400: hsl(17, 80%, 60%);
+  --color-rust-500: hsl(17, 70%, 60%);
+  --color-rust-600: hsl(17, 54%, 48%);
+  --color-rust-700: hsl(17, 54%, 43%);
+  --color-rust-800: hsl(17, 54%, 35%);
+
+  /* Height */
+  /* --height-screen: 100dvh; // Removed because it's now included into Tailwind CSS v4 under h-dvh utility class */
+}
