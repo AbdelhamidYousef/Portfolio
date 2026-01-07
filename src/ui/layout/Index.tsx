@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { HamburgerToggleButton } from '@/library/ui/features/menu-buttons';
 import { Sidebar } from '@/library/ui/features/sidebar';
-import { profilePicture } from '@/assets';
+import { profilePicture } from '@/assets/index';
 
 const sidebarContent = {
   profilePicUrl: profilePicture,
