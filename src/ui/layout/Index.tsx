@@ -3,6 +3,7 @@ import { HamburgerToggleButton } from '@/library/ui/features/menu-buttons';
 import { Sidebar } from '@/library/ui/features/sidebar';
 import { ThemeButtons } from '@/library/ui/features/theme-button';
 import { ProgressCircleList, IconCardList } from '@/library/ui/features/lists';
+import { RubberChars } from '@/library/ui/shared';
 import { profilePicture } from '@/assets/index';
 
 const sidebarContent = {
@@ -107,6 +108,18 @@ const Index = () => {
                 { id: 6, title: 'Git', iconName: 'git' },
               ]}
             />
+          </div>
+        </div>
+
+        {/* Rubber Chars Section */}
+        <div className="mb-8">
+          <h2 className="mb-4 text-lg font-semibold text-gray-800 dark:text-gray-200">
+            Rubber Chars
+          </h2>
+          <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+            <p className="text-4xl font-bold text-slate-700 dark:text-slate-200">
+              <RubberChars>Hover over me!</RubberChars>
+            </p>
           </div>
         </div>
       </main>
