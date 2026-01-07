@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useKeydown } from '@/library/hooks/useKeydown';
+import { useKeydown } from '@/library/hooks';
 import { SidebarToggleButton } from './SidebarToggleButton';
 import { SidebarContent } from './SidebarContent';
 import type { IconListItem } from '@/library/ui/features/lists';

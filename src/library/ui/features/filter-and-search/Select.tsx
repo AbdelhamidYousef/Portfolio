@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ArrowHeadIcon } from '@/library/ui/svgs';
+import { ArrowHead } from '@/library/ui/svgs';
 import { useKeydown, useClickOutside } from '@/library/hooks';
 
 export interface SelectOption {
@@ -48,7 +48,7 @@ export const Select = ({
           isOpen ? 'rotate-180' : 'rotate-0'
         } w-5 h-5 text-gray-600 dark:text-gray-50 transition-all duration-300`}
       >
-        <ArrowHeadIcon />
+        <ArrowHead />
       </span>
 
       <ul

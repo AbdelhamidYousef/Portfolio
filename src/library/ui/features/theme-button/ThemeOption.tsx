@@ -1,4 +1,4 @@
-import type { ThemePreference } from '@/library/hooks/useTheme';
+import type { ThemePreference } from '@/library/hooks';
 import { ThemeIcons } from '@/library/ui/svgs';
 
 interface ThemeOptionProps {

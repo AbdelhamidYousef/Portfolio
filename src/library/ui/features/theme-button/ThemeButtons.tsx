@@ -1,4 +1,4 @@
-import { useTheme, type ThemePreference } from '@/library/hooks/useTheme';
+import { useTheme, type ThemePreference } from '@/library/hooks';
 import { ThemeOption } from './ThemeOption';
 
 interface ThemeButtonsProps {
