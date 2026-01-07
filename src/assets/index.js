@@ -1,7 +1,6 @@
-import avatar from './images/avatar.png';
-
 // Named Export: Best for Direct, Known Imports
-export { avatar };
+export { default as avatar } from './images/avatar.png';
+export { default as profilePicture } from './images/profile.webp';
 
 // Default Export (Object) — Best for Dynamic Lookups
 // export default { avatar };
