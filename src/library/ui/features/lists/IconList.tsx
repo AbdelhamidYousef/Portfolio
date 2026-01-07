@@ -9,9 +9,10 @@ export interface IconListItem {
 }
 
 interface IconListProps {
-  data: IconListItem[];
+  content: IconListItem[];
   containerClasses?: string;
   itemClasses?: string;
+  iconClasses?: string;
 }
 
 /**
@@ -19,7 +20,7 @@ interface IconListProps {
  *
  * @example
  * <IconList
- *   data={[
+ *   content={[
  *     { id: 1, iconName: 'typescript' }, // no link, just displays
  *     { id: 2, iconName: 'github', title: 'GitHub' },
  *     { id: 3, iconName: 'linkedin', link: 'https://linkedin.com/in/profile', external: false },
@@ -29,15 +30,16 @@ interface IconListProps {
  * />
  */
 export const IconList = ({
-  data,
+  content,
   containerClasses = '',
   itemClasses = '',
+  iconClasses = '',
 }: IconListProps) => {
   return (
     <ul
       className={`flex items-center justify-center gap-5 ${containerClasses}`}
     >
-      {data.map(({ id, iconName, title, link, external }) => {
+      {content.map(({ id, iconName, title, link, external }) => {
         // Get the icon component from the icon map
         const IconComponent = getIcon(iconName);
 
@@ -53,7 +55,7 @@ export const IconList = ({
           <li
             key={id}
             className={`h-6 w-6 transition-all duration-300 hover:scale-110 hover:opacity-70 ${itemClasses}`}
-            data-title-top={title}
+            content-title-top={title}
           >
             {link ? (
               <a
@@ -61,10 +63,10 @@ export const IconList = ({
                 aria-label={title}
                 {...(isExternal && { target: '_blank', rel: 'noreferrer' })}
               >
-                <IconComponent />
+                <IconComponent className={iconClasses} />
               </a>
             ) : (
-              <IconComponent />
+              <IconComponent className={iconClasses} />
             )}
           </li>
         );

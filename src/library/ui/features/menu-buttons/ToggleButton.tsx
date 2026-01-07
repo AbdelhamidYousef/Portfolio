@@ -9,7 +9,7 @@ const sizes = {
 
 const variants = {
   default: '',
-  rounded: 'bg-slate-700/70 rounded-full p-1.5',
+  rounded: 'bg-slate-700/70 rounded-full p-1.5 text-slate-50',
   outline: 'border border-current rounded-md p-1',
   ghost: 'hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md p-1',
 } as const;
@@ -59,6 +59,7 @@ export const ToggleButton = ({
       className={`
         text-gray-700 dark:text-gray-300
         hover:opacity-90 transition-opacity
+        cursor-pointer
         ${sizes[size]}
         ${variants[variant]}
         ${className}
