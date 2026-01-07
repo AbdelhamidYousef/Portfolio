@@ -1,20 +1,14 @@
 import { useState } from 'react';
 import { useKeydown } from '@/library/hooks/useKeydown';
-import SidebarToggleButton from './SidebarToggleButton';
+import { SidebarToggleButton } from './SidebarToggleButton';
 import { SidebarContent } from './SidebarContent';
-
-interface SocialItem {
-  id: string | number;
-  title: string;
-  iconName: string;
-  link: string;
-}
+import type { IconListItem } from '@/library/ui/features/lists';
 
 interface SidebarProps {
   content: {
     profilePicUrl: string;
     navLinks: string[];
-    socials: SocialItem[];
+    socials: IconListItem[];
   };
 }
 
@@ -34,26 +28,19 @@ interface SidebarProps {
  *  }} />
  */
 export const Sidebar = ({ content }: SidebarProps) => {
-  // State for the sidebar open/close
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
-  // Function to toggle the sidebar open/close
   const toggleSidebar = () => setIsSidebarOpen((prev) => !prev);
-
-  // Function to close the sidebar
   const closeSidebar = () => setIsSidebarOpen(false);
 
-  // Use the useKeydown hook to close the sidebar when the Escape key is pressed
   useKeydown('Escape', closeSidebar);
 
-  // Return the sidebar component
   return (
     <aside>
       <SidebarToggleButton
         isSidebarOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
       />
-
       <SidebarContent
         isSidebarOpen={isSidebarOpen}
         closeSidebar={closeSidebar}

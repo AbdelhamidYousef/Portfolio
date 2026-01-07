@@ -6,25 +6,28 @@ interface SidebarToggleButtonProps {
 }
 
 /**
- * Sidebar Toggle Button component for the header and menu
+ * Sidebar Toggle Button - fixed hamburger menu for mobile
  *
  * @example
  * <SidebarToggleButton isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
  */
-const SidebarToggleButton = ({
+export const SidebarToggleButton = ({
   isSidebarOpen,
   toggleSidebar,
-}: SidebarToggleButtonProps) => {
-  return (
-    <span className="fixed lg:hidden left-5 top-5 z-sidebar-buttons outline-hidden focus:ring-2 focus:ring-slate-600 transition-all duration-300 animate-overshootRight-2">
-      <HamburgerToggleButton
-        isOpen={isSidebarOpen}
-        onClick={toggleSidebar}
-        className="w-11 h-11"
-        variant="rounded"
-      />
-    </span>
-  );
-};
-
-export default SidebarToggleButton;
+}: SidebarToggleButtonProps) => (
+  <span
+    className={`
+      lg:hidden
+      fixed left-5 top-5 z-sidebar-buttons
+      transition-all duration-300 animate-overshootRight-2
+      outline-hidden focus:ring-2 focus:ring-slate-600
+    `}
+  >
+    <HamburgerToggleButton
+      isOpen={isSidebarOpen}
+      onClick={toggleSidebar}
+      className="w-11 h-11"
+      variant="rounded"
+    />
+  </span>
+);
