@@ -52,5 +52,17 @@ export const useTheme = () => {
     document.documentElement.classList.toggle('dark', theme === 'dark');
   }, [theme]);
 
+  // Listen for OS theme changes when preference is 'system'
+  useEffect(() => {
+    if (preference !== 'system') return;
+
+    // Update theme when OS theme changes
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = () => setTheme(getSystemTheme());
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, [preference]);
+
   return { theme, preference, setNewPreference };
 };
