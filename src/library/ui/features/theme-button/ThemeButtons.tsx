@@ -1,10 +1,8 @@
-import { useTheme } from '@/library/hooks/useTheme';
+import { useTheme, type ThemePreference } from '@/library/hooks/useTheme';
 import { ThemeOption } from './ThemeOption';
 
-type Theme = 'light' | 'dark' | 'system';
-
 interface ThemeButtonsProps {
-  themes?: Theme[];
+  themePreference?: ThemePreference[];
   className?: string;
 }
 
@@ -13,10 +11,10 @@ interface ThemeButtonsProps {
  *
  * @example
  * <ThemeButtons />
- * <ThemeButtons themes={['light', 'dark']} className="my-class" />
+ * <ThemeButtons themePreference={['light', 'dark']} className="my-class" />
  */
 export const ThemeButtons = ({
-  themes = ['system', 'dark', 'light'],
+  themePreference = ['system', 'dark', 'light'],
   className = '',
 }: ThemeButtonsProps) => {
   const { preference, setNewPreference } = useTheme();
@@ -30,7 +28,7 @@ export const ThemeButtons = ({
         transition-all duration-300 focus-within:w-40
       `}
     >
-      {themes.map((theme) => (
+      {themePreference.map((theme) => (
         <ThemeOption
           key={theme}
           theme={theme}
