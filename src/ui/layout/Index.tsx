@@ -3,7 +3,7 @@ import { HamburgerToggleButton } from '@/library/ui/features/menu-buttons';
 import { Sidebar } from '@/library/ui/features/sidebar';
 import { ThemeButtons } from '@/library/ui/features/theme-button';
 import { ProgressCircleList, IconCardList } from '@/library/ui/features/lists';
-import { RubberChars, ScrollToTopButton } from '@/library/ui/shared';
+import { Button, RubberChars, ScrollToTopButton } from '@/library/ui/shared';
 import { profilePicture } from '@/assets/index';
 
 const sidebarContent = {
@@ -123,6 +123,31 @@ const Index = () => {
             <p className="text-4xl font-bold text-slate-700 dark:text-slate-200">
               <RubberChars>Hover over me!</RubberChars>
             </p>
+          </div>
+        </div>
+
+        {/* Button Section */}
+        <div className="mb-8">
+          <h2 className="mb-4 text-lg font-semibold text-gray-800 dark:text-gray-200">
+            Buttons
+          </h2>
+          <div className="flex flex-wrap items-center gap-4 rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+            <Button variant="primary">Primary</Button>
+            <Button variant="secondary">Secondary</Button>
+            <Button variant="outline">Outline</Button>
+            <Button variant="ghost">Ghost</Button>
+            <Button variant="primary" size="sm">
+              Small
+            </Button>
+            <Button variant="primary" size="lg">
+              Large
+            </Button>
+            <Button variant="primary" disabled>
+              Disabled
+            </Button>
+            <Button as="a" href="#" variant="outline">
+              Link Button
+            </Button>
           </div>
         </div>
       </main>
