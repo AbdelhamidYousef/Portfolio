@@ -160,4 +160,21 @@
       transform: scaleX(1.05) scaleY(0.95);
     }
   }
+
+  /*
+    Fade In Left Animation
+    Element fades in while sliding from the left.
+    Used for staggered list animations.
+  */
+  --animate-fadeInLeft: fadeInLeft 0.5s ease-out;
+  @keyframes fadeInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }

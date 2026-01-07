@@ -1,8 +1,8 @@
-interface ReactIconProps {
+interface ReactProps {
   className?: string;
 }
 
-export const ReactIcon = ({ className = '' }: ReactIconProps) => (
+export const React = ({ className = '' }: ReactProps) => (
   <svg
     className={className}
     width="100%"

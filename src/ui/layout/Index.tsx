@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { HamburgerToggleButton } from '@/library/ui/features/menu-buttons';
 import { Sidebar } from '@/library/ui/features/sidebar';
 import { ThemeButtons } from '@/library/ui/features/theme-button';
-import { ProgressCircleList } from '@/library/ui/features/lists';
+import { ProgressCircleList, IconCardList } from '@/library/ui/features/lists';
 import { profilePicture } from '@/assets/index';
 
 const sidebarContent = {
@@ -87,6 +87,25 @@ const Index = () => {
                 { id: 5, label: 'GraphQL', percentage: 60, color: '#e535ab' },
               ]}
               containerClasses="gap-8"
+            />
+          </div>
+        </div>
+
+        {/* Icon Card List Section */}
+        <div className="mb-8">
+          <h2 className="mb-4 text-lg font-semibold text-gray-800 dark:text-gray-200">
+            Icon Card List
+          </h2>
+          <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+            <IconCardList
+              data={[
+                { id: 1, title: 'React', iconName: 'react' },
+                { id: 2, title: 'TypeScript', iconName: 'typescript' },
+                { id: 3, title: 'JavaScript', iconName: 'javascript' },
+                { id: 4, title: 'Node.js', iconName: 'nodejs' },
+                { id: 5, title: 'HTML', iconName: 'html' },
+                { id: 6, title: 'Git', iconName: 'git' },
+              ]}
             />
           </div>
         </div>
