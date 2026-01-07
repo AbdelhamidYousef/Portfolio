@@ -18,7 +18,7 @@ export const SidebarToggleButton = ({
   <span
     className={`
       lg:hidden
-      fixed left-5 top-5 z-sidebar-buttons
+      fixed left-5 top-5 z-sidebar-button
       transition-all duration-300 animate-overshootRight-2
       outline-hidden focus:ring-2 focus:ring-slate-600
     `}
