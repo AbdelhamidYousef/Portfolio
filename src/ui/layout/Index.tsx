@@ -4,9 +4,15 @@ import { Sidebar } from '@/library/ui/features/sidebar';
 import { ThemeButtons } from '@/library/ui/features/theme-button';
 import { ProgressCircleList, IconCardList } from '@/library/ui/features/lists';
 import {
+  ProjectCard,
+  type ProjectData,
+} from '@/library/ui/features/project-card';
+import {
   Button,
+  DownloadLink,
   RubberChars,
   ScrollToTopButton,
+  Section,
   SectionTitle,
 } from '@/library/ui/shared';
 import { profilePicture } from '@/assets/index';
@@ -31,8 +37,36 @@ const sidebarContent = {
   ],
 };
 
+const sampleProjects: ProjectData[] = [
+  {
+    id: 1,
+    title: 'Portfolio',
+    description:
+      'A responsive portfolio website built with React and Tailwind CSS.',
+    image: profilePicture,
+    technologies: [
+      { id: 1, title: 'React', iconName: 'react' },
+      { id: 2, title: 'TypeScript', iconName: 'typescript' },
+    ],
+    githubLink: 'https://github.com',
+    demoLink: 'https://example.com',
+  },
+  {
+    id: 2,
+    title: 'Dashboard',
+    description: 'Analytics dashboard with charts and real-time data.',
+    image: profilePicture,
+    technologies: [
+      { id: 1, title: 'React', iconName: 'react' },
+      { id: 2, title: 'Node.js', iconName: 'nodejs' },
+    ],
+    githubLink: 'https://github.com',
+  },
+];
+
 const Index = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeProject, setActiveProject] = useState(1);
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -156,8 +190,42 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Section Title */}
-        <SectionTitle>About Me</SectionTitle>
+        {/* Download Link Section */}
+        <div className="mb-8">
+          <h2 className="mb-4 text-lg font-semibold text-gray-800 dark:text-gray-200">
+            Download Link
+          </h2>
+          <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+            <DownloadLink href="#" shortLabel="Resume">
+              Download My Resume
+            </DownloadLink>
+          </div>
+        </div>
+
+        {/* Section Component */}
+        <Section id="demo-section" className="mb-8 py-8">
+          <SectionTitle>Section Component</SectionTitle>
+          <p className="text-slate-600 dark:text-slate-300">
+            This is wrapped in a Section component with a bottom border.
+          </p>
+        </Section>
+
+        {/* Project Cards Section */}
+        <div className="mb-8">
+          <h2 className="mb-4 text-lg font-semibold text-gray-800 dark:text-gray-200">
+            Project Cards
+          </h2>
+          <ul className="flex flex-col md:flex-row gap-4">
+            {sampleProjects.map((project) => (
+              <ProjectCard
+                key={project.id}
+                data={project}
+                isActive={activeProject === project.id}
+                onClick={() => setActiveProject(project.id)}
+              />
+            ))}
+          </ul>
+        </div>
       </main>
     </div>
   );
