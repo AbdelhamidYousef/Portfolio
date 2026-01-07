@@ -5,20 +5,19 @@ interface OverlayProps {
 }
 
 /**
- * Full Width Overlay component that covers the entire width of the screen
+ * Overlay component that covers the screen when open
  *
  * @example
- * <FullWidthOverlay isOpen={true} onClick={() => setIsOpen(false)} />
+ * <Overlay isOpen={true} onClick={() => setIsOpen(false)} />
  */
-export const Overlay = ({ isOpen, onClick, className = '' }: OverlayProps) => {
-  return (
-    <div
-      className={`
-        ${className}
-        ${isOpen ? 'w-screen' : 'w-0'}
-        absolute inset-0 bg-gray-900/30
-      `}
-      onClick={onClick}
-    ></div>
-  );
-};
+export const Overlay = ({ isOpen, onClick, className = '' }: OverlayProps) => (
+  <div
+    className={`
+      ${className}
+      ${isOpen ? 'w-screen' : 'w-0'}
+      absolute inset-0 bg-gray-900/30
+    `}
+    onClick={onClick}
+    aria-hidden="true"
+  />
+);
