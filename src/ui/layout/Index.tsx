@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { HamburgerToggleButton } from '@/library/ui/features/menu-buttons';
 import { Sidebar } from '@/library/ui/features/sidebar';
 import { ThemeButtons } from '@/library/ui/features/theme-button';
+import { ProgressCircleList } from '@/library/ui/features/lists';
 import { profilePicture } from '@/assets/index';
 
 const sidebarContent = {
@@ -63,6 +64,30 @@ const Index = () => {
               />
               <span className="text-xs text-gray-500">Rounded</span>
             </div>
+          </div>
+        </div>
+
+        {/* Progress Circle Section */}
+        <div className="mb-8">
+          <h2 className="mb-4 text-lg font-semibold text-gray-800 dark:text-gray-200">
+            Progress Circle List
+          </h2>
+          <div className="rounded-lg border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
+            <ProgressCircleList
+              data={[
+                { id: 1, label: 'React', percentage: 90 },
+                {
+                  id: 2,
+                  label: 'TypeScript',
+                  percentage: 85,
+                  color: '#3178c6',
+                },
+                { id: 3, label: 'Node.js', percentage: 75, color: '#68a063' },
+                { id: 4, label: 'UI Design', percentage: 70, color: '#ff6b9d' },
+                { id: 5, label: 'GraphQL', percentage: 60, color: '#e535ab' },
+              ]}
+              containerClasses="gap-8"
+            />
           </div>
         </div>
       </main>
