@@ -5,14 +5,9 @@ import { ThemeButtons } from '@/library/ui/features/theme-button';
 import { ProgressCircleList, IconCardList } from '@/library/ui/features/lists';
 import {
   Button,
-  Form,
-  FormContainer,
-  FormField,
-  Input,
-  Label,
   RubberChars,
   ScrollToTopButton,
-  Textarea,
+  SectionTitle,
 } from '@/library/ui/shared';
 import { profilePicture } from '@/assets/index';
 
@@ -161,40 +156,8 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Form Section */}
-        <div className="mb-8">
-          <h2 className="mb-4 text-lg font-semibold text-gray-800 dark:text-gray-200">
-            Form
-          </h2>
-          <FormContainer className="max-w-4xl">
-            <Form onSubmit={() => console.log('Form submitted')}>
-              <FormField>
-                <Label htmlFor="name">Name</Label>
-                <Input id="name" placeholder="John Doe" />
-              </FormField>
-              <FormField>
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="you@example.com" />
-              </FormField>
-              <FormField>
-                <Label htmlFor="email-error">Email (with error)</Label>
-                <Input
-                  id="email-error"
-                  type="email"
-                  placeholder="invalid@"
-                  error
-                />
-              </FormField>
-              <FormField>
-                <Label htmlFor="message">Message</Label>
-                <Textarea id="message" placeholder="Your message..." rows={3} />
-              </FormField>
-              <Button type="submit" className="w-full">
-                Submit
-              </Button>
-            </Form>
-          </FormContainer>
-        </div>
+        {/* Section Title */}
+        <SectionTitle>About Me</SectionTitle>
       </main>
     </div>
   );
