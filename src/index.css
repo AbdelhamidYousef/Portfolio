@@ -21,7 +21,7 @@
 
   /* Z-Index */
   /* --z-index-selectMenu: 60; */
-  /* --z-index-toTopBtn: 70; */
+  --z-index-scroll-to-top: 70;
   /* --z-index-footer: 71; */
   --z-index-sidebar-container: 80;
   --z-index-sidebar-button: 81;

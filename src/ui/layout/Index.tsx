@@ -3,7 +3,7 @@ import { HamburgerToggleButton } from '@/library/ui/features/menu-buttons';
 import { Sidebar } from '@/library/ui/features/sidebar';
 import { ThemeButtons } from '@/library/ui/features/theme-button';
 import { ProgressCircleList, IconCardList } from '@/library/ui/features/lists';
-import { RubberChars } from '@/library/ui/shared';
+import { RubberChars, ScrollToTopButton } from '@/library/ui/shared';
 import { profilePicture } from '@/assets/index';
 
 const sidebarContent = {
@@ -37,6 +37,9 @@ const Index = () => {
       <span className="fixed right-5 top-5 z-theme-button">
         <ThemeButtons />
       </span>
+
+      {/* Scroll to Top Button */}
+      <ScrollToTopButton />
 
       <main className="p-8 lg:ml-72">
         {/* Menu Buttons Section */}
