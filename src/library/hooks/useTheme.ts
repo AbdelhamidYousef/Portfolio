@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-type Theme = 'light' | 'dark';
-type ThemePreference = Theme | 'system';
+export type Theme = 'light' | 'dark';
+export type ThemePreference = Theme | 'system';
 
 const getSystemTheme = (): Theme =>
   window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';

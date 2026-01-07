@@ -1,9 +1,8 @@
+import type { ThemePreference } from '@/library/hooks/useTheme';
 import { ThemeIcons } from '@/library/ui/svgs';
 
-type Theme = 'light' | 'dark' | 'system';
-
 interface ThemeOptionProps {
-  theme: Theme;
+  theme: ThemePreference;
   isActive: boolean;
   onClick: () => void;
 }
