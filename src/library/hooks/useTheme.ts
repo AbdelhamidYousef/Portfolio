@@ -1,66 +1,56 @@
 import { useEffect, useState } from 'react';
 
 type Theme = 'light' | 'dark';
-type ThemeInput = Theme | 'system';
+type ThemePreference = Theme | 'system';
 
-/**
- * Get the system preferred color scheme
- */
-const getSystemTheme = (): Theme => {
-  return window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'dark'
-    : 'light';
-};
+const getSystemTheme = (): Theme =>
+  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 
-/**
- * Get the initial theme from localStorage or fall back to system preference
- */
-const getInitialTheme = (): Theme => {
-  const stored = localStorage.getItem('theme') as Theme | null;
-  return stored ?? getSystemTheme();
-};
+const getStoredPreference = (): ThemePreference =>
+  (localStorage.getItem('theme') as ThemePreference | null) ?? 'system';
 
 /**
  * Hook to manage theme state with localStorage persistence
- * Initial theme is fetched from localStorage or system preference and set the corresponding class to the document element.
- * Theme is persisted in localStorage.
- * System preference is used if no theme is set.
- * Once a theme is set, the class is updated immediately.
  *
- * @returns A tuple of [currentTheme, setTheme]
+ * @returns { theme, preference, setNewPreference }
+ * - theme: The resolved theme ('light' | 'dark')
+ * - preference: What the user selected ('light' | 'dark' | 'system')
+ * - setNewPreference: Function to update the preference
  *
  * @example
- * const [theme, setTheme] = useTheme();
+ * const { theme, preference, setNewPreference } = useTheme();
  *
- * // Set to specific theme
- * setTheme('dark');
- * setTheme('light');
+ * // Check active state in UI
+ * isActive={preference === 'system'}
  *
- * // Reset to system preference
- * setTheme('system');
+ * // Set preference
+ * setNewPreference('dark');
+ * setNewPreference('system');
  */
-export const useTheme = (): [Theme, (theme: ThemeInput) => void] => {
-  const [currentTheme, setCurrentTheme] = useState<Theme>(getInitialTheme);
+export const useTheme = () => {
+  const [preference, setPreference] =
+    useState<ThemePreference>(getStoredPreference);
 
-  const setTheme = (theme: ThemeInput) => {
-    if (theme === 'system') {
-      setCurrentTheme(getSystemTheme());
+  const [theme, setTheme] = useState<Theme>(() =>
+    preference === 'system' ? getSystemTheme() : preference
+  );
+
+  const setNewPreference = (newPreference: ThemePreference) => {
+    setPreference(newPreference);
+
+    if (newPreference === 'system') {
       localStorage.removeItem('theme');
-      return;
+      setTheme(getSystemTheme());
+    } else {
+      localStorage.setItem('theme', newPreference);
+      setTheme(newPreference);
     }
-
-    setCurrentTheme(theme);
-    localStorage.setItem('theme', theme);
   };
 
   // Apply theme class to document
   useEffect(() => {
-    if (currentTheme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [currentTheme]);
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  }, [theme]);
 
-  return [currentTheme, setTheme];
+  return { theme, preference, setNewPreference };
 };

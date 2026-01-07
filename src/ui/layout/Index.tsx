@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { HamburgerToggleButton } from '@/library/ui/features/menu-buttons';
 import { Sidebar } from '@/library/ui/features/sidebar';
+import { ThemeButtons } from '@/library/ui/features/theme-button';
 import { profilePicture } from '@/assets/index';
 
 const sidebarContent = {
@@ -29,6 +30,11 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
       <Sidebar content={sidebarContent} />
+
+      {/* Floating Theme Buttons */}
+      <span className="fixed right-5 top-5 z-theme-button">
+        <ThemeButtons />
+      </span>
 
       <main className="p-8 lg:ml-72">
         {/* Menu Buttons Section */}
