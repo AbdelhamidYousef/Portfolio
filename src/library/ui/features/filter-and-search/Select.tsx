@@ -3,27 +3,47 @@ import { ArrowHead } from '@/library/ui/svgs';
 import { useKeydown, useClickOutside } from '@/library/hooks';
 
 export interface SelectOption {
-  label: string;
   value: string;
+  label: string;
 }
 
 interface SelectProps {
-  setFilter: (filter: string) => void;
   options: SelectOption[];
+  value: string;
+  onChange: (value: string) => void;
   placeholder?: string;
   className?: string;
 }
 
+/**
+ * Dropdown select for filtering
+ *
+ * @example
+ * <Select
+ *   options={[
+ *     { value: '', label: 'All' },
+ *     { value: 'frontend', label: 'Frontend' },
+ *   ]}
+ *   value={filter}
+ *   onChange={setFilter}
+ *   placeholder="Category"
+ * />
+ */
 export const Select = ({
-  setFilter,
   options,
+  value,
+  onChange,
   placeholder = 'Select...',
   className = '',
 }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [filterLabel, setFilterLabel] = useState<string>();
 
   const closeMenu = () => setIsOpen(false);
+
+  // Find the label for the current value
+  const selectedLabel = options.find((opt) => opt.value === value)?.label;
+  const displayText =
+    selectedLabel && value !== '' ? selectedLabel : placeholder;
 
   useClickOutside('.js-filter-button', closeMenu);
   useKeydown('Escape', closeMenu);
@@ -38,9 +58,7 @@ export const Select = ({
       onClick={() => setIsOpen((prev) => !prev)}
     >
       <span className="font-semibold text-sm text-slate-500 dark:text-gray-50">
-        {!filterLabel || filterLabel === options[0]?.label
-          ? placeholder
-          : filterLabel}
+        {displayText}
       </span>
 
       <span
@@ -58,14 +76,20 @@ export const Select = ({
             : 'invisible opacity-0 scale-0'
         } absolute top-[120%] z-selectMenu w-full px-5 bg-white dark:bg-slate-800 rounded-xl shadow-lg overflow-auto transition-all duration-300 origin-top`}
       >
-        {options.map((option, i) => (
+        {options.map((option) => (
           <li
-            key={i}
-            className="pt-6 last:pb-6 font-medium text-sm text-gray-500 dark:text-gray-50 tracking-wide cursor-pointer select-none transition-all duration-300 hover:text-primary-600 dark:hover:text-primary-400"
+            key={option.value}
+            className={`
+              pt-6 last:pb-6 font-medium text-sm tracking-wide cursor-pointer select-none transition-all duration-300
+              ${
+                value === option.value
+                  ? 'text-primary-600 dark:text-primary-400'
+                  : 'text-gray-500 dark:text-gray-50 hover:text-primary-600 dark:hover:text-primary-400'
+              }
+            `}
             onClick={(e) => {
               e.stopPropagation();
-              setFilterLabel(option.label);
-              setFilter(option.value === 'all' ? '' : option.value);
+              onChange(option.value);
               setIsOpen(false);
             }}
           >
