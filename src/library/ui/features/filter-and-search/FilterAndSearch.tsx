@@ -1,46 +1,38 @@
-import { Searchbar } from './Searchbar';
-import { Select, type SelectOption } from './Select';
-
-interface FilterConfig {
-  options: SelectOption[];
-  placeholder: string;
-}
-
-interface SearchConfig {
-  placeholder: string;
-}
+import type { ReactNode } from 'react';
 
 interface FilterAndSearchProps {
-  query: string;
-  setQuery: (query: string) => void;
-  setFilter: (filter: string) => void;
-  filterConfig: FilterConfig;
-  searchConfig: SearchConfig;
+  children: ReactNode;
   className?: string;
 }
 
+/**
+ * Container for composing Search and Filter components
+ *
+ * @example
+ * <FilterAndSearch>
+ *   <Search value={query} onChange={setQuery} placeholder="Search..." />
+ *   <Filter variant="buttons" options={options} value={filter} onChange={setFilter} />
+ * </FilterAndSearch>
+ *
+ * @example
+ * // Search only
+ * <FilterAndSearch>
+ *   <Search value={query} onChange={setQuery} />
+ * </FilterAndSearch>
+ *
+ * @example
+ * // Filter only
+ * <FilterAndSearch>
+ *   <Filter variant="select" options={options} value={filter} onChange={setFilter} />
+ * </FilterAndSearch>
+ */
 export const FilterAndSearch = ({
-  query,
-  setQuery,
-  setFilter,
-  filterConfig,
-  searchConfig,
+  children,
   className = '',
-}: FilterAndSearchProps) => {
-  return (
-    <div
-      className={`flex flex-col-reverse gap-y-5 md:flex-row md:items-center md:space-x-6 z-selectMenu ${className}`}
-    >
-      <Searchbar
-        query={query}
-        setQuery={setQuery}
-        placeholder={searchConfig.placeholder}
-      />
-      <Select
-        setFilter={setFilter}
-        options={filterConfig.options}
-        placeholder={filterConfig.placeholder}
-      />
-    </div>
-  );
-};
+}: FilterAndSearchProps) => (
+  <div
+    className={`flex flex-col-reverse gap-y-5 md:flex-row md:items-center md:gap-x-6 ${className}`}
+  >
+    {children}
+  </div>
+);
