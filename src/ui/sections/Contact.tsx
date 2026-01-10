@@ -9,14 +9,11 @@ import {
 import { Button } from '@/library/ui/shared/Button';
 import {
   Form,
-  FormField,
-  Label,
-  Input,
-  Textarea,
   FormContainer,
+  DynamicFormFields,
 } from '@/library/ui/features/form';
 import { IconList, type IconListItem } from '@/library/ui/features/lists';
-import { emailjsConfig } from '@/content';
+import { emailjsConfig, contactFormFields } from '@/content';
 
 interface ContactProps {
   email: string;
@@ -112,59 +109,14 @@ export const Contact = ({ email, socials }: ContactProps) => {
           ) : (
             <FormContainer className="bg-gray-100! dark:bg-slate-800! p-6! sm:p-9!">
               <Form onSubmit={handleSubmit}>
-                <FormField>
-                  <Label htmlFor="name">Name</Label>
-                  <Input
-                    id="name"
-                    type="text"
-                    placeholder="Your name"
-                    value={formData.name}
-                    onChange={(e) =>
-                      setFormData((prev) => ({
-                        ...prev,
-                        name: e.target.value,
-                      }))
-                    }
-                    required
-                    disabled={status === 'loading'}
-                  />
-                </FormField>
-
-                <FormField>
-                  <Label htmlFor="email">Email</Label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="your@email.com"
-                    value={formData.email}
-                    onChange={(e) =>
-                      setFormData((prev) => ({
-                        ...prev,
-                        email: e.target.value,
-                      }))
-                    }
-                    required
-                    disabled={status === 'loading'}
-                  />
-                </FormField>
-
-                <FormField>
-                  <Label htmlFor="message">Message</Label>
-                  <Textarea
-                    id="message"
-                    placeholder="Your message..."
-                    value={formData.message}
-                    onChange={(e) =>
-                      setFormData((prev) => ({
-                        ...prev,
-                        message: e.target.value,
-                      }))
-                    }
-                    rows={5}
-                    required
-                    disabled={status === 'loading'}
-                  />
-                </FormField>
+                <DynamicFormFields
+                  fields={contactFormFields}
+                  values={formData}
+                  onChange={(id, value) =>
+                    setFormData((prev) => ({ ...prev, [id]: value }))
+                  }
+                  disabled={status === 'loading'}
+                />
 
                 {status === 'error' && (
                   <p className="text-red-500 dark:text-red-400 text-sm">
