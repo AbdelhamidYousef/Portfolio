@@ -1,4 +1,5 @@
 import { Hero, About, Skills, Projects, Contact } from '@/ui/sections';
+import { Footer } from './Footer';
 import { about } from '@/content';
 import { Sidebar } from '@/library/ui/features/sidebar';
 import { ThemeButtons } from '@/library/ui/features/theme-button';
@@ -31,6 +32,7 @@ const Index = () => {
         <Skills />
         <Projects />
         <Contact email={email} socials={socials} />
+        <Footer socials={socials} resumeUrl={resume} />
       </main>
 
       {/* Scroll to Top */}
