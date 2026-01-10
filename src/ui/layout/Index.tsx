@@ -1,4 +1,11 @@
-import { Hero, About, Skills, Projects, Contact } from '@/ui/sections';
+import {
+  Hero,
+  About,
+  Experience,
+  Skills,
+  Projects,
+  Contact,
+} from '@/ui/sections';
 import { Footer } from './Footer';
 import { about } from '@/content';
 import { Sidebar } from '@/library/ui/features/sidebar';
@@ -29,6 +36,9 @@ const Index = () => {
       <main className="lg:ml-72">
         <Hero fullName={fullName} title={title} tagline={tagline} />
         <About profile={profile} stats={stats} resumeUrl={resume} />
+
+        <Experience />
+
         <Skills />
         <Projects />
         <Contact email={email} socials={socials} />
