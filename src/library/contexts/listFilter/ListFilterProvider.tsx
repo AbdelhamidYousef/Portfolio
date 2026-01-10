@@ -4,15 +4,30 @@ import { ListFilterContext } from './ListFilterContext';
 interface ListFilterProviderProps<T> {
   children: ReactNode;
   originalList: T[];
-  searchKey: keyof T;
-  filterKey: keyof T;
+  /** Key to search by (optional - omit to disable search) */
+  searchKey?: keyof T;
+  /** Key to filter by (optional - omit to disable filtering) */
+  filterKey?: keyof T;
 }
 
 /**
- * A generic context provider for filtering and searching arrays of items
+ * A generic context provider for filtering and/or searching arrays of items
  *
  * @example
+ * // With both search and filter
  * <ListFilterProvider originalList={skills} searchKey="title" filterKey="type">
+ *   <ChildComponent />
+ * </ListFilterProvider>
+ *
+ * @example
+ * // Filter only (no search)
+ * <ListFilterProvider originalList={skills} filterKey="type">
+ *   <ChildComponent />
+ * </ListFilterProvider>
+ *
+ * @example
+ * // Search only (no filter)
+ * <ListFilterProvider originalList={skills} searchKey="title">
  *   <ChildComponent />
  * </ListFilterProvider>
  */
@@ -27,13 +42,13 @@ export const ListFilterProvider = <T extends object>({
 
   let modifiedList = originalList;
 
-  // Filter list by the filter key
-  if (filter) {
+  // Filter list by the filter key (if filterKey is provided)
+  if (filter && filterKey) {
     modifiedList = modifiedList.filter((item) => item[filterKey] === filter);
   }
 
-  // Search list by the search key
-  if (query) {
+  // Search list by the search key (if searchKey is provided)
+  if (query && searchKey) {
     modifiedList = modifiedList.filter((item) =>
       String(item[searchKey]).toLowerCase().includes(query.toLowerCase())
     );
