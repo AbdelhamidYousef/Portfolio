@@ -1,6 +1,6 @@
 import { Section, SectionTitle, AnimateOnScroll } from '@/library/ui/shared';
 import { workExperience } from '@/content/experience';
-import { ExperienceTimeline } from '../../library/ui/features/experience/ExperienceTimeline';
+import { ExperienceTimeline } from '@/library/ui/features/experience';
 
 export const Experience = () => {
   return (

@@ -10,7 +10,7 @@ export const about = {
   email: 'abdelhamedy33@gmail.com',
 
   // Bio
-  profile: `I'm a passionate Frontend Developer specializing in React and TypeScript, with a strong focus on building performant, accessible, and user- centric interfaces. Known for attention to detail, clean code practices, and translating complex requirements into elegant solutions.`,
+  profile: `I'm a passionate Frontend Developer specializing in React and TypeScript, with a strong focus on building performant, accessible, and user-centric interfaces. Known for attention to detail, clean code practices, and translating complex requirements into elegant solutions.`,
 
   // Resume
   // resumeUrl: '/resumes/react-resume.pdf',
