@@ -1,5 +1,11 @@
 import { useState } from 'react';
-import { Section, SectionTitle, AnimateOnScroll } from '@/library/ui/shared';
+import emailjs from '@emailjs/browser';
+import {
+  Section,
+  SectionTitle,
+  AnimateOnScroll,
+  SuccessMessage,
+} from '@/library/ui/shared';
 import { Button } from '@/library/ui/shared/Button';
 import {
   Form,
@@ -7,8 +13,10 @@ import {
   Label,
   Input,
   Textarea,
+  FormContainer,
 } from '@/library/ui/features/form';
 import { IconList, type IconListItem } from '@/library/ui/features/lists';
+import { emailjsConfig } from '@/content';
 
 interface ContactProps {
   email: string;
@@ -26,27 +34,26 @@ export const Contact = ({ email, socials }: ContactProps) => {
   });
 
   const handleSubmit = async () => {
+    if (!formData.name || !formData.email || !formData.message) return;
+
     setStatus('loading');
 
-    // Formspree endpoint - replace YOUR_FORM_ID with your actual Formspree form ID
-    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
-
     try {
-      const response = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+      await emailjs.send(
+        emailjsConfig.serviceId,
+        emailjsConfig.templateId,
+        {
+          user_name: formData.name,
+          user_email: formData.email,
+          message: formData.message,
         },
-        body: JSON.stringify(formData),
-      });
+        emailjsConfig.publicKey
+      );
 
-      if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', message: '' });
-      } else {
-        setStatus('error');
-      }
-    } catch {
+      setStatus('success');
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS error:', error);
       setStatus('error');
     }
   };
@@ -78,47 +85,32 @@ export const Contact = ({ email, socials }: ContactProps) => {
             </a>
 
             {/* Social Links */}
-            <div className="flex justify-center lg:justify-start">
-              <IconList
-                content={socials}
-                containerClasses="gap-5"
-                itemClasses="w-6 h-6 text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400"
-              />
-            </div>
+            <IconList
+              content={socials}
+              containerClasses="gap-5 flex justify-center lg:justify-start"
+              itemClasses="w-6 h-6 text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400"
+            />
           </div>
         </AnimateOnScroll>
 
         {/* Contact Form */}
         <AnimateOnScroll animation="overshoot-left" delay={200}>
-          <div className="bg-gray-100 dark:bg-slate-800 rounded-2xl p-6 sm:p-8">
-            {status === 'success' ? (
-              <div className="h-full flex flex-col items-center justify-center text-center py-8">
-                <div className="w-16 h-16 mb-4 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
-                  <svg
-                    className="w-8 h-8 text-green-600 dark:text-green-400"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M5 13l4 4L19 7"
-                    />
-                  </svg>
-                </div>
-                <h4 className="text-xl font-semibold text-slate-700 dark:text-white mb-2">
-                  Message Sent!
-                </h4>
-                <p className="text-slate-500 dark:text-slate-400 mb-6">
-                  Thanks for reaching out. I'll get back to you soon.
-                </p>
-                <Button variant="ghost" onClick={() => setStatus('idle')}>
-                  Send Another Message
-                </Button>
-              </div>
-            ) : (
+          {/* <div className="bg-gray-100 dark:bg-slate-800 rounded-2xl p-6 sm:p-8"> */}
+          {status === 'success' ? (
+            <SuccessMessage
+              headline="Message Sent!"
+              copy="Thanks for reaching out. I'll get back to you soon."
+            >
+              <Button
+                variant="ghost"
+                onClick={() => setStatus('idle')}
+                className="hover:bg-gray-200! hover:text-gray-700 dark:hover:bg-gray-800 dark:hover:text-gray-300"
+              >
+                Send Another Message
+              </Button>
+            </SuccessMessage>
+          ) : (
+            <FormContainer className="bg-gray-100! dark:bg-slate-800! p-6! sm:p-9!">
               <Form onSubmit={handleSubmit}>
                 <FormField>
                   <Label htmlFor="name">Name</Label>
@@ -128,7 +120,10 @@ export const Contact = ({ email, socials }: ContactProps) => {
                     placeholder="Your name"
                     value={formData.name}
                     onChange={(e) =>
-                      setFormData((prev) => ({ ...prev, name: e.target.value }))
+                      setFormData((prev) => ({
+                        ...prev,
+                        name: e.target.value,
+                      }))
                     }
                     required
                     disabled={status === 'loading'}
@@ -187,8 +182,9 @@ export const Contact = ({ email, socials }: ContactProps) => {
                   {status === 'loading' ? 'Sending...' : 'Send Message'}
                 </Button>
               </Form>
-            )}
-          </div>
+            </FormContainer>
+          )}
+          {/* </div> */}
         </AnimateOnScroll>
       </div>
     </Section>
