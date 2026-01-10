@@ -23,7 +23,7 @@ export const ThemeButtons = ({
     <div
       className={`
         ${className}
-        group w-11 hover:w-40 h-11 rounded-full bg-slate-700/70
+        group w-11 hover:w-40 h-11 rounded-full bg-slate-700/70 z-theme-button
         flex justify-center items-center gap-x-5
         transition-all duration-300 focus-within:w-40
       `}
