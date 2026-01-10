@@ -22,15 +22,15 @@ export const about = {
   socials: [
     {
       id: 1,
-      title: 'GitHub',
-      iconName: 'github',
-      link: 'https://github.com/AbdelhamidYousef',
-    },
-    {
-      id: 2,
       title: 'LinkedIn',
       iconName: 'linkedin',
       link: 'https://linkedin.com/in/abdelhamidy',
+    },
+    {
+      id: 2,
+      title: 'GitHub',
+      iconName: 'github',
+      link: 'https://github.com/AbdelhamidYousef',
     },
     {
       id: 3,

@@ -55,7 +55,7 @@ export const SidebarContent = ({
         <IconList
           content={content.socials}
           containerClasses="absolute left-1/2 -translate-x-1/2 bottom-6 flex gap-6"
-          iconClasses="text-slate-100 fill-current w-6 h-6"
+          iconClasses="text-slate-100 fill-current w-7 h-7"
         />
       </div>
     </div>
