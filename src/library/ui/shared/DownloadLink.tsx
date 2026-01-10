@@ -3,7 +3,7 @@ import { DownloadArrow } from '@/library/ui/svgs/interface/arrows';
 
 interface DownloadLinkProps {
   href: string;
-  children: ReactNode;
+  longLabel: ReactNode;
   shortLabel?: string;
   className?: string;
 }
@@ -18,7 +18,7 @@ interface DownloadLinkProps {
  */
 export const DownloadLink = ({
   href,
-  children,
+  longLabel,
   shortLabel,
   className = '',
 }: DownloadLinkProps) => (
@@ -36,7 +36,7 @@ export const DownloadLink = ({
   >
     <span className="font-bold text-lg xs:text-xl uppercase tracking-tight">
       {shortLabel && <span className="md:hidden">{shortLabel}</span>}
-      <span className={shortLabel ? 'hidden md:block' : ''}>{children}</span>
+      <span className={shortLabel ? 'hidden md:block' : ''}>{longLabel}</span>
     </span>
     <span className="w-4 h-4 animate-bounce group-hover:animate-bounceFast">
       <DownloadArrow />
