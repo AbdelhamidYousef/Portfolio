@@ -5,3 +5,6 @@ export { IconCardList } from './IconCardList';
 export type { IconCardItem } from './IconCardList';
 export { StatsList } from './StatsList';
 export type { StatsItem } from './StatsList';
+export { ProjectCard } from './project-card/ProjectCard';
+export type { ProjectData } from './project-card/ProjectCard';
+export { ProjectCardList } from './project-card/ProjectCardList';
