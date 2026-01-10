@@ -1,73 +1,104 @@
-# React + TypeScript + Vite
+<div align="center">
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 👨‍💻 Abdulhamid Yosef
 
-Currently, two official plugins are available:
+### React Developer Portfolio
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=white)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-7-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 
-## React Compiler
+A modern, responsive portfolio website showcasing my experience and skills.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+[**🌐 View Live Demo**](https://yoursite.com)
 
-## Expanding the ESLint configuration
+</div>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📸 Preview
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+<div align="center">
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+<!-- Replace with your actual screenshot -->
+
+![Portfolio Preview](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=Portfolio+Screenshot)
+
+</div>
+
+## 🛠️ Built With
+
+<div align="center">
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
+![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)
+
+</div>
+
+## ✨ Features
+
+| Feature                  | Description                                   |
+| ------------------------ | --------------------------------------------- |
+| 🎨 **Modern Design**     | Clean, professional UI with smooth animations |
+| 🌙 **Dark/Light Mode**   | Theme toggle with system preference detection |
+| 📱 **Fully Responsive**  | Looks great on all devices                    |
+| ⚡ **Fast Performance**  | Built with Vite for lightning-fast loading    |
+| 🎭 **Scroll Animations** | Elements animate as they enter viewport       |
+| 🃏 **Project Cards**     | Expandable cards with live demo links         |
+| 📬 **Contact Form**      | Working form with Formspree integration       |
+| 🔍 **SEO Optimized**     | Meta tags and OpenGraph support               |
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/portfolio.git
+
+# Navigate to project
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📁 Project Structure
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+src/
+├── 📂 assets/          # Images and static files
+├── 📂 data/            # Site content (edit these!)
+│   ├── siteConfig.ts   # Personal info & socials
+│   ├── skills.ts       # Your skills & proficiency
+│   └── projects.ts     # Project showcase data
+├── 📂 library/         # Reusable component library
+│   ├── hooks/          # Custom React hooks
+│   ├── ui/             # UI components
+│   └── tailwind/       # CSS & animations
+└── 📂 ui/              # Page components
+    ├── layout/         # Main layout
+    └── sections/       # Hero, About, Skills, etc.
+```
+
+## 📜 Available Scripts
+
+| Command           | Description              |
+| ----------------- | ------------------------ |
+| `npm run dev`     | Start development server |
+| `npm run build`   | Build for production     |
+| `npm run preview` | Preview production build |
+| `npm run lint`    | Run ESLint               |
+
+## 📫 Contact
+
+- [abdelhamedy33@gmail.com](mailto:abdelhamedy33@gmail.com)
+- [LinkedIn](https://www.linkedin.com/in/abdelhamidy/)
+<!-- - [Personal Website](https://abdelhamid99.netlify.app/) -->
