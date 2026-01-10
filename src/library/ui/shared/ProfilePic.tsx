@@ -15,7 +15,7 @@ interface ProfilePicProps {
  * // Decorated style (square with rotated backgrounds, for about section)
  * <ProfilePic imageUrl="/profile.jpg" variant="decorated" />
  */
-const ProfilePic = ({
+export const ProfilePic = ({
   imageUrl,
   variant = 'sidebar',
   className = '',
@@ -51,5 +51,3 @@ const ProfilePic = ({
     />
   );
 };
-
-export default ProfilePic;
