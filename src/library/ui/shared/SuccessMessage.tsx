@@ -12,7 +12,7 @@ export const SuccessMessage = ({
   copy,
   children,
 }: SuccessMessageProps) => (
-  <div className="h-full flex flex-col items-center justify-center text-center py-8">
+  <div className="h-full flex flex-col items-center justify-center text-center py-8 bg-gray-100 dark:bg-slate-800 rounded-2xl p-6 sm:p-8">
     <div className="w-16 h-16 mb-4 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center">
       <CheckIcon className="w-8 h-8 text-green-600 dark:text-green-400" />
     </div>
