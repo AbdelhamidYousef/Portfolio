@@ -177,4 +177,25 @@
       transform: translateX(0);
     }
   }
+
+  /*
+    Scroll Indicator Animation
+    Dot moves up and down to indicate scrolling.
+    Used in scroll indicator component.
+  */
+  --animate-scrollIndicator: scrollIndicator 1.5s ease-in-out infinite;
+  @keyframes scrollIndicator {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateY(12px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
