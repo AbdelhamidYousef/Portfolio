@@ -13,5 +13,6 @@ export { Html } from './Html';
 export { Javascript } from './Javascript';
 export { Nextjs } from './Nextjs';
 export { Nodejs } from './Nodejs';
+export { Supabase } from './Supabase';
 export { Typescript } from './Typescript';
 export { Vite } from './Vite';
