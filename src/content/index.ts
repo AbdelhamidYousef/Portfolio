@@ -1,3 +1,4 @@
 export * from './about';
-export * from './skills';
+export * from './contact-form';
 export * from './projects';
+export * from './skills';
