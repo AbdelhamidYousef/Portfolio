@@ -6,9 +6,9 @@ import type { IconListItem } from '@/library/ui/features/lists';
 
 interface SidebarProps {
   content: {
-    profilePicUrl: string;
-    navLinks: string[];
-    socials: IconListItem[];
+    profilePictureUrl: string;
+    navLinks: readonly string[];
+    socials: readonly IconListItem[];
   };
 }
 
@@ -18,7 +18,7 @@ interface SidebarProps {
  * @example
  * <Sidebar
  *  content={{
- *    profilePicUrl: 'https://example.com/profile.jpg',
+ *    profilePictureUrl: 'https://example.com/profile.jpg',
  *    navLinks: ['Home', 'About', 'Contact'],
  *    socials: [
  *      { id: 1, title: 'Linkedin', iconName: 'linkedin', link: 'https://www.linkedin.com/in/your-profile' },

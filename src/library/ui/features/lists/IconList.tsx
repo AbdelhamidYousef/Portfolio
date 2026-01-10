@@ -9,7 +9,7 @@ export interface IconListItem {
 }
 
 interface IconListProps {
-  content: IconListItem[];
+  content: readonly IconListItem[];
   containerClasses?: string;
   itemClasses?: string;
   iconClasses?: string;
