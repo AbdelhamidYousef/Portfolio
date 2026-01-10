@@ -11,7 +11,7 @@
   */
   [data-title-top],
   [data-title-bottom] {
-    @apply relative;
+    @apply relative cursor-help;
   }
 
   [data-title-top]:after,

@@ -55,7 +55,7 @@ export const IconList = ({
           <li
             key={id}
             className={`h-6 w-6 transition-all duration-300 hover:scale-110 hover:opacity-70 ${itemClasses}`}
-            content-title-top={title}
+            data-title-top={title}
           >
             {link ? (
               <a
