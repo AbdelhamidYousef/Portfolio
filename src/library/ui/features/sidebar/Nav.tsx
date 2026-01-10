@@ -1,7 +1,7 @@
 import { scrollToSection } from '@/library/utils';
 
 interface NavProps {
-  navLinksContent: string[];
+  navLinksContent: readonly string[];
   closeSidebar?: () => void;
 }
 

@@ -6,9 +6,9 @@ interface SidebarContentProps {
   isSidebarOpen: boolean;
   closeSidebar: () => void;
   content: {
-    profilePicUrl: string;
-    navLinks: string[];
-    socials: IconListItem[];
+    profilePictureUrl: string;
+    navLinks: readonly string[];
+    socials: readonly IconListItem[];
   };
 }
 
@@ -20,7 +20,7 @@ interface SidebarContentProps {
  *  isSidebarOpen={state}
  *  closeSidebar={handleCloseSidebar}
  *  content={{
- *    profilePicUrl: 'https://example.com/profile.jpg',
+ *    profilePictureUrl: 'https://example.com/profile.jpg',
  *    navLinks: ['Home', 'About', 'Contact'],
  *    socials: [
  *      { id: 1, title: 'Linkedin', iconName: 'linkedin', link: 'https://www.linkedin.com/in/your-profile' },
@@ -50,7 +50,7 @@ export const SidebarContent = ({
       `}
     >
       <div className="h-full grid place-content-center text-center lg:animate-overshootRight-5">
-        <ProfilePic imageUrl={content.profilePicUrl} />
+        <ProfilePic imageUrl={content.profilePictureUrl} />
         <Nav navLinksContent={content.navLinks} closeSidebar={closeSidebar} />
         <IconList
           content={content.socials}
