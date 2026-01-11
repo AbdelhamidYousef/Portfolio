@@ -35,7 +35,9 @@ const AccordionItem = ({
 
       {/* Expand icon */}
       <span
-        className={`w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+        className={`w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center transition-transform duration-300 ${
+          isOpen ? 'rotate-180' : ''
+        }`}
       >
         <svg
           className="w-4 h-4 text-slate-600 dark:text-slate-300"
@@ -55,7 +57,9 @@ const AccordionItem = ({
 
     {/* Content (expandable) */}
     <div
-      className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-[1000px] pb-6' : 'max-h-0'}`}
+      className={`overflow-hidden transition-all duration-300 ${
+        isOpen ? 'max-h-[1000px] pb-6' : 'max-h-0'
+      }`}
     >
       {/* Skills */}
       {job.skills && job.skills.length > 0 && (
@@ -92,7 +96,11 @@ export const ExperienceAccordion = ({ data }: ExperienceAccordionProps) => {
   return (
     <div className="max-w-4xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 shadow-lg">
       {data.map((job, index) => (
-        <AnimateOnScroll key={job.id} animation="fade-up" delay={index * 100}>
+        <AnimateOnScroll
+          key={job.id}
+          animation="slide-up-md"
+          delay={index * 100}
+        >
           <AccordionItem
             job={job}
             isOpen={openId === job.id}
@@ -103,4 +111,3 @@ export const ExperienceAccordion = ({ data }: ExperienceAccordionProps) => {
     </div>
   );
 };
-

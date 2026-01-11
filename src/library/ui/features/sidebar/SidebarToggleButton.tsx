@@ -19,7 +19,7 @@ export const SidebarToggleButton = ({
     className={`
       lg:hidden
       fixed left-5 top-5 z-sidebar-button
-      transition-all duration-300 animate-overshootRight-2
+      transition-all duration-300 animate-overshoot-right-sm
       outline-hidden focus:ring-2 focus:ring-slate-600
     `}
   >

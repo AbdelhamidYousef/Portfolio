@@ -20,7 +20,10 @@ const MinimalEntry = ({ job }: { job: WorkExperience }) => (
     {/* Company & Location */}
     <p className="text-lg text-primary-600 dark:text-primary-400 mb-4">
       {job.company}
-      <span className="text-slate-400 dark:text-slate-500"> — {job.location}</span>
+      <span className="text-slate-400 dark:text-slate-500">
+        {' '}
+        — {job.location}
+      </span>
     </p>
 
     {/* Responsibilities (condensed) */}
@@ -40,10 +43,9 @@ const MinimalEntry = ({ job }: { job: WorkExperience }) => (
 export const ExperienceMinimal = ({ data }: ExperienceMinimalProps) => (
   <div className="max-w-4xl mx-auto">
     {data.map((job, index) => (
-      <AnimateOnScroll key={job.id} animation="fade-up" delay={index * 100}>
+      <AnimateOnScroll key={job.id} animation="slide-up-md" delay={index * 100}>
         <MinimalEntry job={job} />
       </AnimateOnScroll>
     ))}
   </div>
 );
-

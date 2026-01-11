@@ -63,7 +63,7 @@ export const IconCardList = ({
       return (
         <li
           key={item.id}
-          className="animate-fadeInLeft opacity-0"
+          className="animate-slide-right-sm opacity-0"
           style={{
             animationDelay: `${index * staggerDelay}ms`,
             animationFillMode: 'forwards',

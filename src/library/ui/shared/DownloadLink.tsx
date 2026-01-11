@@ -38,7 +38,7 @@ export const DownloadLink = ({
       {shortLabel && <span className="md:hidden">{shortLabel}</span>}
       <span className={shortLabel ? 'hidden md:block' : ''}>{longLabel}</span>
     </span>
-    <span className="w-4 h-4 animate-bounce group-hover:animate-bounceFast">
+    <span className="w-4 h-4 animate-bounce group-hover:animate-bounce-fast">
       <DownloadArrow />
     </span>
   </a>

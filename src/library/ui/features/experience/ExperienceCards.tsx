@@ -55,10 +55,9 @@ const ExperienceCard = ({ job }: { job: WorkExperience }) => (
 export const ExperienceCards = ({ data }: ExperienceCardsProps) => (
   <div className="max-w-5xl mx-auto grid gap-8">
     {data.map((job, index) => (
-      <AnimateOnScroll key={job.id} animation="fade-up" delay={index * 150}>
+      <AnimateOnScroll key={job.id} animation="slide-up-md" delay={index * 150}>
         <ExperienceCard job={job} />
       </AnimateOnScroll>
     ))}
   </div>
 );
-

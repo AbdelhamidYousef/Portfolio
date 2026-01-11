@@ -49,7 +49,7 @@ export const SidebarContent = ({
         w-72 h-full bg-primary-600 transition-all duration-300 lg:translate-x-0 dark:bg-gray-900 dark:border-r dark:border-gray-800
       `}
     >
-      <div className="h-full grid place-content-center text-center lg:animate-overshootRight-5">
+      <div className="h-full grid place-content-center text-center lg:animate-overshoot-right-md">
         <ProfilePic imageUrl={content.profilePictureUrl} />
         <Nav navLinksContent={content.navLinks} closeSidebar={closeSidebar} />
         <IconList

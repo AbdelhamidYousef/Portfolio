@@ -4,7 +4,7 @@ interface RubberCharsProps {
 }
 
 /**
- * Renders characters with rubberband animation on hover
+ * Renders characters with rubber-band animation on hover
  *
  * @example
  * <RubberChars>Hello World</RubberChars>
@@ -16,7 +16,7 @@ export const RubberChars = ({ children, className = '' }: RubberCharsProps) => (
       char === ' ' ? (
         <span key={i}>&nbsp;</span>
       ) : (
-        <span key={i} className="inline-block hover:animate-rubberband">
+        <span key={i} className="inline-block hover:animate-rubber-band">
           {char}
         </span>
       )
