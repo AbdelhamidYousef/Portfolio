@@ -1,4 +1,5 @@
-import { AnimateOnScroll } from '@/library/ui/shared';
+import { motion } from 'framer-motion';
+import { fadeUp, withStagger } from '@/library/framer-motion';
 import type { WorkExperience } from '@/content/experience';
 
 interface ExperienceCardsProps {
@@ -55,9 +56,9 @@ const ExperienceCard = ({ job }: { job: WorkExperience }) => (
 export const ExperienceCards = ({ data }: ExperienceCardsProps) => (
   <div className="max-w-5xl mx-auto grid gap-8">
     {data.map((job, index) => (
-      <AnimateOnScroll key={job.id} animation="slide-up-md" delay={index * 150}>
+      <motion.div key={job.id} {...withStagger(fadeUp, index, 150)}>
         <ExperienceCard job={job} />
-      </AnimateOnScroll>
+      </motion.div>
     ))}
   </div>
 );

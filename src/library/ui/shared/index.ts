@@ -1,4 +1,3 @@
-export { AnimateOnScroll } from './AnimateOnScroll';
 export { BackgroundBlobs } from './BackgroundBlobs';
 export { Button } from './Button';
 export { DownloadLink } from './DownloadLink';

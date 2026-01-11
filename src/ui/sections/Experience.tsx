@@ -1,16 +1,24 @@
-import { SectionTitle, AnimateOnScroll } from '@/library/ui/shared';
+import { motion } from 'framer-motion';
+import { SectionTitle } from '@/library/ui/shared';
 import { Section } from '@/ui/shared';
-import { workExperience } from '@/content/experience';
 import { ExperienceTimeline } from '@/library/ui/features/experience';
+import { fadeUp, withDelay } from '@/library/framer-motion';
+import type { WorkExperience } from '@/content/experience';
 
-export const Experience = () => {
+interface ExperienceProps {
+  data: WorkExperience[];
+}
+
+export const Experience = ({ data }: ExperienceProps) => {
   return (
     <Section id="experience" className="py-20 lg:py-28 px-6 md:px-12 lg:px-20">
-      <AnimateOnScroll animation="slide-up-md">
+      <motion.div {...fadeUp}>
         <SectionTitle>Experience</SectionTitle>
-      </AnimateOnScroll>
+      </motion.div>
 
-      <ExperienceTimeline data={workExperience} />
+      <motion.div {...withDelay(fadeUp, 100)}>
+        <ExperienceTimeline data={data} />
+      </motion.div>
     </Section>
   );
 };

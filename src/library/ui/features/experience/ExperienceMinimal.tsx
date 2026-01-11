@@ -1,4 +1,5 @@
-import { AnimateOnScroll } from '@/library/ui/shared';
+import { motion } from 'framer-motion';
+import { fadeUp, withStagger } from '@/library/framer-motion';
 import type { WorkExperience } from '@/content/experience';
 
 interface ExperienceMinimalProps {
@@ -43,9 +44,9 @@ const MinimalEntry = ({ job }: { job: WorkExperience }) => (
 export const ExperienceMinimal = ({ data }: ExperienceMinimalProps) => (
   <div className="max-w-4xl mx-auto">
     {data.map((job, index) => (
-      <AnimateOnScroll key={job.id} animation="slide-up-md" delay={index * 100}>
+      <motion.div key={job.id} {...withStagger(fadeUp, index)}>
         <MinimalEntry job={job} />
-      </AnimateOnScroll>
+      </motion.div>
     ))}
   </div>
 );

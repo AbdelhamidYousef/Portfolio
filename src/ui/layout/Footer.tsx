@@ -7,7 +7,7 @@ interface FooterProps {
 }
 
 export const Footer = ({ socials, resumeUrl }: FooterProps) => (
-  <footer className="border-t border-gray-200 dark:border-slate-700">
+  <footer className="border-t border-gray-200 dark:border-slate-700 ml-72">
     <div className="max-w-7xl mx-auto px-6 md:px-10 py-6">
       <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
         {/* Left: Get in Touch */}

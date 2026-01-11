@@ -14,6 +14,7 @@ import { ScrollToTopButton } from '@/library/ui/shared';
 import { ActiveSectionProvider } from '@/library/contexts/activeSection';
 import profileImage from '@/assets/images/profile.webp';
 import resume from '@/assets/resumes/react-resume.pdf';
+import { workExperience } from '@/content/experience';
 
 const Index = () => {
   const { fullName, title, tagline, profile, stats, email, socials, navLinks } =
@@ -37,17 +38,17 @@ const Index = () => {
       <main className="lg:ml-72 overflow-x-hidden">
         <Hero fullName={fullName} title={title} tagline={tagline} />
         <About profile={profile} stats={stats} resumeUrl={resume} />
-
-        <Experience />
-
+        <Experience data={workExperience} />
         <Skills />
         <Projects />
         <Contact email={email} socials={socials} />
-        <Footer socials={socials} resumeUrl={resume} />
       </main>
 
       {/* Scroll to Top */}
       <ScrollToTopButton />
+
+      {/* Footer */}
+      <Footer socials={socials} resumeUrl={resume} />
     </ActiveSectionProvider>
   );
 };
