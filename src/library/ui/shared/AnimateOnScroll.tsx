@@ -10,17 +10,17 @@ type Animation =
 
 interface AnimateOnScrollProps {
   children: ReactNode;
+  /** Element tag to render (default: div) */
+  as?: ElementType;
+  /** Additional classes */
+  className?: string;
   animation?: Animation;
   /** Delay in milliseconds */
   delay?: number;
-  /** Visibility threshold (0-1) */
-  threshold?: number;
-  /** Additional classes */
-  className?: string;
-  /** Element tag to render (default: div) */
-  as?: ElementType;
   /** Re-animate when scrolling back into view (default: false) */
   repeat?: boolean;
+  /** Visibility threshold (0-1) */
+  threshold?: number;
 }
 
 const animationClasses: Record<Animation, string> = {
@@ -46,12 +46,12 @@ const animationClasses: Record<Animation, string> = {
  */
 export const AnimateOnScroll = ({
   children,
+  as: Tag = 'div',
+  className = '',
   animation = 'slide-up-md',
   delay = 0,
-  threshold = 0.1,
-  className = '',
-  as: Tag = 'div',
   repeat = true,
+  threshold = 0.1,
 }: AnimateOnScrollProps) => {
   const { ref, isIntersecting, hasIntersected } = useIntersectionObserver({
     threshold,
@@ -69,7 +69,9 @@ export const AnimateOnScroll = ({
         ${repeat ? 'transition-opacity duration-300' : ''}
         ${className}
       `}
-      style={delay ? { animationDelay: `${delay}ms` } : undefined}
+      style={{
+        animationDelay: delay ? `${delay}ms` : undefined,
+      }}
     >
       {children}
     </Tag>
