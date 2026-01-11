@@ -13,12 +13,12 @@ const SkillsContent = () => {
 
   return (
     <>
-      <AnimateOnScroll animation="fade-up">
+      <AnimateOnScroll animation="slide-up-md">
         <SectionTitle className="mb-8!">Skills</SectionTitle>
       </AnimateOnScroll>
 
       {/* Filter Buttons */}
-      <AnimateOnScroll animation="fade-up" delay={100}>
+      <AnimateOnScroll animation="slide-up-md" delay={100}>
         <Filter
           variant="buttons"
           options={skillCategories}
@@ -29,7 +29,7 @@ const SkillsContent = () => {
       </AnimateOnScroll>
 
       {/* Skills List */}
-      <AnimateOnScroll animation="fade-up" delay={200}>
+      <AnimateOnScroll animation="slide-up-md" delay={200}>
         <IconCardList
           data={modifiedList}
           containerClasses="max-w-5xl min-h-[30vh] mx-auto justify-center gap-8 sm:gap-10"

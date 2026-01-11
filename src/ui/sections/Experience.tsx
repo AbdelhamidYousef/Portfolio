@@ -6,7 +6,7 @@ import { ExperienceTimeline } from '@/library/ui/features/experience';
 export const Experience = () => {
   return (
     <Section id="experience" className="py-20 lg:py-28 px-6 md:px-12 lg:px-20">
-      <AnimateOnScroll animation="fade-up">
+      <AnimateOnScroll animation="slide-up-md">
         <SectionTitle>Experience</SectionTitle>
       </AnimateOnScroll>
 

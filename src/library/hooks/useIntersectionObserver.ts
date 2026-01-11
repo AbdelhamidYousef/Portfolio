@@ -21,7 +21,7 @@ interface UseIntersectionObserverOptions {
  * });
  *
  * return (
- *   <div ref={ref} className={hasIntersected ? 'animate-fade-up' : 'opacity-0'}>
+ *   <div ref={ref} className={hasIntersected ? 'animate-slide-up-md' : 'opacity-0'}>
  *     Content
  *   </div>
  * );

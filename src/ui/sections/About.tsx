@@ -13,7 +13,7 @@ interface AboutProps {
 export const About = ({ profile, stats, resumeUrl }: AboutProps) => {
   return (
     <Section id="about" className="py-20 lg:py-28 px-6 md:px-12 lg:px-20">
-      <AnimateOnScroll animation="fade-up">
+      <AnimateOnScroll animation="slide-up-md">
         <SectionTitle>About Me</SectionTitle>
       </AnimateOnScroll>
 

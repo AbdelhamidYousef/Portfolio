@@ -1,10 +1,10 @@
-import type { ReactNode } from 'react';
+import type { ReactNode, ElementType } from 'react';
 import { useIntersectionObserver } from '@/library/hooks';
 
 type Animation =
-  | 'fade-up'
+  | 'slide-up-md'
   | 'fade-left'
-  | 'fade-right'
+  | 'slide-right-sm'
   | 'overshoot-left'
   | 'overshoot-right';
 
@@ -18,22 +18,24 @@ interface AnimateOnScrollProps {
   /** Additional classes */
   className?: string;
   /** Element tag to render (default: div) */
-  as?: keyof JSX.IntrinsicElements;
+  as?: ElementType;
+  /** Re-animate when scrolling back into view (default: false) */
+  repeat?: boolean;
 }
 
 const animationClasses: Record<Animation, string> = {
-  'fade-up': 'animate-fade-up',
-  'fade-left': 'animate-fadeInLeft',
-  'overshoot-left': 'animate-overshootLeft-5',
-  'overshoot-right': 'animate-overshootRight-5',
-  'fade-right': 'animate-overshootRight-2',
+  'slide-up-md': 'animate-slide-up-md',
+  'fade-left': 'animate-slide-right-sm',
+  'overshoot-left': 'animate-overshoot-left-md',
+  'overshoot-right': 'animate-overshoot-right-md',
+  'slide-right-sm': 'animate-overshoot-right-sm',
 };
 
 /**
  * Wrapper component that animates children when they enter the viewport
  *
  * @example
- * <AnimateOnScroll animation="fade-up" delay={200}>
+ * <AnimateOnScroll animation="slide-up-md" delay={200}>
  *   <Card>...</Card>
  * </AnimateOnScroll>
  *
@@ -44,22 +46,27 @@ const animationClasses: Record<Animation, string> = {
  */
 export const AnimateOnScroll = ({
   children,
-  animation = 'fade-up',
+  animation = 'slide-up-md',
   delay = 0,
   threshold = 0.1,
   className = '',
   as: Tag = 'div',
+  repeat = true,
 }: AnimateOnScrollProps) => {
-  const { ref, hasIntersected } = useIntersectionObserver({
+  const { ref, isIntersecting, hasIntersected } = useIntersectionObserver({
     threshold,
-    triggerOnce: true,
+    triggerOnce: !repeat,
   });
+
+  // Use isIntersecting for repeat mode (resets on exit), hasIntersected for once mode
+  const shouldAnimate = repeat ? isIntersecting : hasIntersected;
 
   return (
     <Tag
       ref={ref as React.RefObject<HTMLDivElement>}
       className={`
-        ${hasIntersected ? animationClasses[animation] : 'opacity-0'}
+        ${shouldAnimate ? animationClasses[animation] : 'opacity-0'}
+        ${repeat ? 'transition-opacity duration-300' : ''}
         ${className}
       `}
       style={delay ? { animationDelay: `${delay}ms` } : undefined}
@@ -68,5 +75,3 @@ export const AnimateOnScroll = ({
     </Tag>
   );
 };
-
-

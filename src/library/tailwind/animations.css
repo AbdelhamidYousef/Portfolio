@@ -1,6 +1,229 @@
+/**
+ * Custom Tailwind CSS Animations
+ *
+ * This file defines reusable animations for the library.
+ * Use with Tailwind classes: animate-{name} (e.g., animate-slide-up-md)
+ */
+
 @theme {
-  /* ********************** Using Default Tailwind Animations ********************** */
-  --animate-bounceFast: bounce 0.5s infinite;
+  /* ********************** Bounce & Float & Scroll Indicator Animation ********************** */
+  /*
+    Bounce Animation:
+    - Bounces elements from top to bottom
+    - Uses Tailwind's built-in bounce keyframe
+   */
+
+  /* This is the Tailwind default bounce animation */
+  /* --animate-bounce: bounce 1s infinite; */
+  --animate-bounce-fast: bounce 0.5s infinite; /* Used in download button icons */
+
+  /*
+    Float Animation:
+    - Floats elements from top to bottom
+    - Without the hit feeling of the bounce animation
+   */
+
+  --animate-float: float 6s ease-in-out infinite;
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /*
+    Scroll Indicator Animation
+    - Dot moves up and down to indicate scrolling.
+    - Used in scroll indicator component.
+  */
+  --animate-scrollIndicator: scrollIndicator 1.5s ease-in-out infinite;
+  @keyframes scrollIndicator {
+    0%,
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateY(12px);
+    }
+  }
+
+  /* ********************** Slide & Overshoot Animation ********************** */
+  /*
+    Slide Animation:
+    - Elements slide in to enter the screen.
+    - Used to animate the entrance of elements into the screen.
+   */
+
+  --animate-slide-up-sm: slide-up-sm 0.5s ease-out forwards;
+  @keyframes slide-up-sm {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  --animate-slide-up-md: slide-up-md 0.5s ease-out forwards;
+  @keyframes slide-up-md {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  --animate-slide-up-lg: slide-up-lg 0.5s ease-out forwards;
+  @keyframes slide-up-lg {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  --animate-slide-right-sm: slide-right-sm 0.5s ease-out;
+  @keyframes slide-right-sm {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  --animate-slide-right-md: slide-right-md 0.5s ease-out;
+  @keyframes slide-right-md {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  --animate-slide-right-lg: slide-right-lg 0.5s ease-out;
+  @keyframes slide-right-lg {
+    from {
+      opacity: 0;
+      transform: translateX(-60px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /*
+    Overshoot Animation:
+    - Elements slide in with an overshoot effect.
+    - Used to animate the entrance of elements into the screen with a bounce effect.
+  */
+
+  --animate-overshoot-right-sm: overshoot-right-sm 0.8s ease-out;
+  @keyframes overshoot-right-sm {
+    0% {
+      opacity: 0;
+      transform: translateX(-75%);
+    }
+    80% {
+      transform: translateX(2%);
+    }
+    100% {
+      opacity: 100%;
+      transform: translateX(0);
+    }
+  }
+
+  --animate-overshoot-right-md: overshoot-right-md 0.8s ease-out;
+  @keyframes overshoot-right-md {
+    0% {
+      opacity: 0;
+      transform: translateX(-75%);
+    }
+    80% {
+      transform: translateX(5%);
+    }
+    100% {
+      opacity: 100%;
+      transform: translateX(0);
+    }
+  }
+
+  --animate-overshoot-left-sm: overshoot-left-sm 0.8s ease-out;
+  @keyframes overshoot-left-sm {
+    0% {
+      opacity: 0;
+      transform: translateX(75%);
+    }
+    80% {
+      transform: translateX(-2%);
+    }
+    100% {
+      opacity: 100%;
+      transform: translateX(0);
+    }
+  }
+
+  --animate-overshoot-left-md: overshoot-left-md 0.8s ease-out;
+  @keyframes overshoot-left-md {
+    0% {
+      opacity: 0;
+      transform: translateX(75%);
+    }
+    80% {
+      transform: translateX(-5%);
+    }
+    100% {
+      opacity: 100%;
+      transform: translateX(0);
+    }
+  }
+
+  /* ********************** Text Animation ********************** */
+  /*
+    Rubber Band Animation:
+    - Elements vibrate with a rubber band effect.
+    - Used to animate the click or hover effect of text letters.
+  */
+  --animate-rubber-band: rubber-band 0.8s ease-out;
+  @keyframes rubber-band {
+    0% {
+      transform: scale(1);
+    }
+    40% {
+      transform: scaleX(1.12) scaleY(0.75);
+    }
+    55% {
+      transform: scaleX(0.85) scaleY(1);
+    }
+    65% {
+      transform: scaleX(1.09) scaleY(0.85);
+    }
+    75% {
+      transform: scaleX(0.9) scaleY(1);
+    }
+    90% {
+      transform: scaleX(1.05) scaleY(0.95);
+    }
+  }
 
   /* ********************** Radix UI Animations ********************** */
   --animate-accordion-down: accordion-down 0.2s ease-out;
@@ -23,10 +246,8 @@
     }
   }
 
-  /* ********************** Common Animations ********************** */
+  /* ********************** Shimmer & Glow Animation ********************** */
   --animate-shimmer: shimmer 2s linear infinite;
-  --animate-fade-up: fadeUp 0.6s ease-out forwards;
-  --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
 
   @keyframes shimmer {
@@ -37,25 +258,7 @@
       background-position: 200% 0;
     }
   }
-  @keyframes fadeUp {
-    from {
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  @keyframes float {
-    0%,
-    100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-10px);
-    }
-  }
+
   @keyframes pulse-glow {
     0%,
     100% {
@@ -63,139 +266,6 @@
     }
     50% {
       box-shadow: 0 0 30px -5px hsl(187 92% 50% / 0.5);
-    }
-  }
-
-  /* ********************** Custom Animations ********************** */
-
-  /*
-    Overshoot Animations
-    Element slides in with a bounce overshoot effect.
-    Used to animate the left and right entrance of elements into the screen.
-  */
-
-  --animate-overshootLeft-5: overshootLeft-5 1s ease-out;
-  @keyframes overshootLeft-5 {
-    0% {
-      opacity: 0;
-      transform: translateX(75%);
-    }
-    80% {
-      transform: translateX(5%);
-    }
-    100% {
-      opacity: 100%;
-      transform: translateX(0);
-    }
-  }
-
-  --animate-overshootRight-5: overshootRight-5 1s ease-out;
-  @keyframes overshootRight-5 {
-    0% {
-      opacity: 0;
-      transform: translateX(-75%);
-    }
-    80% {
-      transform: translateX(5%);
-    }
-    100% {
-      opacity: 100%;
-      transform: translateX(0);
-    }
-  }
-
-  --animate-overshootLeft-2: overshootLeft-2 0.8s ease-out;
-  @keyframes overshootLeft-2 {
-    0% {
-      opacity: 0;
-      transform: translateX(75%);
-    }
-    80% {
-      transform: translateX(-2%);
-    }
-    100% {
-      opacity: 100%;
-      transform: translateX(0);
-    }
-  }
-
-  --animate-overshootRight-2: overshootRight-2 0.8s ease-out;
-  @keyframes overshootRight-2 {
-    0% {
-      opacity: 0;
-      transform: translateX(-75%);
-    }
-    80% {
-      transform: translateX(2%);
-    }
-    100% {
-      opacity: 100%;
-      transform: translateX(0);
-    }
-  }
-
-  /*
-    Rubber band Animation
-    Element vibrates with a rubber band effect.
-    Used to animate the click or hover effect of text letters.
-  */
-  --animate-rubberband: rubberband 0.8s ease-out;
-  @keyframes rubberband {
-    0% {
-      transform: scale(1);
-    }
-    40% {
-      transform: scaleX(1.12) scaleY(0.75);
-    }
-    55% {
-      transform: scaleX(0.85) scaleY(1);
-    }
-    65% {
-      transform: scaleX(1.09) scaleY(0.85);
-    }
-    75% {
-      transform: scaleX(0.9) scaleY(1);
-    }
-    90% {
-      transform: scaleX(1.05) scaleY(0.95);
-    }
-  }
-
-  /*
-    Fade In Left Animation
-    Element fades in while sliding from the left.
-    Used for staggered list animations.
-  */
-  --animate-fadeInLeft: fadeInLeft 0.5s ease-out;
-  @keyframes fadeInLeft {
-    from {
-      opacity: 0;
-      transform: translateX(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-
-  /*
-    Scroll Indicator Animation
-    Dot moves up and down to indicate scrolling.
-    Used in scroll indicator component.
-  */
-  --animate-scrollIndicator: scrollIndicator 1.5s ease-in-out infinite;
-  @keyframes scrollIndicator {
-    0% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    50% {
-      opacity: 0.5;
-      transform: translateY(12px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
     }
   }
 }

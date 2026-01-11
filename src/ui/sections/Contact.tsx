@@ -57,7 +57,7 @@ export const Contact = ({ email, socials }: ContactProps) => {
 
   return (
     <Section id="contact" className="py-20 lg:py-28 px-6 md:px-12 lg:px-20">
-      <AnimateOnScroll animation="fade-up">
+      <AnimateOnScroll animation="slide-up-md">
         <SectionTitle>Contact</SectionTitle>
       </AnimateOnScroll>
 
