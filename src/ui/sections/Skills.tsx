@@ -1,4 +1,5 @@
-import { SectionTitle, AnimateOnScroll } from '@/library/ui/shared';
+import { motion } from 'framer-motion';
+import { SectionTitle } from '@/library/ui/shared';
 import { Section } from '@/ui/shared';
 import { IconCardList } from '@/library/ui/features/lists';
 import { Filter } from '@/library/ui/features/filter-and-search';
@@ -7,18 +8,19 @@ import {
   useListFilter,
 } from '@/library/contexts/listFilter';
 import { skills, skillCategories, type Skill } from '@/content/skills';
+import { fadeUp, withDelay } from '@/library/framer-motion';
 
 const SkillsContent = () => {
   const { modifiedList, filter, setFilter } = useListFilter<Skill>();
 
   return (
     <>
-      <AnimateOnScroll animation="slide-up-md">
+      <motion.div {...fadeUp}>
         <SectionTitle className="mb-8!">Skills</SectionTitle>
-      </AnimateOnScroll>
+      </motion.div>
 
       {/* Filter Buttons */}
-      <AnimateOnScroll animation="slide-up-md" delay={100}>
+      <motion.div {...withDelay(fadeUp, 100)}>
         <Filter
           variant="buttons"
           options={skillCategories}
@@ -26,15 +28,15 @@ const SkillsContent = () => {
           onChange={setFilter}
           className="mb-12"
         />
-      </AnimateOnScroll>
+      </motion.div>
 
       {/* Skills List */}
-      <AnimateOnScroll animation="slide-up-md" delay={200}>
+      <motion.div {...withDelay(fadeUp, 200)}>
         <IconCardList
           data={modifiedList}
           containerClasses="max-w-5xl min-h-[30vh] mx-auto justify-center gap-8 sm:gap-10"
         />
-      </AnimateOnScroll>
+      </motion.div>
 
       {/* No results message */}
       {modifiedList.length === 0 && (

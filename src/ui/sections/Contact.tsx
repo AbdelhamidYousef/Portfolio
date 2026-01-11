@@ -1,10 +1,7 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
-import {
-  SectionTitle,
-  AnimateOnScroll,
-  SuccessMessage,
-} from '@/library/ui/shared';
+import { SectionTitle, SuccessMessage } from '@/library/ui/shared';
 import { Section } from '@/ui/shared';
 import { Button } from '@/library/ui/shared/Button';
 import {
@@ -14,6 +11,12 @@ import {
 } from '@/library/ui/features/form';
 import { IconList, type IconListItem } from '@/library/ui/features/lists';
 import { emailjsConfig, contactFormFields } from '@/content';
+import {
+  fadeUp,
+  overshootRight,
+  overshootLeft,
+  withDelay,
+} from '@/library/framer-motion';
 
 interface ContactProps {
   email: string;
@@ -57,13 +60,13 @@ export const Contact = ({ email, socials }: ContactProps) => {
 
   return (
     <Section id="contact" className="py-20 lg:py-28 px-6 md:px-12 lg:px-20">
-      <AnimateOnScroll animation="slide-up-md">
+      <motion.div {...fadeUp}>
         <SectionTitle>Contact</SectionTitle>
-      </AnimateOnScroll>
+      </motion.div>
 
-      <div className="grid lg:grid-cols-[2fr_3fr] gap-12 lg:gap-16 max-w-5xl mx-auto">
+      <div className="grid lg:grid-cols-[2fr_3fr] gap-12 lg:gap-16 max-w-5xl">
         {/* Contact Info */}
-        <AnimateOnScroll animation="overshoot-right" delay={100}>
+        <motion.div {...withDelay(overshootRight, 100)}>
           <div className="text-center lg:text-left">
             <h3 className="font-headlines text-2xl sm:text-3xl font-semibold text-slate-700 dark:text-white mb-4">
               Let's Work Together
@@ -88,11 +91,10 @@ export const Contact = ({ email, socials }: ContactProps) => {
               itemClasses="w-6 h-6 text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400"
             />
           </div>
-        </AnimateOnScroll>
+        </motion.div>
 
         {/* Contact Form */}
-        <AnimateOnScroll animation="overshoot-left" delay={200}>
-          {/* <div className="bg-gray-100 dark:bg-slate-800 rounded-2xl p-6 sm:p-8"> */}
+        <motion.div {...withDelay(overshootLeft, 200)}>
           {status === 'success' ? (
             <SuccessMessage
               headline="Message Sent!"
@@ -136,8 +138,7 @@ export const Contact = ({ email, socials }: ContactProps) => {
               </Form>
             </FormContainer>
           )}
-          {/* </div> */}
-        </AnimateOnScroll>
+        </motion.div>
       </div>
     </Section>
   );
