@@ -16,7 +16,7 @@ export const about = {
   // resumeUrl: '/resumes/react-resume.pdf',
 
   // Navigation
-  navLinks: ['Home', 'About', 'Experience', 'Skills', 'Projects', 'Contact'],
+  navLinks: ['home', 'about', 'experience', 'skills', 'projects', 'contact'],
 
   // Social Links
   socials: [
