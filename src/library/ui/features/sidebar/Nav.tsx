@@ -42,7 +42,7 @@ export const Nav = ({ navLinksContent, closeSidebar }: NavProps) => {
                 <span
                   className={`
                     absolute -left-[5%] top-[115%] w-[110%] h-0.5 bg-current transition-all duration-300 origin-left
-                    scale-x-0 group-hover:scale-x-100 group-focus:scale-x-100
+                    scale-x-0 group-hover:scale-x-100 
                   `}
                 />
               </a>
