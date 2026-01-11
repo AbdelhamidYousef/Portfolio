@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import {
-  Section,
   SectionTitle,
   AnimateOnScroll,
   SuccessMessage,
 } from '@/library/ui/shared';
+import { Section } from '@/ui/shared';
 import { Button } from '@/library/ui/shared/Button';
 import {
   Form,

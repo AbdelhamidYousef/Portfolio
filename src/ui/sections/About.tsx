@@ -1,9 +1,5 @@
-import {
-  Section,
-  SectionTitle,
-  AnimateOnScroll,
-  ProfilePic,
-} from '@/library/ui/shared';
+import { SectionTitle, AnimateOnScroll, ProfilePic } from '@/library/ui/shared';
+import { Section } from '@/ui/shared';
 import { DownloadLink } from '@/library/ui/shared/DownloadLink';
 import { StatsList, type StatsItem } from '@/library/ui/features/lists';
 import profileImage from '@/assets/images/profile.webp';

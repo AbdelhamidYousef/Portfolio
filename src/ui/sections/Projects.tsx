@@ -1,4 +1,5 @@
-import { Section, SectionTitle, AnimateOnScroll } from '@/library/ui/shared';
+import { SectionTitle, AnimateOnScroll } from '@/library/ui/shared';
+import { Section } from '@/ui/shared';
 import { ProjectCardList } from '@/library/ui/features/lists';
 import { projects } from '@/content/projects';
 

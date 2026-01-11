@@ -2,6 +2,7 @@ import {
   RubberChars,
   BackgroundBlobs,
   ScrollIndicator,
+  TrackedSection,
 } from '@/library/ui/shared';
 import { Button } from '@/library/ui/shared/Button';
 
@@ -13,7 +14,7 @@ interface HeroProps {
 
 export const Hero = ({ fullName, title, tagline }: HeroProps) => {
   return (
-    <section
+    <TrackedSection
       id="home"
       className="relative min-h-dvh flex flex-col items-center justify-center px-6 overflow-hidden"
     >
@@ -65,6 +66,6 @@ export const Hero = ({ fullName, title, tagline }: HeroProps) => {
       </div>
 
       <ScrollIndicator targetId="about" ariaLabel="Scroll to About section" />
-    </section>
+    </TrackedSection>
   );
 };

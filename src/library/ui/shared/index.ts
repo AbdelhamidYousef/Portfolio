@@ -7,6 +7,6 @@ export { ProfilePic } from './ProfilePic';
 export { RubberChars } from './RubberChars';
 export { ScrollIndicator } from './ScrollIndicator';
 export { ScrollToTopButton } from './ScrollToTopButton';
-export { Section } from './Section';
+export { TrackedSection } from './TrackedSection';
 export { SectionTitle } from './SectionTitle';
 export { SuccessMessage } from './SuccessMessage';

@@ -1,4 +1,5 @@
-import { Section, SectionTitle, AnimateOnScroll } from '@/library/ui/shared';
+import { SectionTitle, AnimateOnScroll } from '@/library/ui/shared';
+import { Section } from '@/ui/shared';
 import { workExperience } from '@/content/experience';
 import { ExperienceTimeline } from '@/library/ui/features/experience';
 
