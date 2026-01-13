@@ -10,7 +10,7 @@ interface ExperienceProps {
 
 export const Experience = ({ data }: ExperienceProps) => {
   return (
-    <Section id="experience" className="py-20 lg:py-28 px-6 md:px-12 lg:px-20">
+    <Section id="experience">
       <motion.div>
         <SectionTitle>Experience</SectionTitle>
       </motion.div>

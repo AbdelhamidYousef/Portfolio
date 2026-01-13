@@ -53,7 +53,7 @@ export const Contact = ({ email, socials }: ContactProps) => {
   };
 
   return (
-    <Section id="contact" className="py-20 lg:py-28 px-6 md:px-12 lg:px-20">
+    <Section id="contact">
       <motion.div>
         <SectionTitle>Contact</SectionTitle>
       </motion.div>

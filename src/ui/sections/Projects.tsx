@@ -5,7 +5,7 @@ import { ProjectCardList } from '@/library/ui/features/lists';
 import { projects } from '@/content/projects';
 
 export const Projects = () => (
-  <Section id="projects" className="py-20 lg:py-28 px-6 md:px-12 lg:px-20">
+  <Section id="projects">
     <motion.div>
       <SectionTitle>Personal Projects</SectionTitle>
     </motion.div>
