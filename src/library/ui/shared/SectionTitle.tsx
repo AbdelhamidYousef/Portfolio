@@ -25,6 +25,8 @@ export const SectionTitle = ({
       ${className}
     `}
   >
-    <RubberChars>{children}</RubberChars>
+    <RubberChars className="flex justify-center md:justify-start">
+      {children}
+    </RubberChars>
   </h2>
 );

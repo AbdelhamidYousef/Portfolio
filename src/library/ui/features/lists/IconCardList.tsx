@@ -33,7 +33,7 @@ export const IconCardList = ({
   itemClasses = '',
 }: IconCardListProps) => (
   <ul
-    className={`grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 content-start gap-3 sm:gap-4 lg:gap-5 ${containerClasses}`}
+    className={`grid grid-cols-1 sm:grid-cols-2 2xl:grid-cols-3 content-start gap-x-3 sm:gap-x-4 lg:gap-x-5 gap-y-4 ${containerClasses}`}
   >
     <AnimatePresence>
       {data.map((item, index) => {
