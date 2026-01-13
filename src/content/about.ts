@@ -43,7 +43,7 @@ export const about = {
   // Stats/Highlights
   stats: [
     { label: 'Years Experience', value: '2+' },
-    { label: 'Projects Completed', value: '10+' },
+    { label: 'Projects', value: '10+' },
     { label: 'Technologies', value: '12+' },
   ],
 } as const;
