@@ -8,18 +8,19 @@ import {
   useListFilter,
 } from '@/library/contexts/listFilter';
 import { skills, skillCategories, type Skill } from '@/content/skills';
+import { fadeIn } from '@/library/utils/motion';
 
 const SkillsContent = () => {
   const { modifiedList, filter, setFilter } = useListFilter<Skill>();
 
   return (
     <>
-      <motion.div>
+      <motion.div variants={fadeIn('up')}>
         <SectionTitle className="mb-8!">Skills</SectionTitle>
       </motion.div>
 
       {/* Filter Buttons */}
-      <motion.div>
+      <motion.div variants={fadeIn('up', 0.1)}>
         <Filter
           variant="buttons"
           options={skillCategories}
@@ -30,7 +31,7 @@ const SkillsContent = () => {
       </motion.div>
 
       {/* Skills List */}
-      <motion.div>
+      <motion.div variants={fadeIn('up', 0.2)}>
         <IconCardList
           data={modifiedList}
           containerClasses="max-w-5xl min-h-[30vh] mx-auto justify-center gap-8 sm:gap-10"

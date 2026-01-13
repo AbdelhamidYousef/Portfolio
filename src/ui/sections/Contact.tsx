@@ -11,6 +11,7 @@ import {
 } from '@/library/ui/features/form';
 import { IconList, type IconListItem } from '@/library/ui/features/lists';
 import { emailjsConfig, contactFormFields } from '@/content';
+import { fadeIn } from '@/library/utils/motion';
 
 interface ContactProps {
   email: string;
@@ -54,13 +55,13 @@ export const Contact = ({ email, socials }: ContactProps) => {
 
   return (
     <Section id="contact">
-      <motion.div>
+      <motion.div variants={fadeIn('up')}>
         <SectionTitle>Contact</SectionTitle>
       </motion.div>
 
       <div className="grid lg:grid-cols-[2fr_3fr] gap-12 lg:gap-16 max-w-5xl">
         {/* Contact Info */}
-        <motion.div>
+        <motion.div variants={fadeIn('right', 0.1)}>
           <div className="text-center lg:text-left">
             <h3 className="font-headlines text-2xl sm:text-3xl font-semibold text-slate-700 dark:text-white mb-4">
               Let's Work Together
@@ -88,7 +89,7 @@ export const Contact = ({ email, socials }: ContactProps) => {
         </motion.div>
 
         {/* Contact Form */}
-        <motion.div>
+        <motion.div variants={fadeIn('left', 0.2)}>
           {status === 'success' ? (
             <SuccessMessage
               headline="Message Sent!"
