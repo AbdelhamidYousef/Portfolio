@@ -11,15 +11,22 @@ interface RubberCharsProps {
  * <RubberChars className="text-2xl font-bold">Hover me!</RubberChars>
  */
 export const RubberChars = ({ children, className = '' }: RubberCharsProps) => (
-  <span className={className}>
-    {children.split('').map((char, i) =>
-      char === ' ' ? (
-        <span key={i}>&nbsp;</span>
-      ) : (
-        <span key={i} className="inline-block hover:animate-rubber-band">
-          {char}
-        </span>
-      )
-    )}
+  <span className={`inline-flex flex-wrap ${className}`}>
+    {children.split(' ').map((word, wordIndex) => (
+      <span key={wordIndex} className="inline-block whitespace-nowrap">
+        {word.split('').map((char, charIndex) => (
+          <span
+            key={charIndex}
+            className="inline-block hover:animate-rubber-band"
+          >
+            {char}
+          </span>
+        ))}
+        {/* Add space after word (except last) */}
+        {wordIndex < children.split(' ').length - 1 && (
+          <span className="inline-block">&nbsp;</span>
+        )}
+      </span>
+    ))}
   </span>
 );

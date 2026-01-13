@@ -34,7 +34,7 @@ const SkillsContent = () => {
       <motion.div variants={fadeIn('up', 0.2)}>
         <IconCardList
           data={modifiedList}
-          containerClasses="max-w-5xl min-h-[30vh] mx-auto justify-center gap-8 sm:gap-10"
+          containerClasses="max-w-5xl min-h-[30vh] mx-auto justify-center"
         />
       </motion.div>
 
