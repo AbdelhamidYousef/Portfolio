@@ -42,7 +42,7 @@ export const ProjectCard = ({
 
   return (
     <motion.li
-      variants={fadeIn('left', 0.2 * index, 0.2)}
+      variants={fadeIn('left', 0.5 * index, 0.2, 'tween')}
       initial="hidden"
       whileInView="show"
       viewport={{ once: false, amount: 0.2 }}
