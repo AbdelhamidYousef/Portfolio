@@ -6,7 +6,8 @@ export const about = {
   firstName: 'Abdulhamid',
   lastName: 'Yosef',
   titles: ['Frontend Developer', 'React Developer'] as const,
-  tagline: 'Building modern web experiences',
+  tagline: 'Crafting performant React interfaces',
+  techStack: 'React · TypeScript · Tailwind',
   email: 'abdelhamedy33@gmail.com',
 
   // Bio
