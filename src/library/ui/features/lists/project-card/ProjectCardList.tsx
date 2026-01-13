@@ -28,20 +28,18 @@ export const ProjectCardList = ({
   );
 
   return (
-    <>
-      <ul
-        className={`flex flex-col md:flex-row gap-4 md:gap-3 ${containerClasses}`}
-      >
-        {data.map((project, index) => (
-          <ProjectCard
-            key={project.id}
-            data={project}
-            isActive={activeId === project.id}
-            onClick={() => setActiveId(project.id)}
-            index={index}
-          />
-        ))}
-      </ul>
-    </>
+    <ul
+      className={`flex flex-col md:flex-row gap-4 md:gap-3 ${containerClasses}`}
+    >
+      {data.map((project, index) => (
+        <ProjectCard
+          key={project.id}
+          data={project}
+          isActive={activeId === project.id}
+          onClick={() => setActiveId(project.id)}
+          index={index}
+        />
+      ))}
+    </ul>
   );
 };

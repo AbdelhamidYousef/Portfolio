@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { fadeUp, withStagger } from '@/library/framer-motion';
 import type { WorkExperience } from '@/content/experience';
 
 interface ExperienceAccordionProps {
@@ -96,14 +94,14 @@ export const ExperienceAccordion = ({ data }: ExperienceAccordionProps) => {
 
   return (
     <div className="max-w-4xl mx-auto bg-white dark:bg-slate-800 rounded-2xl p-6 sm:p-8 shadow-lg">
-      {data.map((job, index) => (
-        <motion.div key={job.id} {...withStagger(fadeUp, index)}>
+      {data.map((job) => (
+        <div key={job.id}>
           <AccordionItem
             job={job}
             isOpen={openId === job.id}
             onToggle={() => setOpenId(openId === job.id ? null : job.id)}
           />
-        </motion.div>
+        </div>
       ))}
     </div>
   );

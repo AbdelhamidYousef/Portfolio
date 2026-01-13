@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-import { fadeUp, withStagger } from '@/library/framer-motion';
 import type { WorkExperience } from '@/content/experience';
 
 interface ExperienceCardsProps {
@@ -55,10 +53,10 @@ const ExperienceCard = ({ job }: { job: WorkExperience }) => (
 
 export const ExperienceCards = ({ data }: ExperienceCardsProps) => (
   <div className="max-w-5xl mx-auto grid gap-8">
-    {data.map((job, index) => (
-      <motion.div key={job.id} {...withStagger(fadeUp, index, 150)}>
+    {data.map((job) => (
+      <div key={job.id}>
         <ExperienceCard job={job} />
-      </motion.div>
+      </div>
     ))}
   </div>
 );
