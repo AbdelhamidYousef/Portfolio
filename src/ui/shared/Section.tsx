@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { motion } from 'framer-motion';
 import { TrackedSection } from '@/library/ui/shared';
 
 interface SectionProps {
@@ -10,11 +11,11 @@ interface SectionProps {
 /**
  * Styled page section with consistent borders.
  * Automatically tracked by ActiveSectionProvider for scroll-based navigation.
+ * Propagates "hidden"/"show" animation states to children with variants.
  *
  * @example
- * <Section id="about" className="py-20 px-6">
- *   <SectionTitle>About Me</SectionTitle>
- *   <p>Content here...</p>
+ * <Section id="about">
+ *   <motion.div variants={fadeIn('right')}>Animated content</motion.div>
  * </Section>
  */
 export const Section = ({ id, children, className = '' }: SectionProps) => (
@@ -25,6 +26,10 @@ export const Section = ({ id, children, className = '' }: SectionProps) => (
       border-b-2 border-gray-200 dark:border-gray-700
       ${className}
     `}
+    as={motion.section}
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: false, amount: 0.2 }}
   >
     {children}
   </TrackedSection>
