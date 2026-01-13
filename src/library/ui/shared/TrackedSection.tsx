@@ -1,26 +1,40 @@
-import { useCallback, type ReactNode } from 'react';
+import {
+  useCallback,
+  type ReactNode,
+  type ComponentPropsWithoutRef,
+} from 'react';
 import { useActiveSection } from '@/library/contexts/activeSection';
 
-interface TrackedSectionProps {
+type TrackedSectionProps<T extends React.ElementType = 'section'> = {
   id: string;
   children: ReactNode;
   className?: string;
-}
+  as?: T;
+} & Omit<ComponentPropsWithoutRef<T>, 'id' | 'children' | 'className'>;
 
 /**
- * Section wrapper that registers with ActiveSectionProvider for scroll tracking.
- * Use this when you need a section to be tracked by the active section observer.
+ * Polymorphic section wrapper that registers with ActiveSectionProvider for scroll tracking.
+ * Accepts an `as` prop to render as different elements (e.g., motion.section).
  *
  * @example
+ * // Plain section
  * <TrackedSection id="about">
  *   <h2>About Me</h2>
  * </TrackedSection>
+ *
+ * // Motion section with animation
+ * <TrackedSection id="about" as={motion.section} initial="hidden" whileInView="show">
+ *   <motion.div variants={fadeIn('up')}>Content</motion.div>
+ * </TrackedSection>
  */
-export const TrackedSection = ({
+export const TrackedSection = <T extends React.ElementType = 'section'>({
+  as,
   children,
   id,
   className = '',
-}: TrackedSectionProps) => {
+  ...props
+}: TrackedSectionProps<T>) => {
+  const Component = as || 'section';
   const { sectionsRef } = useActiveSection();
 
   // Ref callback - runs synchronously when element mounts (before useEffect)
@@ -38,8 +52,13 @@ export const TrackedSection = ({
   );
 
   return (
-    <section ref={sectionRefCallback} id={id} className={className}>
+    <Component
+      ref={sectionRefCallback}
+      id={id}
+      className={className}
+      {...props}
+    >
       {children}
-    </section>
+    </Component>
   );
 };
