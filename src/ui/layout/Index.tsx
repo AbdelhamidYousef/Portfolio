@@ -17,7 +17,7 @@ import resume from '@/assets/resumes/react-resume.pdf';
 import { workExperience } from '@/content/experience';
 
 const Index = () => {
-  const { fullName, title, tagline, profile, stats, email, socials, navLinks } =
+  const { firstName, lastName, titles, tagline, profile, stats, email, socials, navLinks } =
     about;
 
   return (
@@ -36,7 +36,7 @@ const Index = () => {
 
       {/* Main Content */}
       <main className="lg:ml-72 overflow-x-hidden">
-        <Hero fullName={fullName} title={title} tagline={tagline} />
+        <Hero firstName={firstName} lastName={lastName} titles={titles} tagline={tagline} />
         <About profile={profile} stats={stats} resumeUrl={resume} />
         <Experience data={workExperience} />
         <Skills />

@@ -7,12 +7,13 @@ import {
 import { Button } from '@/library/ui/shared/Button';
 
 interface HeroProps {
-  fullName: string;
-  title: string;
+  firstName: string;
+  lastName: string;
+  titles: readonly [string, string];
   tagline: string;
 }
 
-export const Hero = ({ fullName, title, tagline }: HeroProps) => {
+export const Hero = ({ firstName, lastName, titles, tagline }: HeroProps) => {
   return (
     <TrackedSection
       id="home"
@@ -28,14 +29,25 @@ export const Hero = ({ fullName, title, tagline }: HeroProps) => {
         </p>
 
         {/* Name */}
-        <h1 className="mb-4 font-headlines font-black text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-slate-800 dark:text-white uppercase tracking-tight animate-slide-up-md [animation-delay:100ms] opacity-0 [animation-fill-mode:forwards]">
-          <RubberChars>{fullName}</RubberChars>
+        <h1 className="mb-4 font-headlines font-bold text-5xl sm:text-7xl md:text-8xl uppercase tracking-wide animate-slide-up-md [animation-delay:100ms] opacity-0 [animation-fill-mode:forwards]">
+          <span className="text-slate-700 dark:text-gray-50">
+            <RubberChars>{firstName}</RubberChars>
+          </span>{' '}
+          <span className="text-primary-600 dark:text-primary-400">
+            <RubberChars>{lastName}</RubberChars>
+          </span>
         </h1>
 
-        {/* Title with gradient */}
-        <h2 className="mb-6 font-headlines text-2xl sm:text-3xl md:text-4xl font-semibold text-transparent bg-clip-text bg-linear-to-r from-primary-500 via-primary-600 to-primary-700 dark:from-primary-300 dark:via-primary-400 dark:to-primary-500 tracking-wide animate-slide-up-md [animation-delay:200ms] opacity-0 [animation-fill-mode:forwards]">
-          {title}
-        </h2>
+        {/* Title - Split with separator like v2 */}
+        <p className="mb-6 font-headlines font-medium text-lg sm:text-xl md:text-2xl uppercase tracking-widest animate-slide-up-md [animation-delay:200ms] opacity-0 [animation-fill-mode:forwards]">
+          <span className="text-slate-600 dark:text-gray-200">{titles[0]}</span>
+          <span className="mx-2 sm:mx-3 text-slate-400 dark:text-gray-500">
+            |
+          </span>
+          <span className="text-primary-600 dark:text-primary-400">
+            {titles[1]}
+          </span>
+        </p>
 
         {/* Tagline */}
         <p className="mb-10 text-lg sm:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto animate-slide-up-md [animation-delay:300ms] opacity-0 [animation-fill-mode:forwards]">

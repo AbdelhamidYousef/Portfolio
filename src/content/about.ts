@@ -5,7 +5,7 @@ export const about = {
   fullName: 'Abdulhamid Yosef',
   firstName: 'Abdulhamid',
   lastName: 'Yosef',
-  title: 'React Developer',
+  titles: ['Frontend Developer', 'React Developer'] as const,
   tagline: 'Building modern web experiences',
   email: 'abdelhamedy33@gmail.com',
 
