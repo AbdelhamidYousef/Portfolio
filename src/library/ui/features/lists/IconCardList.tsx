@@ -64,7 +64,7 @@ export const IconCardList = ({
         return (
           <motion.li
             key={item.id}
-            variants={fadeIn('left', 0.05 * index)}
+            variants={fadeIn('left', 0.05 * index, 0.8, 'spring')}
             initial="hidden"
             animate="show"
             exit="hidden"
