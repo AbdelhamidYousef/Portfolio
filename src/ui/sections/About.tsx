@@ -12,10 +12,8 @@ interface AboutProps {
 
 export const About = ({ profile, stats, resumeUrl }: AboutProps) => {
   return (
-    <Section id="about" className="py-20 lg:py-28 px-6 md:px-12 lg:px-20">
-      <div>
-        <SectionTitle>About Me</SectionTitle>
-      </div>
+    <Section id="about">
+      <SectionTitle>About Me</SectionTitle>
 
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-0 items-center max-w-6xl mx-auto">
         {/* Profile Picture */}

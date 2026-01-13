@@ -48,7 +48,7 @@ const SkillsContent = () => {
 };
 
 export const Skills = () => (
-  <Section id="skills" className="py-20 lg:py-28 px-6 md:px-12 lg:px-20">
+  <Section id="skills">
     <ListFilterProvider originalList={skills} filterKey="type">
       <SkillsContent />
     </ListFilterProvider>
