@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-import { fadeUp, withStagger } from '@/library/framer-motion';
 import type { WorkExperience } from '@/content/experience';
 
 interface ExperienceMinimalProps {
@@ -43,10 +41,10 @@ const MinimalEntry = ({ job }: { job: WorkExperience }) => (
 
 export const ExperienceMinimal = ({ data }: ExperienceMinimalProps) => (
   <div className="max-w-4xl mx-auto">
-    {data.map((job, index) => (
-      <motion.div key={job.id} {...withStagger(fadeUp, index)}>
+    {data.map((job) => (
+      <div key={job.id}>
         <MinimalEntry job={job} />
-      </motion.div>
+      </div>
     ))}
   </div>
 );

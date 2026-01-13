@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { GitHub } from '@/library/ui/svgs/socials';
 import { ExternalLinkArrow } from '@/library/ui/svgs/interface/arrows';
 import { IconList, type IconListItem } from '../IconList';
@@ -29,24 +28,16 @@ interface ProjectCardProps {
  *   data={projectData}
  *   isActive={activeId === projectData.id}
  *   onClick={() => setActiveId(projectData.id)}
+ *   index={0}
  * />
  */
-export const ProjectCard = ({
-  data,
-  isActive,
-  onClick,
-  index = 0,
-}: ProjectCardProps) => {
+export const ProjectCard = ({ data, isActive, onClick }: ProjectCardProps) => {
   const { title, description, image, technologies, githubLink, demoLink } =
     data;
 
   return (
-    <motion.li
+    <li
       onClick={onClick}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: false, amount: 0.2 }}
-      transition={{ duration: 0.5, delay: index * 0.1, ease: 'easeOut' }}
       className={`
         ${
           isActive
@@ -138,6 +129,6 @@ export const ProjectCard = ({
           <ExternalLinkArrow className="w-3 h-3 sm:w-4 sm:h-4" />
         </a>
       </div>
-    </motion.li>
+    </li>
   );
 };

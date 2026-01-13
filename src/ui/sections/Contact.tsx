@@ -11,12 +11,6 @@ import {
 } from '@/library/ui/features/form';
 import { IconList, type IconListItem } from '@/library/ui/features/lists';
 import { emailjsConfig, contactFormFields } from '@/content';
-import {
-  fadeUp,
-  overshootRight,
-  overshootLeft,
-  withDelay,
-} from '@/library/framer-motion';
 
 interface ContactProps {
   email: string;
@@ -60,13 +54,13 @@ export const Contact = ({ email, socials }: ContactProps) => {
 
   return (
     <Section id="contact" className="py-20 lg:py-28 px-6 md:px-12 lg:px-20">
-      <motion.div {...fadeUp}>
+      <motion.div>
         <SectionTitle>Contact</SectionTitle>
       </motion.div>
 
       <div className="grid lg:grid-cols-[2fr_3fr] gap-12 lg:gap-16 max-w-5xl">
         {/* Contact Info */}
-        <motion.div {...withDelay(overshootRight, 100)}>
+        <motion.div>
           <div className="text-center lg:text-left">
             <h3 className="font-headlines text-2xl sm:text-3xl font-semibold text-slate-700 dark:text-white mb-4">
               Let's Work Together
@@ -94,7 +88,7 @@ export const Contact = ({ email, socials }: ContactProps) => {
         </motion.div>
 
         {/* Contact Form */}
-        <motion.div {...withDelay(overshootLeft, 200)}>
+        <motion.div>
           {status === 'success' ? (
             <SuccessMessage
               headline="Message Sent!"

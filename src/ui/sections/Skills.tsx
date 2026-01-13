@@ -8,19 +8,18 @@ import {
   useListFilter,
 } from '@/library/contexts/listFilter';
 import { skills, skillCategories, type Skill } from '@/content/skills';
-import { fadeUp, withDelay } from '@/library/framer-motion';
 
 const SkillsContent = () => {
   const { modifiedList, filter, setFilter } = useListFilter<Skill>();
 
   return (
     <>
-      <motion.div {...fadeUp}>
+      <motion.div>
         <SectionTitle className="mb-8!">Skills</SectionTitle>
       </motion.div>
 
       {/* Filter Buttons */}
-      <motion.div {...withDelay(fadeUp, 100)}>
+      <motion.div>
         <Filter
           variant="buttons"
           options={skillCategories}
@@ -31,7 +30,7 @@ const SkillsContent = () => {
       </motion.div>
 
       {/* Skills List */}
-      <motion.div {...withDelay(fadeUp, 200)}>
+      <motion.div>
         <IconCardList
           data={modifiedList}
           containerClasses="max-w-5xl min-h-[30vh] mx-auto justify-center gap-8 sm:gap-10"
