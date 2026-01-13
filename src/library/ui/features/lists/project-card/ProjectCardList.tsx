@@ -10,7 +10,7 @@ interface ProjectCardListProps {
 }
 
 /**
- * Expandable project cards list with accordion behavior
+ * Expandable project cards list with accordion behavior (staggered animation)
  *
  * @example
  * <ProjectCardList
