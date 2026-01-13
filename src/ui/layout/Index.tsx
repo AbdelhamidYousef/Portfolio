@@ -17,8 +17,18 @@ import resume from '@/assets/resumes/react-resume.pdf';
 import { workExperience } from '@/content/experience';
 
 const Index = () => {
-  const { firstName, lastName, titles, tagline, profile, stats, email, socials, navLinks } =
-    about;
+  const {
+    firstName,
+    lastName,
+    titles,
+    tagline,
+    techStack,
+    profile,
+    stats,
+    email,
+    socials,
+    navLinks,
+  } = about;
 
   return (
     <ActiveSectionProvider>
@@ -36,7 +46,13 @@ const Index = () => {
 
       {/* Main Content */}
       <main className="lg:ml-72 overflow-x-hidden">
-        <Hero firstName={firstName} lastName={lastName} titles={titles} tagline={tagline} />
+        <Hero
+          firstName={firstName}
+          lastName={lastName}
+          titles={titles}
+          tagline={tagline}
+          techStack={techStack}
+        />
         <About profile={profile} stats={stats} resumeUrl={resume} />
         <Experience data={workExperience} />
         <Skills />

@@ -11,9 +11,16 @@ interface HeroProps {
   lastName: string;
   titles: readonly [string, string];
   tagline: string;
+  techStack: string;
 }
 
-export const Hero = ({ firstName, lastName, titles, tagline }: HeroProps) => {
+export const Hero = ({
+  firstName,
+  lastName,
+  titles,
+  tagline,
+  techStack,
+}: HeroProps) => {
   return (
     <TrackedSection
       id="home"
@@ -49,10 +56,15 @@ export const Hero = ({ firstName, lastName, titles, tagline }: HeroProps) => {
           </span>
         </p>
 
-        {/* Tagline */}
-        <p className="mb-10 text-lg sm:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto animate-slide-up-md [animation-delay:300ms] opacity-0 [animation-fill-mode:forwards]">
-          {tagline}
-        </p>
+        {/* Tagline & Tech Stack */}
+        <div className="mb-10 animate-slide-up-md [animation-delay:300ms] opacity-0 [animation-fill-mode:forwards]">
+          <p className="text-lg sm:text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
+            {tagline}
+          </p>
+          <p className="mt-2 text-sm sm:text-base text-slate-400 dark:text-slate-500 tracking-wider">
+            {techStack}
+          </p>
+        </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-slide-up-md [animation-delay:400ms] opacity-0 [animation-fill-mode:forwards]">
@@ -67,12 +79,12 @@ export const Hero = ({ firstName, lastName, titles, tagline }: HeroProps) => {
           </Button>
           <Button
             as="a"
-            href="#projects"
+            href="#experience"
             variant="outline"
             size="lg"
             className="min-w-[180px]"
           >
-            View Projects
+            See My Work
           </Button>
         </div>
       </div>
