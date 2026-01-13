@@ -3,7 +3,7 @@ import { SectionTitle } from '@/library/ui/shared';
 import { Section } from '@/ui/shared';
 import { ProjectCardList } from '@/library/ui/features/lists';
 import { projects } from '@/content/projects';
-import { fadeIn } from '@/library/utils/motion';
+import { fadeIn, fade } from '@/library/utils/motion';
 
 export const Projects = () => (
   <Section id="projects">
@@ -11,7 +11,7 @@ export const Projects = () => (
       <SectionTitle>Personal Projects</SectionTitle>
     </motion.div>
 
-    <motion.div variants={fadeIn('up', 0.1)}>
+    <motion.div variants={fade(0, 0)}>
       <ProjectCardList data={projects} containerClasses="max-w-6xl mx-auto" />
     </motion.div>
   </Section>

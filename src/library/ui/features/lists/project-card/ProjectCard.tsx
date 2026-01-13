@@ -1,6 +1,8 @@
+import { motion } from 'framer-motion';
 import { GitHub } from '@/library/ui/svgs/socials';
 import { ExternalLinkArrow } from '@/library/ui/svgs/interface/arrows';
 import { IconList, type IconListItem } from '../IconList';
+import { fadeIn } from '@/library/utils/motion';
 
 export interface ProjectData {
   id: number;
@@ -16,8 +18,7 @@ interface ProjectCardProps {
   data: ProjectData;
   isActive: boolean;
   onClick: () => void;
-  /** Index for staggered animation delay */
-  index?: number;
+  index: number;
 }
 
 /**
@@ -28,15 +29,23 @@ interface ProjectCardProps {
  *   data={projectData}
  *   isActive={activeId === projectData.id}
  *   onClick={() => setActiveId(projectData.id)}
- *   index={0}
  * />
  */
-export const ProjectCard = ({ data, isActive, onClick }: ProjectCardProps) => {
+export const ProjectCard = ({
+  data,
+  isActive,
+  onClick,
+  index,
+}: ProjectCardProps) => {
   const { title, description, image, technologies, githubLink, demoLink } =
     data;
 
   return (
-    <li
+    <motion.li
+      variants={fadeIn('left', 0.2 * index, 0.2)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.2 }}
       onClick={onClick}
       className={`
         ${
@@ -129,6 +138,6 @@ export const ProjectCard = ({ data, isActive, onClick }: ProjectCardProps) => {
           <ExternalLinkArrow className="w-3 h-3 sm:w-4 sm:h-4" />
         </a>
       </div>
-    </li>
+    </motion.li>
   );
 };
