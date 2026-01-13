@@ -18,13 +18,13 @@ export type TransitionType = 'spring' | 'tween';
  * @example
  * // In parent Section: initial="hidden" whileInView="show"
  * <m.div variants={fadeIn('right')}>
- * <m.div variants={fadeIn('up', 'tween', 0.4, 0.2)}>
+ * <m.div variants={fadeIn('up', 'tween', 1, 0.2)}>
  */
 export const fadeIn = (
   direction: Direction,
-  type: TransitionType = 'tween',
-  duration = 0.4,
-  delay = 0
+  delay = 0,
+  duration = 2,
+  type: TransitionType = 'spring'
 ): Variants => ({
   hidden: {
     opacity: 0,
@@ -43,11 +43,11 @@ export const fadeIn = (
  * Creates a slide animation variant (larger movement, custom easing)
  *
  * @example
- * <m.div variants={slideIn('left', 0.4)}>
+ * <m.div variants={slideIn('left', 1)}>
  */
 export const slideIn = (
   direction: Direction,
-  duration = 0.4,
+  duration = 1,
   delay = 0
 ): Variants => ({
   hidden: {
@@ -63,7 +63,7 @@ export const slideIn = (
       type: 'tween',
       duration,
       delay,
-      ease: [0.25, 0.46, 0.45, 0.94],
+      ease: [0.25, 16, 15, 0.94],
     },
   },
 });
@@ -72,9 +72,9 @@ export const slideIn = (
  * Creates a scale animation variant
  *
  * @example
- * <m.div variants={scaleIn(0.4, 0.5)}>
+ * <m.div variants={scaleIn(1, 0.5)}>
  */
-export const scaleIn = (from = 0.4, duration = 0.5, delay = 0): Variants => ({
+export const scaleIn = (from = 1, duration = 0.5, delay = 0): Variants => ({
   hidden: {
     opacity: 0,
     scale: from,
