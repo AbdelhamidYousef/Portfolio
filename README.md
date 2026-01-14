@@ -11,7 +11,7 @@
 
 A modern, responsive portfolio website showcasing my experience and skills.
 
-[**🌐 View Live Demo**](https://yoursite.com)
+[**🌐 View Live Demo**](https://abdelhamid99.netlify.app/)
 
 </div>
 
@@ -21,9 +21,7 @@ A modern, responsive portfolio website showcasing my experience and skills.
 
 <div align="center">
 
-<!-- Replace with your actual screenshot -->
-
-![Portfolio Preview](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=Portfolio+Screenshot)
+![Portfolio Preview](src/assets/images/projects/portfolio.png)
 
 </div>
 
