@@ -12,7 +12,7 @@ import {
 import { emailjsConfig, contactFormFields } from '@/content';
 import { fadeIn } from '@/library/utils/motion';
 import { Email } from '@/library/ui/svgs/socials';
-import { LocationIcon } from '@/library/ui/svgs/interface';
+import { LocationIcon, SendIcon } from '@/library/ui/svgs/interface';
 
 interface ContactProps {
   email: string;
@@ -133,10 +133,13 @@ export const Contact = ({ email }: ContactProps) => {
                   type="submit"
                   variant="primary"
                   size="lg"
-                  className="w-full"
+                  className="w-full flex items-center justify-center gap-2"
                   disabled={status === 'loading'}
                 >
                   {status === 'loading' ? 'Sending...' : 'Send Message'}
+                  {status !== 'loading' && (
+                    <SendIcon className="w-4 h-4 relative top-0.5" />
+                  )}
                 </Button>
               </Form>
             </FormContainer>
