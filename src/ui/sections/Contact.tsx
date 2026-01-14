@@ -9,18 +9,18 @@ import {
   FormContainer,
   DynamicFormFields,
 } from '@/library/ui/features/form';
-import { IconList, type IconListItem } from '@/library/ui/features/lists';
 import { emailjsConfig, contactFormFields } from '@/content';
 import { fadeIn } from '@/library/utils/motion';
+import { Email } from '@/library/ui/svgs/socials';
+import { LocationIcon } from '@/library/ui/svgs/interface';
 
 interface ContactProps {
   email: string;
-  socials: readonly IconListItem[];
 }
 
 type FormStatus = 'idle' | 'loading' | 'success' | 'error';
 
-export const Contact = ({ email, socials }: ContactProps) => {
+export const Contact = ({ email }: ContactProps) => {
   const [status, setStatus] = useState<FormStatus>('idle');
   const [formData, setFormData] = useState({
     name: '',
@@ -56,7 +56,7 @@ export const Contact = ({ email, socials }: ContactProps) => {
   return (
     <Section id="contact">
       <motion.div variants={fadeIn('up')}>
-        <SectionTitle>Contact</SectionTitle>
+        <SectionTitle>Get in Touch</SectionTitle>
       </motion.div>
 
       <div className="grid lg:grid-cols-[2fr_3fr] gap-12 lg:gap-16 max-w-5xl">
@@ -74,18 +74,25 @@ export const Contact = ({ email, socials }: ContactProps) => {
             {/* Email */}
             <a
               href={`mailto:${email}`}
-              className="inline-block mb-8 text-lg font-medium text-primary-600 dark:text-primary-400 hover:underline underline-offset-4"
+              className="-ml-2 flex items-center gap-3 mb-4 group"
             >
-              {email}
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-primary-600/10 dark:bg-primary-400/10 text-primary-600 dark:text-primary-400">
+                <Email className="w-5 h-5 fill-current" />
+              </span>
+              <span className="text-lg font-medium text-primary-600 dark:text-primary-400 group-hover:underline underline-offset-4">
+                {email}
+              </span>
             </a>
 
-            {/* Social Links */}
-            <IconList
-              content={socials}
-              containerClasses="gap-5 flex justify-center lg:justify-start"
-              itemClasses="w-6 h-6 text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400"
-              iconClasses="fill-current"
-            />
+            {/* Remote Location */}
+            <div className="-ml-2 flex items-center gap-3 mb-8">
+              <span className="flex items-center justify-center w-10 h-10 rounded-full bg-primary-600/10 dark:bg-primary-400/10 text-primary-600 dark:text-primary-400">
+                <LocationIcon className="w-5 h-5 fill-current" />
+              </span>
+              <span className="text-lg text-primary-600 dark:text-primary-400">
+                Open to Remote Opportunities
+              </span>
+            </div>
           </div>
         </motion.div>
 

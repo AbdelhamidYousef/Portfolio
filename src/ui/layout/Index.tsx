@@ -57,7 +57,7 @@ const Index = () => {
         <Experience data={workExperience} />
         <Skills />
         <Projects />
-        <Contact email={email} socials={socials} />
+        <Contact email={email} />
       </main>
 
       {/* Scroll to Top */}
