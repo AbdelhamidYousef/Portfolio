@@ -74,7 +74,7 @@ export const Contact = ({ email }: ContactProps) => {
             {/* Email */}
             <a
               href={`mailto:${email}`}
-              className="-ml-2 flex items-center gap-3 mb-4 group"
+              className="lg:-ml-2 flex items-center gap-3 mb-4 group"
             >
               <span className="flex items-center justify-center w-10 h-10 rounded-full bg-primary-600/10 dark:bg-primary-400/10 text-primary-600 dark:text-primary-400">
                 <Email className="w-5 h-5 fill-current" />
@@ -85,7 +85,7 @@ export const Contact = ({ email }: ContactProps) => {
             </a>
 
             {/* Remote Location */}
-            <div className="-ml-2 flex items-center gap-3 mb-8">
+            <div className="lg:-ml-2 flex items-center gap-3 mb-8">
               <span className="flex items-center justify-center w-10 h-10 rounded-full bg-primary-600/10 dark:bg-primary-400/10 text-primary-600 dark:text-primary-400">
                 <LocationIcon className="w-5 h-5 fill-current" />
               </span>
