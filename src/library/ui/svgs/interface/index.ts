@@ -10,6 +10,7 @@ export { EyeIcon } from './EyeIcon';
 export { EyeOffIcon } from './EyeOffIcon';
 export { HomeIcon } from './HomeIcon';
 export { HamburgerIcon } from './HamburgerIcon';
+export { LocationIcon } from './LocationIcon';
 export { MinusIcon } from './MinusIcon';
 export { PlusIcon } from './PlusIcon';
 export { SearchIcon } from './SearchIcon';
