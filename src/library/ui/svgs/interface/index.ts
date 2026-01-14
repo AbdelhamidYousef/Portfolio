@@ -14,5 +14,6 @@ export { LocationIcon } from './LocationIcon';
 export { MinusIcon } from './MinusIcon';
 export { PlusIcon } from './PlusIcon';
 export { SearchIcon } from './SearchIcon';
+export { SendIcon } from './SendIcon';
 export { ThemeIcons } from './ThemeIcons';
 export { UserIcon } from './UserIcon';
