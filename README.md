@@ -20,9 +20,10 @@ A modern, responsive portfolio website showcasing my experience and skills.
 ## 📸 Preview
 
 <div align="center">
-
-![Portfolio Preview](src/assets/images/projects/portfolio.png)
-
+  <a href="https://abdelhamid99.netlify.app/">
+    <img src="src/assets/images/projects/portfolio.png" alt="Portfolio Preview" width="800">
+  </a>
+  <p><em>Click to view live demo</em></p>
 </div>
 
 ## 🛠️ Built With
