@@ -1,4 +1,4 @@
-import { HamburgerToggleButton } from '../menu-buttons/HamburgerToggleButton';
+import { HamburgerToggleButton } from '@/library/ui/features/menu-buttons';
 
 interface SidebarToggleButtonProps {
   isSidebarOpen: boolean;

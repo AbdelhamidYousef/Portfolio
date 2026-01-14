@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { GitHub } from '@/library/ui/svgs/socials';
 import { ExternalLinkArrow } from '@/library/ui/svgs/interface/arrows';
-import { IconList, type IconListItem } from '../IconList';
+import { IconList, type IconListItem } from '@/library/ui/features/lists';
 import { fadeIn } from '@/library/utils/motion';
 
 export interface ProjectData {

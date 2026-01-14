@@ -1,5 +1,4 @@
-export { Experience } from '../../../../ui/sections/Experience';
-export { ExperienceTimeline } from './ExperienceTimeline';
+export { ExperienceAccordion } from './ExperienceAccordion';
 export { ExperienceCards } from './ExperienceCards';
 export { ExperienceMinimal } from './ExperienceMinimal';
-export { ExperienceAccordion } from './ExperienceAccordion';
+export { ExperienceTimeline } from './ExperienceTimeline';
