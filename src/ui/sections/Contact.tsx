@@ -84,6 +84,7 @@ export const Contact = ({ email, socials }: ContactProps) => {
               content={socials}
               containerClasses="gap-5 flex justify-center lg:justify-start"
               itemClasses="w-6 h-6 text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400"
+              iconClasses="fill-current"
             />
           </div>
         </motion.div>
