@@ -21,7 +21,7 @@ A modern, responsive portfolio website showcasing my experience and skills.
 
 <div align="center">
   <a href="https://abdelhamid99.netlify.app/">
-    <img src="src/assets/images/projects/portfolio.png" alt="Portfolio Preview" width="800">
+    <img src="src/assets/images/projects/portfolio.png" alt="Portfolio Preview" height="500">
   </a>
   <p><em>Click to view live demo</em></p>
 </div>
