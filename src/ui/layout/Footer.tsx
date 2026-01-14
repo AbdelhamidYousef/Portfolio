@@ -11,7 +11,7 @@ export const Footer = ({ socials, resumeUrl }: FooterProps) => (
     <div className="max-w-7xl mx-auto px-6 md:px-10 py-6">
       <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
         {/* Left: Get in Touch */}
-        <h3 className="font-headlines font-bold text-lg lg:text-3xl tracking-wider text-slate-700 dark:text-slate-300 uppercase">
+        <h3 className="font-headlines font-bold text-3xl tracking-widest dark:text-gray-100 uppercase">
           Get in Touch
         </h3>
 
@@ -19,8 +19,8 @@ export const Footer = ({ socials, resumeUrl }: FooterProps) => (
         <IconList
           content={socials}
           containerClasses="gap-6"
-          itemClasses="w-6 h-6 text-slate-600 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors"
-          iconClasses="fill-current"
+          itemClasses=" text-slate-600 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors"
+          iconClasses="w-5 lg:w-6 h-5 lg:h-6 fill-current"
         />
 
         {/* Right: Download Resume */}
