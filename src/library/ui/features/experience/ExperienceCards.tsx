@@ -38,7 +38,7 @@ const ExperienceCard = ({ job }: { job: WorkExperience }) => (
 
     {/* Responsibilities */}
     <ul className="space-y-3">
-      {job.responsibilities.map((item, index) => (
+      {(job.responsibilities ?? []).map((item, index) => (
         <li
           key={index}
           className="flex items-start gap-3 text-slate-600 dark:text-slate-300"

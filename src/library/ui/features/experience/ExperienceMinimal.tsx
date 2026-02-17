@@ -27,7 +27,7 @@ const MinimalEntry = ({ job }: { job: WorkExperience }) => (
 
     {/* Responsibilities (condensed) */}
     <ul className="grid sm:grid-cols-2 gap-x-8 gap-y-2">
-      {job.responsibilities.slice(0, 4).map((item, index) => (
+      {(job.responsibilities ?? []).slice(0, 4).map((item, index) => (
         <li
           key={index}
           className="text-sm text-slate-600 dark:text-slate-400 before:content-['→'] before:mr-2 before:text-primary-500"

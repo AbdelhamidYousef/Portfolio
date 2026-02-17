@@ -136,19 +136,18 @@ const LegacyTimelineCard = ({ job }: { job: WorkExperience }) => (
       </div>
     )}
 
-    {job.responsibilities && job.responsibilities.length > 0 && (
-      <ul className="space-y-2">
-        {job.responsibilities.map((item, index) => (
-          <li
-            key={index}
-            className="flex items-start gap-3 text-slate-600 dark:text-slate-300"
-          >
-            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-500 shrink-0" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    )}
+    {/* Responsibilities */}
+    <ul className="space-y-2">
+      {(job.responsibilities ?? []).map((item, index) => (
+        <li
+          key={index}
+          className="flex items-start gap-3 text-slate-600 dark:text-slate-300"
+        >
+          <span className="mt-2 w-1.5 h-1.5 rounded-full bg-slate-400 dark:bg-slate-500 shrink-0" />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
   </div>
 );
 
