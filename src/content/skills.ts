@@ -45,7 +45,7 @@ export const skills: Skill[] = [
   {
     id: 6,
     title: 'Adobe Launch / Tags',
-    iconName: 'adobetags',
+    iconName: 'adobeexperiencecloud',
     type: 'aec',
   },
   {
