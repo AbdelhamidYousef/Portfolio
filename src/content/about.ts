@@ -14,7 +14,14 @@ export const about = {
   email: 'abdelhamedy33@gmail.com',
 
   // Bio
-  profile: `I'm a passionate Frontend Developer specializing in React and TypeScript, with a strong focus on building performant, accessible, and user-centric interfaces. Known for attention to detail, clean code practices, and translating complex requirements into elegant solutions.`,
+  profile: `Adobe Target Engineer with 3+ years of experience delivering enterprise-scale experimentation and personalization across complex digital ecosystems. Specialized in flicker-free JavaScript delivery, SPA/headless optimization, and advanced data orchestration within the Adobe Experience Cloud.`,
+
+  // Stats/Highlights
+  stats: [
+    { label: 'Years Experience', value: '3+' },
+    { label: 'Projects', value: '3+' },
+    { label: 'Technologies', value: '12+' },
+  ],
 
   // Resume
   // resumeUrl: '/resumes/react-resume.pdf',
@@ -43,11 +50,4 @@ export const about = {
       link: 'mailto:abdelhamedy33@gmail.com',
     },
   ] satisfies IconListItem[],
-
-  // Stats/Highlights
-  stats: [
-    { label: 'Years Experience', value: '2+' },
-    { label: 'Projects', value: '10+' },
-    { label: 'Technologies', value: '12+' },
-  ],
 } as const;
