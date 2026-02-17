@@ -50,7 +50,7 @@ export const Hero = ({
           <span className="text-slate-600 dark:text-gray-200 leading-none sm:leading-normal">
             {titles[0]}
           </span>
-          <span className="hidden sm:block mx-2 sm:mx-3 text-slate-400 dark:text-gray-500">
+          <span className="hidden sm:block mx-2 sm:mx-1 text-slate-400 dark:text-gray-500">
             |
           </span>
           <span className="text-primary-600 dark:text-primary-400">

@@ -1,3 +1,14 @@
+export interface CoreContribution {
+  label: string;
+  description: string;
+}
+
+export interface EnterpriseProject {
+  name: string;
+  subtitle: string;
+  bullets: string[];
+}
+
 export interface WorkExperience {
   id: number;
   title: string;
@@ -5,48 +16,79 @@ export interface WorkExperience {
   period: string;
   location: string;
   skills?: string[];
-  responsibilities: string[];
+  /** Narrative format: intro paragraph */
+  intro?: string;
+  /** Narrative format: core technical contributions (label + description) */
+  coreTechnicalContributions?: CoreContribution[];
+  /** Narrative format: key enterprise projects */
+  keyEnterpriseProjects?: EnterpriseProject[];
+  /** Legacy: flat list of responsibilities (used when intro/contributions not set) */
+  responsibilities?: string[];
 }
 
 export const workExperience: WorkExperience[] = [
   {
     id: 1,
-    title: 'Full Stack Developer | React Developer',
+    title:
+      'Certified Adobe Target Engineer | Personalization & Experimentation',
     company: 'Scandiweb',
-    period: '2024–present',
+    period: '2023–present',
     location: 'Latvia - Remote',
     skills: [
-      'TypeScript',
-      'React',
-      'React Router',
-      'React Query',
-      'Tailwind CSS',
-      'SASS',
+      'Adobe Target',
+      'A4T',
+      'Adobe Tags',
+      'JavaScript',
+      'Personalization',
+      'Experimentation',
+      'A/B Testing',
     ],
-    responsibilities: [
-      'Transitioned from a full-stack role to focus on frontend development, specializing in React and TypeScript.',
-      'Developed and maintained React/TypeScript web applications, prioritizing performance, scalability, and user experience.',
-      'Built responsive, accessible, and visually appealing interfaces, optimizing for speed and usability.',
-      'Integrated frontend with backend services via APIs and GraphQL, ensuring seamless data flow.',
-      'Wrote clean, maintainable, and well-documented code, following best practices and modern frontend architecture.',
+    intro: `Delivering end-to-end personalization and experimentation using Adobe Target across large enterprise portfolios. Specialized in flicker-free JavaScript delivery, SPA/headless optimization, and advanced data orchestration within the Adobe Experience Cloud.`,
+    coreTechnicalContributions: [
+      {
+        label: 'Workflow Automation',
+        description:
+          'Architected and developed a proprietary JavaScript utility library delivered via Adobe Tags, reducing activity build time by ~70% and enforcing shared logic across teams.',
+      },
+      {
+        label: 'Performance Engineering',
+        description:
+          'Designed flicker-free delivery patterns for dynamic SPA environments, preserving Core Web Vitals while running deep-funnel personalization at scale.',
+      },
+      {
+        label: 'Stack Integration',
+        description:
+          'Led complex data orchestration between Target, Adobe Analytics (A4T) and Google Analytics (GA4), ensuring experiment integrity across analytics stacks.',
+      },
     ],
-  },
-  {
-    id: 2,
-    title: 'Personalization & Adobe Target Developer',
-    company: '85Sixty',
-    period: '2024–Present',
-    location: 'USA - Remote',
-    skills: ['SASS', 'JavaScript', 'Adobe Target', 'Adobe Analytics'],
-    responsibilities: [
-      'Setting up A/B, multivariate, and experience targeting activities with Adobe Target.',
-      'Setting up ML-based features of Adobe Target including Auto-Target, Automated Personalizations, and Recommendations.',
-      'Managing static and dynamic (React-based) websites with vanilla JavaScript custom code from within Target.',
-      'Implementing audience-based targeting strategies.',
-      'Managing tracking using traditional at.js and more advanced WebSDK.',
-      'Creating and managing different treatments to enhance user interactions.',
-      'Ensuring seamless delivery of personalized content based on data-driven decisions.',
-      'Developing and updating a utility library to automate the generation of the code for different activities.',
+    keyEnterpriseProjects: [
+      {
+        name: 'Alterra Mountain Company (via 85Sixty)',
+        subtitle: 'High-Volume Portfolio Management',
+        bullets: [
+          'Scope: Led experimentation across 16 high-traffic resort domains and the Ikon Pass portal',
+          'Scale: Delivered 100+ complex Adobe Target activities annually, supporting extreme seasonal traffic spikes',
+          'Impact: Centralized cross-brand logic into a shared Adobe Tags library, achieving 100% code consistency across the portfolio',
+        ],
+      },
+      {
+        name: 'DirectWines Portfolio (WSJWine, Laithwaites)',
+        subtitle: 'Global E-commerce Optimization',
+        bullets: [
+          'Environment: React.js, headless, non-VEC compatible flows',
+          'Challenge: Deep-funnel experimentation where standard Target VEC could not operate',
+          'Impact: Built a custom integration bridge between Adobe Target and GA4, maintaining analytics parity across global markets',
+        ],
+      },
+      {
+        name: 'Christmas Tree World (UK #1 Retailer)',
+        subtitle: 'Seasonal CRO & MVT Delivery',
+        bullets: [
+          'Scope: High-stakes Q4 conversion strategy under extreme seasonal pressure',
+          'Execution: Delivered advanced MVT testing on product affinity and user intent',
+          'Impact: Performed full technical audits, identifying and resolving critical tracking leaks before peak season',
+        ],
+      },
     ],
   },
 ];

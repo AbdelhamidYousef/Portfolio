@@ -76,7 +76,7 @@ const AccordionItem = ({
 
       {/* Responsibilities */}
       <ul className="space-y-2 pl-4">
-        {job.responsibilities.map((item, index) => (
+        {(job.responsibilities ?? []).map((item, index) => (
           <li
             key={index}
             className="text-slate-600 dark:text-slate-300 before:content-['•'] before:mr-3 before:text-primary-500"
