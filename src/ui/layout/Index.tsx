@@ -13,7 +13,7 @@ import { ThemeButtons } from '@/library/ui/features/theme-button';
 import { ScrollToTopButton } from '@/library/ui/shared';
 import { ActiveSectionProvider } from '@/library/contexts/activeSection';
 import profileImage from '@/assets/images/profile.webp';
-import resume from '@/assets/resumes/react-resume.pdf';
+import resume from '@/assets/resumes/resume-target-engineer-abdulhamid.pdf';
 import { workExperience } from '@/content/experience';
 
 const Index = () => {
