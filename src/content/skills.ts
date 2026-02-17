@@ -5,119 +5,59 @@ export interface Skill {
   type: string;
 }
 
-export const skillCategories: { value: string | ''; label: string }[] = [
+export const skillCategories: { value: string; label: string }[] = [
   { value: '', label: 'All Skills' },
-  { value: 'core', label: 'Core Technologies' },
-  { value: 'css frameworks', label: 'CSS Frameworks' },
-  { value: 'react ecosystem', label: 'React Ecosystem' },
-  { value: 'tools', label: 'Tools' },
+  { value: 'web', label: 'Fullstack & Web Development' },
+  { value: 'aec', label: 'Adobe Experience Cloud' },
 ];
 
 export const skills: Skill[] = [
-  // Core Technologies
-  {
-    id: 1,
-    title: 'HTML',
-    iconName: 'html',
-    type: 'core',
-  },
+  // Languages
+  { id: 1, title: 'HTML5', iconName: 'html', type: 'web' },
   {
     id: 2,
-    title: 'CSS',
+    title: 'CSS3 (Tailwind/SASS)',
     iconName: 'css',
-    type: 'core',
+    type: 'web',
   },
   {
     id: 3,
-    title: 'JavaScript',
+    title: 'JavaScript (ES6+)',
     iconName: 'javascript',
-    type: 'core',
+    type: 'web',
   },
   {
-    id: 4,
+    id: 3,
     title: 'TypeScript',
     iconName: 'typescript',
-    type: 'core',
+    type: 'web',
   },
-  // CSS Frameworks
+  // Frameworks
+  { id: 4, title: 'React', iconName: 'react', type: 'web' },
+  { id: 5, title: 'Magento', iconName: 'react', type: 'web' },
+  // Adobe Experience Cloud
   {
-    id: 5,
-    title: 'Sass',
-    iconName: 'sass',
-    type: 'css frameworks',
+    id: 6,
+    title: 'Adobe Target',
+    iconName: 'adobetarget',
+    type: 'aec',
   },
   {
     id: 6,
-    title: 'Tailwind',
-    iconName: 'tailwind',
-    type: 'css frameworks',
+    title: 'Adobe Launch / Tags',
+    iconName: 'adobetags',
+    type: 'aec',
   },
   {
     id: 7,
-    title: 'Styled Components',
-    iconName: 'styledcomponents',
-    type: 'css frameworks',
+    title: 'A4T (Analytics for Target)',
+    iconName: 'adobeanalytics',
+    type: 'aec',
   },
   {
     id: 8,
-    title: 'CSS Modules',
-    iconName: 'cssmodules',
-    type: 'css frameworks',
-  },
-  // React Ecosystem
-  {
-    id: 9,
-    title: 'React',
-    iconName: 'react',
-    type: 'react ecosystem',
-  },
-  {
-    id: 10,
-    title: 'React Router',
-    iconName: 'reactrouter',
-    type: 'react ecosystem',
-  },
-  {
-    id: 11,
-    title: 'React Query',
-    iconName: 'reactquery',
-    type: 'react ecosystem',
-  },
-  {
-    id: 12,
-    title: 'Redux',
-    iconName: 'redux',
-    type: 'react ecosystem',
-  },
-  {
-    id: 13,
-    title: 'React Hook Form',
-    iconName: 'reacthookform',
-    type: 'react ecosystem',
-  },
-  // Tools
-  {
-    id: 14,
-    title: 'Git',
-    iconName: 'git',
-    type: 'tools',
-  },
-  {
-    id: 15,
-    title: 'Vite',
-    iconName: 'vite',
-    type: 'tools',
-  },
-  {
-    id: 16,
-    title: 'Docker',
-    iconName: 'docker',
-    type: 'tools',
-  },
-  {
-    id: 17,
-    title: 'ESLint',
-    iconName: 'eslint',
-    type: 'tools',
+    title: 'Adobe Audience Manager',
+    iconName: 'adobeanalytics',
+    type: 'aec',
   },
 ];

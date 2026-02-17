@@ -16,7 +16,10 @@ const SkillsContent = () => {
   return (
     <>
       <motion.div variants={fadeIn('up')}>
-        <SectionTitle className="mb-8!">Skills</SectionTitle>
+        <SectionTitle className="mb-2!">Skills</SectionTitle>
+        <p className="text-center sm:text-left text-lg text-slate-500 dark:text-slate-400 mb-8">
+          Fullstack & Web Development
+        </p>
       </motion.div>
 
       {/* Filter Buttons */}
