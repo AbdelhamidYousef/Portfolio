@@ -5,9 +5,12 @@ export const about = {
   fullName: 'Abdulhamid Yosef',
   firstName: 'Abdulhamid',
   lastName: 'Yosef',
-  titles: ['Frontend Developer', 'React Developer'] as const,
-  tagline: 'Crafting performant React interfaces',
-  techStack: 'React · TypeScript · Tailwind',
+  titles: [
+    'Certified Adobe Target Engineer',
+    'Personalization & Experimentation Expert',
+  ] as const,
+  tagline: 'Turning data into personalized experiences',
+  techStack: 'Adobe Target · A4T · Adobe Tags',
   email: 'abdelhamedy33@gmail.com',
 
   // Bio
