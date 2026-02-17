@@ -11,6 +11,7 @@ export { Git } from './Git';
 export { GraphQL } from './GraphQL';
 export { Html } from './Html';
 export { Javascript } from './Javascript';
+export { Magento } from './Magento';
 export { Nextjs } from './Nextjs';
 export { Nodejs } from './Nodejs';
 export { Supabase } from './Supabase';

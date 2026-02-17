@@ -34,7 +34,7 @@ export const skills: Skill[] = [
   },
   // Frameworks
   { id: 4, title: 'React', iconName: 'react', type: 'web' },
-  { id: 5, title: 'Magento', iconName: 'react', type: 'web' },
+  { id: 5, title: 'Magento', iconName: 'magento', type: 'web' },
   // Adobe Experience Cloud
   {
     id: 6,
