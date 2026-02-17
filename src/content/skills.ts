@@ -57,7 +57,7 @@ export const skills: Skill[] = [
   {
     id: 8,
     title: 'Adobe Audience Manager',
-    iconName: 'adobeanalytics',
+    iconName: 'adobeaudiencemanager',
     type: 'aec',
   },
 ];
